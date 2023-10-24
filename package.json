@@ -1,0 +1,33 @@
+{
+	"name": "smart-travel-design-system",
+	"version": "0.0.1",
+	"description": "Smart Travel Design System",
+	"license": "ISC",
+	"author": {
+		"name": "Anh Le",
+		"email": "ledzanh@gmail.com"
+	},
+	"contributors": [
+		{
+			"name": "Hieu DN"
+		}
+	],
+	"main": "index.js",
+	"scripts": {
+		"check": "npx @biomejs/biome check --apply .",
+		"prepare": "husky install",
+    "sort": "npx sort-package-json"
+	},
+	"commitlint": {
+		"extends": [
+			"./@commitlint/config-conventional"
+		]
+	},
+	"devDependencies": {
+		"@biomejs/biome": "^1.3.1",
+		"@commitlint/cli": "^18.0.0",
+		"@commitlint/config-conventional": "^18.0.0",
+		"husky": "^8.0.3",
+		"vite": "^4.5.0"
+	}
+}
