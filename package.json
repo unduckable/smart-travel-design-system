@@ -16,7 +16,7 @@
 	"scripts": {
 		"check": "npx @biomejs/biome check --apply .",
 		"prepare": "husky install",
-    "sort": "npx sort-package-json"
+		"sort": "npx sort-package-json"
 	},
 	"commitlint": {
 		"extends": [
@@ -28,6 +28,13 @@
 		"@commitlint/cli": "^18.0.0",
 		"@commitlint/config-conventional": "^18.0.0",
 		"husky": "^8.0.3",
+		"nano-staged": "^0.8.0",
+		"sort-package-json": "^2.6.0",
+		"typescript": "^5.2.2",
 		"vite": "^4.5.0"
-	}
+	},
+  "nano-staged": {
+    "*.{css,json,md,yaml,yml,js,ts,tsx}": "npx @biomejs/biome check --apply",
+    "package.json": "sort-package-json"
+  }
 }
