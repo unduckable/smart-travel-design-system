@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Design System Playground</title>
+    <style>
+      body {
+        font-family: system-ui, sans-serif;
+      }
+
+      .home p {
+        margin: 0;
+        line-height: 1.5;
+      }
+
+      .home span {
+        color: white;
+        font-size: 14px;
+        background: gray;
+        padding: 2px 4px;
+        border-radius: 4px;
+      }
+
+      .nav-bar {
+        padding: 8px;
+        background: orange;
+        display: flex;
+        gap: 8px;
+        border-radius: 4px;
+      }
+      .nav-bar a {
+        color: white;
+        text-decoration: none;
+      }
+
+      .nav-bar a:hover, .nav-bar a.active {
+        text-decoration: underline;
+      }
+    </style>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/main.tsx"></script>
+  </body>
+</html>
