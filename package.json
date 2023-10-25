@@ -14,12 +14,11 @@
   ],
   "main": "index.js",
   "scripts": {
-    "build-storybook": "storybook build",
-    "check": "npx @biomejs/biome check --apply .",
-    "dev": "vite playground",
-    "prepare": "husky install",
-    "sort": "npx sort-package-json",
-    "storybook": "storybook dev -p 6006"
+    "build:storybook": "storybook build",
+    "check": "@biomejs/biome check --apply .",
+    "dev": "vite --config config/dev.js",
+    "dev:storybook": "storybook dev -p 6006",
+    "prepare": "husky install"
   },
   "commitlint": {
     "extends": ["@commitlint/config-conventional"]
@@ -30,7 +29,6 @@
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",
-    "cva": "^0.0.0",
     "react-aria": "^3.29.1",
     "react-aria-components": "^1.0.0-beta.2"
   },
