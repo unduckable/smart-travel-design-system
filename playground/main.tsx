@@ -1,7 +1,8 @@
 import React, { Suspense, lazy } from "react";
 import { render } from "react-dom";
-import { JsxElement } from "typescript";
 import { Link, Route, useLocation } from "wouter";
+
+import "../src/styles/index.css";
 
 const ROUTES = [
   { label: "Home", route: "/", component: lazy(() => import("./home")) },
@@ -20,8 +21,6 @@ function App() {
           </Link>
         ))}
       </nav>
-
-      <br />
 
       {ROUTES.map((r, index) => {
         // biome-ignore lint: workaround to bypass ts errors
