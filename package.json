@@ -1,5 +1,5 @@
 {
-  "name": "smart-travel-design-system",
+  "name": "smart-travel-ui",
   "version": "0.0.1",
   "description": "Smart Travel Design System",
   "license": "ISC",
@@ -12,8 +12,21 @@
       "name": "Hieu DN"
     }
   ],
-  "main": "index.js",
+  "type": "module",
+  "exports": {
+    "./package.json": "./package.json",
+    ".": {
+      "import": "./dist/index.es.js",
+      "default": "./dist/index.umd.js"
+    },
+    "./dist/": "./dist/",
+    "./types": "./dist/index.d.ts"
+  },
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "files": ["dist"],
   "scripts": {
+    "build": "vite build --config config/build.js",
     "build:storybook": "storybook build",
     "check": "@biomejs/biome check --apply .",
     "dev": "vite --config config/dev.js",
@@ -56,6 +69,7 @@
     "tailwindcss": "^3.3.4",
     "typescript": "^5.2.2",
     "vite": "^4.5.0",
+    "vite-plugin-dts": "^3.6.1",
     "wouter": "^2.12.1"
   },
   "peerDependencies": {

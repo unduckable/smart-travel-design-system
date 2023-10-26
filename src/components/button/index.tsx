@@ -1,8 +1,8 @@
+import { TestProps } from "@/src/utils";
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
 import { FC, forwardRef } from "react";
 import { Button as BaseButton, ButtonProps as BaseButtonProps } from "react-aria-components";
-import { TestProps } from "../../utils";
 
 export interface IButton extends VariantProps<typeof buttonClasses>, BaseButtonProps, TestProps {}
 

@@ -1,4 +1,4 @@
-### Smart Travel Design System
+## Smart Travel Design System
 
 - Design: [Figma](https://figma.com)
 

@@ -2,7 +2,8 @@ import React, { Suspense, lazy } from "react";
 import { render } from "react-dom";
 import { Link, Route, useLocation } from "wouter";
 
-import "../src/styles/index.css";
+// trick to inject styles
+import "@/src/index.ts";
 
 const ROUTES = [
   { label: "Home", route: "/", component: lazy(() => import("./home")) },

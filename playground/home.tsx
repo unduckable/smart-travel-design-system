@@ -7,8 +7,8 @@ export default function () {
       <p>This is the testing area for components during dev process.</p>
       <p>Each component must be in a separated page.</p>
       <p>
-        Just add new file inside <span>components</span> and update the <span>ROUTES</span> value in{" "}
-        <span>main.tsx</span> file
+        In order to testing out a new component, please just add new file inside <span>components</span> and update the{" "}
+        <span>ROUTES</span> value in <span>main.tsx</span> file.
       </p>
     </div>
   );
