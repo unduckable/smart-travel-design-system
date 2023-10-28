@@ -4,25 +4,64 @@ import type { VariantProps } from "class-variance-authority";
 import { FC, forwardRef } from "react";
 import { Button as BaseButton, ButtonProps as BaseButtonProps } from "react-aria-components";
 
-export interface IButton extends VariantProps<typeof buttonClasses>, BaseButtonProps, TestProps {}
+export interface IButton extends VariantProps<typeof buttonClasses>, BaseButtonProps, TestProps {
+  onClick?: () => void;
+}
 
 const buttonClasses = cva(["st-button"], {
   variants: {
     intent: {
-      primary: ["s-bg-blue-500", "s-text-white", "s-border-transparent", "hover:s-bg-blue-600"],
-      secondary: ["s-bg-white", "s-text-gray-800", "s-border-gray-400", "hover:s-bg-gray-100"],
+      primary: ["s-text-white", "s-border-transparent"],
+      secondary: ["s-text-gray-800", "s-border-gray-400"],
     },
     size: {
       small: ["s-text-sm", "s-py-1", "s-px-2"],
       medium: ["s-text-base", "s-py-2", "s-px-4"],
     },
+    active: {
+      true: "",
+    },
+    disabled: {
+      true: ["s-opacity-50", "s-cursor-not-allowed"],
+    },
   },
+  compoundVariants: [
+    {
+      intent: "primary",
+      disabled: false,
+      className: "hover:s-bg-blue-600",
+    },
+    {
+      intent: "primary",
+      active: false,
+      className: "s-bg-blue-500",
+    },
+    {
+      intent: "primary",
+      active: true,
+      className: "s-bg-blue-600",
+    },
+    {
+      intent: "secondary",
+      disabled: false,
+      className: "hover:s-bg-gray-200",
+    },
+    {
+      intent: "secondary",
+      active: false,
+      className: "s-bg-white",
+    },
+    {
+      intent: "secondary",
+      active: true,
+      className: "s-bg-gray-100",
+    },
+  ],
 });
 
 export const Button: FC<IButton> = forwardRef<HTMLButtonElement, IButton>((props, ref) => {
-  const { children, className, intent, size, ...rest } = props;
-  const classes = buttonClasses({ intent, size, className });
-
+  const { active, children, className, disabled, intent, size, ...rest } = props;
+  const classes = buttonClasses({ active, disabled, intent, size, className });
   return (
     <BaseButton ref={ref} {...rest} className={classes}>
       {children}
@@ -34,4 +73,7 @@ Button.defaultProps = {
   children: "Button",
   intent: "primary",
   size: "medium",
+  active: false,
+  disabled: false,
+  onClick: () => {},
 };
