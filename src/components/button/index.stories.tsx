@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import React, { useCallback, useState } from "react";
-import { Button, IButton } from "./index";
+import React, { useCallback } from "react";
+import { Button } from "./";
 
 type Story = StoryObj<typeof Button>;
 const meta: Meta<typeof Button> = {
@@ -10,9 +10,9 @@ const meta: Meta<typeof Button> = {
 
 export default meta;
 
-type Props = {
+interface Props {
   children: React.ReactNode;
-};
+}
 const Wrapper: React.FC<Props> = ({ children }) => <div className="s-flex s-items-center s-gap-4">{children}</div>;
 
 export const Default: Story = {};
