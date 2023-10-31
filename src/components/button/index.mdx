@@ -1,0 +1,63 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as ButtonStories from './index.stories';
+
+<Meta of={ButtonStories} />
+
+# Button
+
+- [Overview](#overview)
+- [Props](#props)
+- [Variants](#variants)
+- [Tips](#tips)
+- [Examples](#examples)
+
+## Overview
+
+Buttons allow users to trigger an action or event with a single click.
+For example, you can use a button for allowing the functionality of submitting a form, opening a dialog, canceling an action,
+or performing a delete operation.
+
+
+<Canvas of={ButtonStories.Default} />
+
+## Props
+
+
+<Controls of={ButtonStories.Default} />
+
+
+## Variants
+
+### Button kinds
+
+There can be more than one button in a screen, but to create the hierarchy of actions we need to use button intents.
+<Canvas of={ButtonStories.Intents} />
+
+### Sizes
+
+<Canvas of={ButtonStories.Sizes} />
+
+
+### Disabled
+
+Set disable button for something that isn’t usable. Use a tooltip on hover in order to indicate the reason of the disabled action.
+
+<Canvas of={ButtonStories.Disabled} />
+
+### Actives
+
+<Canvas of={ButtonStories.Active} />
+
+## Tips 
+
+➡️ Buttons may contain icon, on the left or the right side  
+➡️ Replace text with a loader if action is submitted, but still processing  
+➡️ Button width is set by it’s content, avoid changing it width  
+➡️ Use only one primary button, and any remaining calls to action should be represented as lower emphasis buttons  
+
+
+## Examples
+
+### Call-to-action
+
+<Canvas of={ButtonStories.CTA} />
