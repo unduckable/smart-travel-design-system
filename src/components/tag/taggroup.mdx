@@ -1,0 +1,39 @@
+import { ArgTypes, Canvas, Controls, Meta } from "@storybook/blocks";
+import * as TagGroupStories from './taggroup.stories.tsx';
+import * as TagStories from './tag.stories.tsx';
+
+<Meta of={TagGroupStories} />
+
+# TagGroup
+
+- [Overview](#overview)
+- [Props](#props)
+- [Variants](#variants)
+- [Tips](#tips)
+- [Examples](#examples)
+
+## Overview
+A tag group is a focusable list of labels, categories, keywords, filters, or other items, with support for keyboard navigation, selection, and removal.
+
+<Canvas of={TagGroupStories.Default} />
+
+
+## Props
+
+<Controls of={TagGroupStories.Default} />
+
+### Tag Props
+<ArgTypes of={TagStories.Default} />
+
+
+## Variants
+
+
+
+## Tips 
+➡️ Keep the number of tags manageable to prevent overwhelming users.  
+
+## Examples
+
+<Canvas of={TagGroupStories.Icescream}/>
+
