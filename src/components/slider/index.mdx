@@ -1,0 +1,48 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as SliderStories from './index.stories';
+
+<Meta of={SliderStories} />
+
+# Slider
+
+- [Overview](#overview)
+- [Props](#props)
+- [Variants](#variants)
+- [Tips](#tips)
+- [Examples](#examples)
+
+## Overview
+
+A slider allows a user to select one or more values within a range.
+<Canvas of={SliderStories.Default} />
+
+
+## Props
+
+<Controls of={SliderStories.Default} />
+
+
+## Variants
+
+### States
+
+<Canvas of={SliderStories.Variants} />
+
+### Ranged Slider
+
+Slider can define range instead of single value 
+<Canvas of={SliderStories.Ranged} />
+
+### Limit and Step
+
+Limit and Step can be customized.
+<Canvas of={SliderStories.LimitStep} />
+
+
+## Tips 
+➡ Slider adjustment makes immediate changes to its content without need of saving  
+➡ Slider works best when the exact value does not matter for the user  
+➡ Slider works best for adjusting volume, setting playback time within a music player, adjusting brightness.  
+
+## Examples
+
