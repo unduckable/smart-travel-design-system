@@ -8,7 +8,7 @@ import { Button } from "../button";
 const tagClasses = cva(
   [
     "st-tag s-text-base s-text-gray-800 s-rounded-lg s-border-gray-500 s-border-2 s-p-1 s-outline-none",
-    "hover:s-border-gray-400 data-[selected=true]:s-bg-gray-500 data-[selected=true]:s-text-white",
+    "hover:s-border-gray-400 selected:s-bg-gray-500 selected:s-text-white",
   ],
   {
     variants: {
