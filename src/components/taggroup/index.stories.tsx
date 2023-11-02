@@ -1,6 +1,6 @@
 import type { Meta, StoryObj } from "@storybook/react";
-import { Tag } from "./tag";
-import { TagGroup } from "./taggroup";
+import { Tag } from "../tag";
+import { TagGroup } from "./";
 
 const meta: Meta<typeof TagGroup> = {
   title: "Components/TagGroup",
