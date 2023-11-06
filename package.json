@@ -29,6 +29,7 @@
     "build": "vite build --config config/build.js",
     "build:storybook": "storybook build",
     "check": "@biomejs/biome check --apply .",
+    "clean": "rm -rf dist storybook-static",
     "dev": "vite --config config/dev.js",
     "dev:storybook": "storybook dev -p 6006",
     "prepare": "husky install",
