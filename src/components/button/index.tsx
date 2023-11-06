@@ -21,14 +21,14 @@ const buttonClasses = cva(["st-button"], {
     active: {
       true: "",
     },
-    disabled: {
+    isDisabled: {
       true: ["s-opacity-50", "s-cursor-not-allowed"],
     },
   },
   compoundVariants: [
     {
       intent: "primary",
-      disabled: false,
+      isDisabled: false,
       className: "hover:s-bg-blue-600",
     },
     {
@@ -43,7 +43,7 @@ const buttonClasses = cva(["st-button"], {
     },
     {
       intent: "secondary",
-      disabled: false,
+      isDisabled: false,
       className: "hover:s-bg-gray-200",
     },
     {
@@ -60,8 +60,8 @@ const buttonClasses = cva(["st-button"], {
 });
 
 export const Button: FC<IButton> = forwardRef<HTMLButtonElement, IButton>((props, ref) => {
-  const { active, children, className, disabled, intent, size, ...rest } = props;
-  const classes = buttonClasses({ active, disabled, intent, size, className });
+  const { active, children, className, isDisabled, intent, size, ...rest } = props;
+  const classes = buttonClasses({ active, isDisabled, intent, size, className });
   return (
     <BaseButton ref={ref} {...rest} className={classes}>
       {children}
@@ -74,6 +74,6 @@ Button.defaultProps = {
   intent: "primary",
   size: "medium",
   active: false,
-  disabled: false,
+  isDisabled: false,
   onClick: () => {},
 };

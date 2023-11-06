@@ -39,10 +39,10 @@ export const Sizes: Story = {
 export const Disabled: Story = {
   render: () => (
     <Wrapper>
-      <Button intent="primary" disabled>
+      <Button intent="primary" isDisabled>
         Primary
       </Button>
-      <Button intent="secondary" disabled>
+      <Button intent="secondary" isDisabled>
         Secondary
       </Button>
     </Wrapper>
