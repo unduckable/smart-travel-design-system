@@ -1,0 +1,39 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as TextFieldStories from './index.stories';
+
+<Meta of={TextFieldStories} />
+
+# TextField
+
+- [Overview](#overview)
+- [Props](#props)
+- [Variants](#variants)
+- [Tips](#tips)
+- [Examples](#examples)
+
+## Overview
+
+An input field includes a label and a text field users can type text into. They typically appear in forms and dialogs.
+
+<Canvas of={TextFieldStories.Default} />
+
+
+## Props
+
+<Controls of={TextFieldStories.Default} />
+
+
+## Variants
+
+### States
+
+<Canvas of={TextFieldStories.Variants} />
+
+
+## Tips 
+➡️ Always use placeholder in input field  
+➡️ Icons can be used to message alerts as well. Pair them with error messages to provide redundant alerts.  
+➡️ Character or word counters should be used if there is a character or word limit.  
+
+## Examples
+

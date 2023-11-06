@@ -1,0 +1,42 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as RadioGroupStories from './index.stories.tsx';
+
+<Meta of={RadioGroupStories} />
+
+# Radio Group
+
+- [Overview](#overview)
+- [Props](#props)
+- [Variants](#variants)
+- [Tips](#tips)
+- [Examples](#examples)
+
+## Overview
+A radio group allows a user to select a single item from a list of mutually exclusive options.
+
+<Canvas of={RadioGroupStories.Default} />
+
+
+## Props
+
+<Controls of={RadioGroupStories.Default} />
+
+### Radio Props
+[See Radio docs](/docs/components-radio--docs)
+
+
+## Variants
+
+### States
+Radio buttons have 3 states: regular, selected, and disabled.
+<Canvas of={RadioGroupStories.Variants} />
+
+## Tips 
+➡ A radio lets a user make exactly one selection from a set, which is all visible at the same time.  
+➡ Set one radio group option as default. Select the most likely or convenient option.  
+➡ Both label and input are clickable to select the option.  
+
+## Examples
+
+<Canvas of={RadioGroupStories.Icescream}/>
+

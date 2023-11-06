@@ -1,0 +1,14 @@
+.st-checkbox {
+  &[data-selected] {
+    & svg {
+      stroke-dashoffset: 44;
+    }
+  }
+
+  &[data-indeterminate] {
+    & svg {
+      stroke: none;
+      fill: currentColor;
+    }
+  }
+}

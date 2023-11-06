@@ -1,0 +1,44 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as CheckboxStories from './index.stories';
+
+<Meta of={CheckboxStories} />
+
+# Checkbox
+
+- [Overview](#overview)
+- [Props](#props)
+- [Variants](#variants)
+- [Tips](#tips)
+- [Examples](#examples)
+
+## Overview
+
+Checkboxes allow users to select one or more items from a set of options.
+
+<Canvas of={CheckboxStories.Default} />
+
+
+## Props
+
+<Controls of={CheckboxStories.Default} />
+
+
+## Variants
+
+### Button kinds
+
+There can be more than one button in a screen, but to create the hierarchy of actions we need to use button intents.
+<Canvas of={CheckboxStories.Variants} />
+
+
+## Tips 
+➡️ Use checkboxes to select one or more options from a list   
+➡️ Use checkboxes to turn an item on or off in a desktop environment    
+➡️ Use checkboxes independently from each other: selecting one checkbox shouldn’t change the selection status of another checkbox in the list. The exception is when a checkbox is used to make a bulk selection.   
+➡️ Ensure both label and input are clickable to select the checkbox field.   
+➡️ Checkboxes should be listed according to a logical order.   
+➡️ Place checkboxes vertically, using 16px spacing.   
+➡️ Checkbox will always apear with a label.   
+
+## Examples
+
