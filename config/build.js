@@ -30,8 +30,6 @@ export default defineConfig({
           "react-dom": "ReactDOM",
           tailwindcss: "tailwindcss",
         },
-        // entryFileNames: ({ name: fileName }) => `${fileName}.js`,
-        // preserveModules: true,
       },
     },
   },
