@@ -1,0 +1,43 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as SwitchStories from './index.stories';
+
+<Meta of={SwitchStories} />
+
+# Switch
+
+- [Overview](#overview)
+- [Props](#props)
+- [Variants](#variants)
+- [Tips](#tips)
+- [Examples](#examples)
+
+## Overview
+
+A switch allows a user to turn a setting on or off.
+<Canvas of={SwitchStories.Default} />
+
+
+## Props
+
+<Controls of={SwitchStories.Default} />
+
+
+## Variants
+
+### States
+
+<Canvas of={SwitchStories.States} />
+
+### Disabled
+
+<Canvas of={SwitchStories.Disabled} />
+
+
+## Tips 
+➡ Use toggles when your intent is to turn something on or off instantly.  
+➡ Toggle can either be selected or not selected. They cannot be in an indeterminate state (unlike 
+checkboxes  
+➡ Use labels such as “on” and “off” or “enable” and “disable” to communicate the state of the toggle.  
+
+## Examples
+
