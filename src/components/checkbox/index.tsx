@@ -3,7 +3,6 @@ import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
 import { FC, forwardRef } from "react";
 import { Checkbox as BaseCheckbox, CheckboxProps as BaseCheckboxProps } from "react-aria-components";
-import "./index.css";
 
 export interface ICheckbox extends VariantProps<typeof checkboxClasses>, BaseCheckboxProps, TestProps {}
 
