@@ -3,7 +3,7 @@ import { Tag } from ".";
 import { TagGroup } from "../tag-group";
 
 const meta: Meta<typeof Tag> = {
-  title: "Components/Tag",
+  title: "Components/Tags/Tag",
   component: Tag,
 };
 
