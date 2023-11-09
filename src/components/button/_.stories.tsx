@@ -62,11 +62,11 @@ export const Active: Story = {
 };
 export const CTA: Story = {
   render: () => {
-    const onClick = useCallback(() => {
-      alert("Made a reserveration!");
+    const onPress = useCallback(() => {
+      alert("Made a reservation!");
     }, []);
     return (
-      <Button intent="primary" onClick={onClick}>
+      <Button intent="primary" onPress={onPress}>
         Book Now
       </Button>
     );

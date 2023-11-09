@@ -18,6 +18,16 @@ const config: StorybookConfig = {
   docs: {
     autodocs: true,
   },
+  typescript: {
+    reactDocgen: "react-docgen-typescript",
+    reactDocgenTypescriptOptions: {
+      compilerOptions: {
+        allowSyntheticDefaultImports: false,
+        esModuleInterop: false,
+      },
+      propFilter: () => true,
+    },
+  },
 };
 
 export default config;

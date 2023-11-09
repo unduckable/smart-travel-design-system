@@ -4,9 +4,7 @@ import type { VariantProps } from "class-variance-authority";
 import { FC, forwardRef } from "react";
 import { Button as BaseButton, ButtonProps as BaseButtonProps } from "react-aria-components";
 
-export interface IButton extends VariantProps<typeof buttonClasses>, BaseButtonProps, TestProps {
-  onClick?: () => void;
-}
+export interface IButton extends VariantProps<typeof buttonClasses>, BaseButtonProps, TestProps {}
 
 const buttonClasses = cva(["st-button"], {
   variants: {
@@ -63,7 +61,7 @@ export const Button: FC<IButton> = forwardRef<HTMLButtonElement, IButton>((props
   const { active, children, className, isDisabled, intent, size, ...rest } = props;
   const classes = buttonClasses({ active, isDisabled, intent, size, className });
   return (
-    <BaseButton ref={ref} {...rest} className={classes}>
+    <BaseButton ref={ref} {...rest} className={classes} isDisabled={isDisabled}>
       {children}
     </BaseButton>
   );
@@ -75,5 +73,4 @@ Button.defaultProps = {
   size: "medium",
   active: false,
   isDisabled: false,
-  onClick: () => {},
 };

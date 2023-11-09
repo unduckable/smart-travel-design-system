@@ -1,5 +1,4 @@
 import { resolve } from "path";
-import tailwindcss from "tailwindcss";
 import { defineConfig } from "vite";
 import dts from "vite-plugin-dts";
 import packageContent from "../package.json";
@@ -7,11 +6,6 @@ import { alias } from "./shared";
 
 export default defineConfig({
   plugins: [dts({ rollupTypes: true })],
-  css: {
-    postcss: {
-      plugins: [tailwindcss],
-    },
-  },
   resolve: { alias },
   build: {
     lib: {
