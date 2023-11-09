@@ -1,0 +1,22 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as TabStories from './_.stories.tsx';
+
+<Meta of={TabStories} />
+
+# Tab
+
+- [Overview](#overview)
+- [Props](#props)
+- [Tips](#tips)
+
+## Overview
+Tab is used to switch between a group of tabs that belongs to a Tabs component.
+
+<Canvas of={TabStories.Default} />
+
+
+## Props
+<Controls of={TabStories.Default} />
+
+## Tips 
+➡️ Tab component is a controlled component. This means you need to compose it with **Tabs** and **Tab List** components to work properly.  
