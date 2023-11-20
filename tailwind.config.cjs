@@ -88,6 +88,7 @@ module.exports = {
           800: "#B82E00",
           900: "#852100",
         },
+        disabled: "#A9A9BC"
       }
     },
   },
