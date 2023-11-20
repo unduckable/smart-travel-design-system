@@ -27,6 +27,9 @@ export const Variants: Story = {
         <Checkbox isSelected isDisabled>
           Disabled checked
         </Checkbox>
+        <Checkbox isIndeterminate isDisabled>
+          Disabled indeterminate
+        </Checkbox>
       </Wrapper>
     );
   },
