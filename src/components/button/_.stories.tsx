@@ -10,57 +10,136 @@ const meta: Meta<typeof Button> = {
 
 export default meta;
 
-interface Props {
-  children: React.ReactNode;
-}
-const Wrapper: React.FC<Props> = ({ children }) => <div className="s-flex s-items-center s-gap-4">{children}</div>;
+const Wrapper = (Story) => (
+  <div className="s-flex s-items-center s-gap-4">
+    <Story />
+  </div>
+);
 
 export const Default: Story = {};
-export const Intents: Story = {
+export const Shapes: Story = {
+  decorators: [Wrapper],
   render: () => {
     return (
-      <Wrapper>
+      <>
+        <Button intent="primary" shape="pill">
+          Pill
+        </Button>
+        <Button intent="primary" shape="round">
+          Round
+        </Button>
+      </>
+    );
+  },
+};
+export const Intents: Story = {
+  decorators: [Wrapper],
+  render: () => {
+    return (
+      <>
         <Button intent="primary">Primary</Button>
+        <Button intent="secondary-outline">Secondary Outline</Button>
         <Button intent="secondary">Secondary</Button>
-      </Wrapper>
+        <Button intent="tertiary">Tertiary</Button>
+      </>
+    );
+  },
+};
+export const IntentsSmall: Story = {
+  decorators: [Wrapper],
+  render: () => {
+    return (
+      <>
+        <Button size="small" intent="primary">
+          Primary
+        </Button>
+        <Button size="small" intent="secondary-outline">
+          Secondary Outline
+        </Button>
+        <Button size="small" intent="secondary">
+          Secondary
+        </Button>
+        <Button size="small" intent="tertiary">
+          Tertiary
+        </Button>
+      </>
+    );
+  },
+};
+export const DestructiveIntents: Story = {
+  decorators: [Wrapper],
+  render: () => {
+    return (
+      <>
+        <Button intent="primary" isDestructive>
+          Primary
+        </Button>
+        <Button intent="secondary-outline" isDestructive>
+          Secondary Outline
+        </Button>
+        <Button intent="secondary" isDestructive>
+          Secondary
+        </Button>
+        <Button intent="tertiary" isDestructive>
+          Tertiary
+        </Button>
+      </>
+    );
+  },
+};
+export const DestructiveIntentsSmall: Story = {
+  decorators: [Wrapper],
+  render: () => {
+    return (
+      <>
+        <Button size="small" intent="primary" isDestructive>
+          Primary
+        </Button>
+        <Button size="small" intent="secondary-outline" isDestructive>
+          Secondary Outline
+        </Button>
+        <Button size="small" intent="secondary" isDestructive>
+          Secondary
+        </Button>
+        <Button size="small" intent="tertiary" isDestructive>
+          Tertiary
+        </Button>
+      </>
     );
   },
 };
 export const Sizes: Story = {
+  decorators: [Wrapper],
   render: () => {
     return (
-      <Wrapper>
+      <>
         <Button size="medium">Medium</Button>
         <Button size="small">Small</Button>
-      </Wrapper>
+      </>
     );
   },
 };
 export const Disabled: Story = {
+  decorators: [Wrapper],
   render: () => (
-    <Wrapper>
-      <Button intent="primary" isDisabled>
+    <>
+      <Button isDisabled intent="primary">
         Primary
       </Button>
-      <Button intent="secondary" isDisabled>
+      <Button isDisabled intent="secondary-outline">
+        Secondary Outline
+      </Button>
+      <Button isDisabled intent="secondary">
         Secondary
       </Button>
-    </Wrapper>
-  ),
-};
-export const Active: Story = {
-  render: () => (
-    <Wrapper>
-      <Button intent="primary" active>
-        Primary
+      <Button isDisabled intent="tertiary">
+        Tertiary
       </Button>
-      <Button intent="secondary" active>
-        Secondary
-      </Button>
-    </Wrapper>
+    </>
   ),
 };
 export const CTA: Story = {
+  decorators: [Wrapper],
   render: () => {
     const onPress = useCallback(() => {
       alert("Made a reservation!");

@@ -3,6 +3,13 @@ module.exports = {
   content: ["./src/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
+      borderRadius: {
+        md: "8px",
+        '3xl': "360px",
+      },
+      boxShadow: {
+        xs: "0px 1px 2px 0px #1212170D"
+      },
       colors: {
         gray: {
           50: "#F7F7F8",
