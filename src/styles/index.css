@@ -1,3 +1,15 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+  .st-button-group {
+    .st-button {
+      @apply s-outline-0;
+    }
+
+    .st-button + .st-button {
+      @apply s-border-r-[1px] s-border-gray-100;
+    }
+  }
+}

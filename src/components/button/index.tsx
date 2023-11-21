@@ -17,6 +17,7 @@ const buttonClasses = cva(["st-button s-shadow-xs s-text-sm s-border-[1px] s-out
     shape: {
       round: "s-rounded-md",
       pill: "s-rounded-3xl",
+      rectangle: "s-rounded-none",
     },
     size: {
       small: "s-py-1.5 s-leading-none s-px-2 s-h-8",
