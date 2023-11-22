@@ -3,7 +3,7 @@ import { RadioGroup } from ".";
 import { Radio } from "../radio";
 
 const meta: Meta<typeof RadioGroup> = {
-  title: "Components/RadioGroup",
+  title: "Components/Radio Group",
   component: RadioGroup,
 };
 
@@ -36,14 +36,63 @@ export const Variants: Story = {
     </>
   ),
 };
+export const Room: Story = {
+  render: () => (
+    <RadioGroup label="Room type" defaultValue="single" isRequired>
+      <Radio value="single">
+        <div>
+          Single <br />
+          <p className="s-text-gray-500">Helper text</p>
+        </div>
+      </Radio>
+      <Radio value="double-window">
+        <div>
+          Double with window <br />
+          <p className="s-text-gray-500">Helper text</p>
+        </div>
+      </Radio>
+      <Radio value="double-twin">
+        <div>
+          Double twin <br />
+          <p className="s-text-gray-500">Helper text</p>
+        </div>
+      </Radio>
+      <Radio value="penthouse" isDisabled>
+        <div>
+          Penthouse <br />
+          <p className="s-text-gray-500">Helper text</p>
+        </div>
+      </Radio>
+    </RadioGroup>
+  ),
+};
+
 export const Icescream: Story = {
   render: () => (
-    <RadioGroup label="Ice cream flavor">
-      <Radio value="chocolate">Chocolate</Radio>
-      <Radio value="mint">Mint</Radio>
-      <Radio value="strawberry">Strawberry</Radio>
+    <RadioGroup label="Ice cream flavor" defaultValue="vanilla">
+      <Radio value="chocolate">
+        <div>
+          Chocolate <br />
+          <p className="s-text-gray-500">Helper text</p>
+        </div>
+      </Radio>
+      <Radio value="mint">
+        <div>
+          Mint <br />
+          <p className="s-text-gray-500">Helper text</p>
+        </div>
+      </Radio>
+      <Radio value="strawberry">
+        <div>
+          Strawberry <br />
+          <p className="s-text-gray-500">Helper text</p>
+        </div>
+      </Radio>
       <Radio value="vanilla" isDisabled>
-        Vanilla (Out of stock)
+        <div>
+          Vanilla (Out of stock) <br />
+          <p className="s-text-gray-500">Helper text</p>
+        </div>
       </Radio>
     </RadioGroup>
   ),

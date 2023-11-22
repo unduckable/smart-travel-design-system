@@ -1,7 +1,7 @@
 import { Canvas, Controls, Meta } from "@storybook/blocks";
 import * as ButtonStories from './_.stories';
 
-<Meta of={ButtonStories} />
+  <Meta of={ButtonStories} />
 
 # Button
 
@@ -18,35 +18,46 @@ For example, you can use a button for allowing the functionality of submitting a
 or performing a delete operation.
 
 
-<Canvas of={ButtonStories.Default} />
+  <Canvas of={ButtonStories.Default} />
 
 ## Props
 
 
-<Controls of={ButtonStories.Default} />
+  <Controls of={ButtonStories.Default} />
 
 
 ## Variants
 
-### Button kinds
-
-There can be more than one button in a screen, but to create the hierarchy of actions we need to use button intents.
-<Canvas of={ButtonStories.Intents} />
+### Shapes
+ 
+  <Canvas of={ButtonStories.Shapes} />
 
 ### Sizes
 
-<Canvas of={ButtonStories.Sizes} />
+  <Canvas of={ButtonStories.Sizes} />
+
+### Intents
+
+#### Medium size
+  <Canvas of={ButtonStories.Intents} />
+
+#### Small size
+  <Canvas of={ButtonStories.IntentsSmall} />
+
+### Destructive intents
+#### Medium size
+  <Canvas of={ButtonStories.DestructiveIntents} />
+
+#### Small size
+  <Canvas of={ButtonStories.DestructiveIntentsSmall} />
 
 
 ### Disabled
 
 Set disable button for something that isn’t usable. Use a tooltip on hover in order to indicate the reason of the disabled action.
 
-<Canvas of={ButtonStories.Disabled} />
+  <Canvas of={ButtonStories.Disabled} />
 
-### Actives
-
-<Canvas of={ButtonStories.Active} />
 
 ## Tips
 
@@ -60,4 +71,4 @@ Set disable button for something that isn’t usable. Use a tooltip on hover in 
 
 ### Call-to-action
 
-<Canvas of={ButtonStories.CTA} />
+  <Canvas of={ButtonStories.CTA} />

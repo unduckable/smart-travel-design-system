@@ -25,12 +25,15 @@ export interface ITagGroup extends VariantProps<typeof radioGroupClasses>, BaseR
 }
 
 export const RadioGroup: FC<ITagGroup> = forwardRef<HTMLDivElement, ITagGroup>((props, ref) => {
-  const { children, className, isDisabled, label, description, errorMessage, items, ...rest } = props;
+  const { children, className, isDisabled, isRequired, label, description, errorMessage, items, ...rest } = props;
   const classes = radioGroupClasses({ className, isDisabled });
 
   return (
     <BaseRadioGroup ref={ref} {...rest} className={classes}>
-      <Label>{label}</Label>
+      <Label>
+        {label}{" "}
+        {isRequired ? <span className="s-text-red-500">*</span> : <span className="s-text-gray-300">(optional)</span>}
+      </Label>
       <>
         {children}
         {description && <Text slot="description">{description}</Text>}

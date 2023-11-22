@@ -4,19 +4,46 @@ import type { VariantProps } from "class-variance-authority";
 import { FC, forwardRef } from "react";
 import { Radio as BaseRadio, RadioProps as BaseRadioProps } from "react-aria-components";
 
-const radioClasses = cva(
+const radioClasses = cva(["st-radio s-flex"], {
+  variants: {
+    isDisabled: {
+      true: "s-opacity-50 s-pointer-events-none",
+    },
+  },
+});
+
+const radioInnerClasses = cva(
   [
-    "st-radio s-flex s-items-center",
-    "selected:before:s-border-[0.3rem]",
-    "before:s-mr-2 before:s-w-4 before:s-h-4 before:s-border-2 before:s-border-blue-500",
-    "before:s-rounded-full before:s-transition-all",
+    "s-flex s-mt-1 s-mr-2 s-w-[14.5px] s-h-[14.5px] s-border-[1px] s-rounded-full s-transition-all s-outline-none",
+    "after:s-m-auto after:s-w-2 after:s-h-2 after:s-rounded-full after:s-transition-all",
   ],
   {
     variants: {
+      isHovered: { true: "" },
+      isSelected: {
+        false: "s-border-gray-200 after:s-hidden",
+      },
+      isFocused: {
+        true: "s-outline-blue-500",
+      },
       isDisabled: {
-        true: "s-opacity-50 before:s-border-gray-400 s-pointer-events-none",
+        true: "s-border-gray-300 after:s-bg-gray-300",
+        false: "after:s-bg-blue-500",
       },
     },
+    compoundVariants: [
+      {
+        isDisabled: false,
+        isSelected: true,
+        className: "s-border-blue-500 s-border-blue-500 after:s-block",
+      },
+      {
+        isDisabled: false,
+        isSelected: false,
+        isHovered: true,
+        className: "s-border-gray-300",
+      },
+    ],
   },
 );
 
@@ -28,11 +55,17 @@ export const Radio: FC<IRadio> = forwardRef<HTMLInputElement, IRadio>((props, re
 
   return (
     <BaseRadio ref={ref} {...rest} className={classes}>
-      {children}
+      {({ isSelected, isHovered, isFocused }) => (
+        <>
+          <div className={radioInnerClasses({ isSelected, isHovered, isDisabled, isFocused })} />
+          {children}
+        </>
+      )}
     </BaseRadio>
   );
 });
 
 Radio.defaultProps = {
   children: "Radio",
+  isDisabled: false,
 };

@@ -9,32 +9,31 @@ const meta: Meta<typeof Switch> = {
 export default meta;
 
 type Story = StoryObj<typeof Switch>;
+const Wrapper = (Story) => (
+  <div className="s-flex s-gap-2">
+    <Story />
+  </div>
+);
 export const Default: Story = {};
 export const States: Story = {
+  decorators: [Wrapper],
   render: () => {
     return (
       <>
-        <div>
-          Default On <Switch defaultSelected />
-        </div>
-        <div>
-          Default Off <Switch defaultSelected={false} />
-        </div>
+        <Switch defaultSelected />
+        <Switch defaultSelected={false} />
       </>
     );
   },
 };
 
 export const Disabled: Story = {
+  decorators: [Wrapper],
   render: () => {
     return (
       <>
-        <div>
-          On <Switch isDisabled isSelected />
-        </div>
-        <div>
-          Off <Switch isDisabled isSelected={false} />
-        </div>
+        <Switch isDisabled isSelected />
+        <Switch isDisabled isSelected={false} />
       </>
     );
   },
