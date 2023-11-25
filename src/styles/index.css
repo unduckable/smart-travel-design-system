@@ -12,4 +12,46 @@
       @apply s-border-r-[1px] s-border-gray-100;
     }
   }
+
+  .st-tooltip {
+    &[data-placement="top"],
+    &[data-placement="top-left"],
+    &[data-placement="top-right"] {
+      --origin: translateY(4px);
+    }
+
+    &[data-placement="bottom"],
+    &[data-placement="bottom-left"],
+    &[data-placement="bottom-right"] {
+      --origin: translateY(-4px);
+    }
+
+    &[data-placement="right"] {
+      --origin: translateX(-4px);
+    }
+
+    &[data-placement="left"] {
+      --origin: translateX(4px);
+    }
+
+    &[data-entering] {
+      animation: slide 200ms;
+    }
+
+    &[data-exiting] {
+      animation: slide 200ms reverse ease-in;
+    }
+
+    @keyframes slide {
+      from {
+        transform: var(--origin);
+        opacity: 0;
+      }
+
+      to {
+        transform: translateY(0);
+        opacity: 1;
+      }
+    }
+  }
 }

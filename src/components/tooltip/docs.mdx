@@ -1,0 +1,39 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as TooltipStories from './_.stories';
+
+  <Meta of={TooltipStories} />
+
+# Tooltip 
+
+- [Overview](#overview)
+- [Props](#props)
+- [Variants](#variants)
+- [Tips](#tips)
+- [Examples](#examples)
+
+## Overview
+Tooltips show contextual help or information about specific components when a user hovers on them.
+
+  <Canvas of={TooltipStories.Default} />
+
+
+## Props
+
+  <Controls of={TooltipStories.Default} />
+
+
+## Variants
+
+### Positions
+  <Canvas of={TooltipStories.Positions} />
+
+### Open/Close Delay
+  <Canvas of={TooltipStories.Delay} />
+
+
+## Tips 
+➡️ Should never contain critical information that a user would absolutely need to proceed.  
+➡️ Use when the description content would be too much information to include inline or create too much clutter. For example, when expert users have seen it many times.  
+
+## Examples
+
