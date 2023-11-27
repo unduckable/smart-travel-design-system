@@ -25,21 +25,24 @@
   "types": "./dist/index.d.ts",
   "files": ["dist"],
   "scripts": {
+    "----------BUILD----------": "",
     "build": "vite build --config config/build.js",
     "build:storybook": "storybook build",
-    "check": "@biomejs/biome check --apply .",
-    "clean": "rm -rf dist storybook-static",
+    "----------DEV----------": "",
     "dev": "vite --config config/dev.js",
     "dev:storybook": "storybook dev -p 6006",
-    "prepare": "husky install",
-    "test": "vitest --config config/test.js"
+    "----------TEST----------": "",
+    "test": "vitest --config config/test.js",
+    "----------OTHER----------": "",
+    "check": "@biomejs/biome check --apply .",
+    "clean": "rm -rf dist storybook-static",
+    "prepare": "husky install"
   },
   "commitlint": {
     "extends": ["@commitlint/config-conventional"]
   },
   "nano-staged": {
-    "*.{css,json,md,yaml,yml,js,ts,tsx}": "npx @biomejs/biome check --apply",
-    "package.json": "sort-package-json"
+    "*.{css,json,md,yaml,yml,js,ts,tsx}": "npx @biomejs/biome check --apply"
   },
   "dependencies": {
     "class-variance-authority": "^0.7.0",
@@ -71,7 +74,6 @@
     "postcss": "^8.4.31",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
-    "sort-package-json": "^2.6.0",
     "storybook": "^7.5.1",
     "storybook-addon-swc": "^1.2.0",
     "tailwindcss": "^3.3.4",
