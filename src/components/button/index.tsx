@@ -15,7 +15,7 @@ const buttonClasses = cva(["st-button s-text-sm s-border-[1px] s-outline-none"],
       tertiary: "s-border-transparent",
     },
     shape: {
-      round: "s-rounded-lg",
+      round: "s-rounded-md",
       pill: "s-rounded-3xl",
       rectangle: "s-rounded-none",
     },
