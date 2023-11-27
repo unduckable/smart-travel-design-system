@@ -17,3 +17,6 @@ export type { IRadioGroup } from "./components/radio-group";
 
 export { Switch } from "./components/switch";
 export type { ISwitch } from "./components/switch";
+
+export { Icon } from "./components/icon";
+export type { IIcon } from "./components/icon";
