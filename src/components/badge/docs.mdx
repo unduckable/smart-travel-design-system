@@ -1,0 +1,43 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as BadgeStories from './_.stories';
+
+  <Meta of={BadgeStories} />
+
+# Badge
+
+- [Overview](#overview)
+- [Props](#props)
+- [Variants](#variants)
+- [Tips](#tips)
+- [Examples](#examples)
+
+## Overview
+Badges are compact elements that represent an input, attribute, or action. They may display text, icons, or both.
+
+  <Canvas of={BadgeStories.Default} />
+
+
+## Props
+  <Controls of={BadgeStories.Default} />
+
+
+## Variants
+
+### Colors
+  <Canvas of={BadgeStories.Colors} />
+
+### Shapes
+  <Canvas of={BadgeStories.Shapes} />
+
+### Outlines
+  <Canvas of={BadgeStories.Outlines} />
+
+### With icons
+  <Canvas of={BadgeStories.Icons} />
+
+## Tips 
+➡️ Badges represent a complex piece of information in compact form, such as an entity (person, place, or thing) or status. They enable user input and verify that input by converting text into badges.  
+➡️ Use badges when content is mapped to multiple categories, and the user needs a way to differentiate between them.  
+
+## Examples
+
