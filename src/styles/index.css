@@ -13,6 +13,21 @@
     }
   }
 
+  .st-checkbox {
+    &[data-selected] {
+      & svg {
+        stroke-dashoffset: 44;
+      }
+    }
+
+    &[data-indeterminate] {
+      & svg {
+        stroke: none;
+        fill: currentColor;
+      }
+    }
+  }
+
   .st-tooltip {
     &[data-placement="top"],
     &[data-placement="top-left"],
