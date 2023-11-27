@@ -12,7 +12,7 @@ export interface IAvatar extends VariantProps<typeof avatarClasses>, TestProps {
   size?: "xs" | "sm" | "md" | "lg" | "xl" | "2xl";
 }
 
-const avatarClasses = cva(["st-avatar", "s-relative", "s-text-white-900", "s-rounded-full"], {
+const avatarClasses = cva(["st-avatar", "s-relative", "s-text-white-900", "s-rounded-3xl"], {
   variants: {
     type: {
       image: "",
@@ -69,7 +69,7 @@ const dotClasses = cva(
     "s-border-2",
     "s-border-white-900",
     "s-right-[-2px]",
-    "s-rounded-full",
+    "s-rounded-3xl",
     "s-box-content",
   ],
   {

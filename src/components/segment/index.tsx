@@ -29,7 +29,7 @@ const segmentItemClasses = cva("s-leading-none focus:s-outline-transparent", {
       medium: "s-h-[32px]",
     },
     active: {
-      true: "s-bg-white s-shadow-sm",
+      true: "s-bg-white-900 s-shadow-sm",
     },
   },
 });

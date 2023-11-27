@@ -14,8 +14,8 @@ const radioClasses = cva(["st-radio s-flex"], {
 
 const radioInnerClasses = cva(
   [
-    "s-flex s-mt-1 s-mr-2 s-w-4 s-h-4 s-border-[1px] s-rounded-full s-transition-all s-outline-none",
-    "after:s-m-auto after:s-w-2 after:s-h-2 after:s-rounded-full after:s-transition-all",
+    "s-flex s-mt-1 s-mr-2 s-w-4 s-h-4 s-border-[1px] s-rounded-3xl s-transition-all s-outline-none",
+    "after:s-m-auto after:s-w-2 after:s-h-2 after:s-rounded-3xl after:s-transition-all",
   ],
   {
     variants: {
