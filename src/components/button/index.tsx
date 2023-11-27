@@ -6,12 +6,12 @@ import { Button as BaseButton, ButtonProps as BaseButtonProps } from "react-aria
 
 export interface IButton extends VariantProps<typeof buttonClasses>, BaseButtonProps, TestProps {}
 
-const buttonClasses = cva(["st-button s-shadow-xs s-text-sm s-border-[1px] s-outline-none"], {
+const buttonClasses = cva(["st-button s-text-sm s-border-[1px] s-outline-none"], {
   variants: {
     intent: {
       primary: "s-text-white",
       secondary: "s-border-transparent",
-      "secondary-outline": "",
+      "secondary-outline": "s-shadow-xs ",
       tertiary: "s-border-transparent",
     },
     shape: {

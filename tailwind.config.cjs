@@ -8,7 +8,9 @@ module.exports = {
         '3xl': "360px",
       },
       boxShadow: {
-        xs: "0px 1px 2px 0px #1212170D"
+        xs: "0px 1px 2px 0px #1212170D",
+        sm: "0px 1px 2px 0px #1212170F, 0px 1px 3px 0px #1212171A",
+
       },
       colors: {
         gray: {
