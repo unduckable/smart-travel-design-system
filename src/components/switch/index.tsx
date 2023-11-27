@@ -40,7 +40,7 @@ export const Switch: FC<ISwitch> = forwardRef<HTMLInputElement, ISwitch>((props,
     <BaseSwitch ref={ref} {...rest} className={wrapperClasses}>
       <>
         <div className={classes}>
-          <span className="s-h-3 s-w-3 s-transform s-rounded-full s-bg-white s-shadow s-transition s-duration-200 s-ease-in-out s-translate-x-0 group-selected:s-translate-x-[100%]" />
+          <span className="s-h-3 s-w-3 s-transform s-rounded-full s-bg-white-900 s-shadow s-transition s-duration-200 s-ease-in-out s-translate-x-0 group-selected:s-translate-x-[100%]" />
         </div>
         {children}
       </>

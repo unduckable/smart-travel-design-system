@@ -78,11 +78,19 @@ export const Checkbox: FC<ICheckbox> = forwardRef<HTMLInputElement, ICheckbox>((
     <BaseCheckbox ref={ref} {...rest} className={classes}>
       {({ isIndeterminate, isSelected, isHovered, isFocused }) => (
         <>
-          <div className={checkClasses({ isSelected, isIndeterminate, isHovered, isDisabled, isFocused })}>
+          <div
+            className={checkClasses({
+              isSelected,
+              isIndeterminate,
+              isHovered,
+              isDisabled,
+              isFocused,
+            })}
+          >
             <svg
               viewBox="0 0 16 16"
               aria-hidden="true"
-              className="s-text-white s-w-2 s-h-2 s-fill-none s-stroke-current"
+              className="s-text-white-900 s-w-2 s-h-2 s-fill-none s-stroke-white-900"
               strokeWidth="4px"
               strokeDasharray="22px"
               strokeDashoffset="66"

@@ -17,14 +17,14 @@ const radioGroupClasses = cva(["st-radio-group s-inline-flex s-flex-col s-gap-2"
   },
 });
 
-export interface ITagGroup extends VariantProps<typeof radioGroupClasses>, BaseRadioGroupProps, TestProps {
+export interface IRadioGroup extends VariantProps<typeof radioGroupClasses>, BaseRadioGroupProps, TestProps {
   label?: string;
   description?: string;
   errorMessage?: string;
   items?: Iterable<object>[];
 }
 
-export const RadioGroup: FC<ITagGroup> = forwardRef<HTMLDivElement, ITagGroup>((props, ref) => {
+export const RadioGroup: FC<IRadioGroup> = forwardRef<HTMLDivElement, IRadioGroup>((props, ref) => {
   const { children, className, isDisabled, isRequired, label, description, errorMessage, items, ...rest } = props;
   const classes = radioGroupClasses({ className, isDisabled });
 

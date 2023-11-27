@@ -14,9 +14,9 @@
     "noEmit": true,
     "jsx": "react-jsx",
     "paths": {
-      "@/*": ["./*"],
+      "@/*": ["./*"]
     }
   },
-  "include": ["src", "playground", "test"],
+  "include": ["src", "playground", "test", "_in_progress"],
   "exclude": [".archive"]
 }

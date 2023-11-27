@@ -1,10 +1,15 @@
-import { Button } from "@/src";
+import { Avatar, Button, Icon } from "@/src";
 import React from "react";
 
 export default function () {
   return (
-    <Button id="23" onPress={() => alert(213)}>
-      Button
-    </Button>
+    <div>
+      <Button id="23" onPress={() => alert(213)}>
+        Button
+      </Button>
+
+      <Icon className="s-text-red-500" />
+      <Avatar />
+    </div>
   );
 }
