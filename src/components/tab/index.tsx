@@ -7,8 +7,8 @@ import { Tab as BaseTab, TabProps as BaseTabProps } from "react-aria-components"
 const tabClasses = cva(
   [
     "st-tab",
-    "s-px-4 s-text-center s-cursor-default s-ring-black s-outline-none s-transition-colors focus-visible:s-ring-2 selected:s-border-b-2",
-    "selected:s-border-b-4 selected:s-border-blue-500 selected:s-text-blue-500",
+    "s-min-w-[40px] s-py-3 s-text-sm s-text-center s-cursor-default s-ring-black s-outline-none s-transition-colors s-border-b-2 s-border-transparent",
+    "hover:s-border-gray-100 selected:s-border-blue-500 selected:s-text-blue-500 focus-visible:s-ring-2",
   ],
   {
     variants: {

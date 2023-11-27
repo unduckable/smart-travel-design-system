@@ -4,10 +4,10 @@ import type { VariantProps } from "class-variance-authority";
 import { FC, forwardRef } from "react";
 import { TabList as BaseTabList, TabListProps as BaseTabListProps } from "react-aria-components";
 
-const tabListClasses = cva(["st-tab-list", "s-flex s-space-x-1 s-border-b-2 s-border-gray-400"], {
+const tabListClasses = cva(["st-tab-list", "s-flex s-justify-between s-overflow-y-hidden"], {
   variants: {
     isDisabled: {
-      true: "s-opacity-50 s-pointer-events-none",
+      true: "s-text-gray-100 s-pointer-events-none",
     },
   },
 });
