@@ -8,6 +8,11 @@ module.exports = {
     },
   ],
   theme: {
+    borderRadius: {
+      md: "8px",
+      "3xl": "360px",
+      // TODO: Add missing values from figma
+    },
     fontWeight: {
       normal: "400",
       bold: "700",
@@ -131,6 +136,7 @@ module.exports = {
         800: "#e5e5e5",
         900: "#ffffff",
       },
+      transparent: "transparent",
       disabled: "#A9A9BC",
     },
   },
