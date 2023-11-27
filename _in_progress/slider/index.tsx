@@ -59,7 +59,7 @@ export const Slider: FC<ISlider> = forwardRef<HTMLInputElement, ISlider>((props,
               <SliderThumb
                 key={i}
                 index={i}
-                className="s-h-4 s-w-4 s-top-[50%] s-rounded-full s-border s-border-solid s-border-blue-800/75 s-bg-white s-transition s-dragging:bg-purple-100 s-outline-none s-focus-visible:ring-2 s-ring-black"
+                className="s-h-4 s-w-4 s-top-[50%] s-rounded-full s-border s-border-solid s-border-blue-800/75 s-bg-white-900 s-transition s-dragging:bg-purple-100 s-outline-none s-focus-visible:ring-2 s-ring-black"
               />
             ))}
           </>

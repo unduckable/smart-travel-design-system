@@ -1,11 +1,11 @@
 import type { Meta, StoryObj } from "@storybook/react";
+import { TabPanel } from ".";
 import { Tab } from "../tab";
 import { TabList } from "../tab-list";
-import { TabPanel } from "../tab-panel";
-import { Tabs } from "./";
+import { Tabs } from "../tabs";
 
 const meta: Meta<typeof Tabs> = {
-  title: "Components/Tabs/Tabs",
+  title: "Components/Tabs/Tab Panel",
   component: Tabs,
 };
 
@@ -17,14 +17,8 @@ export const Default: Story = {
     <Tabs className="s-w-full s-max-w-[300px]">
       <TabList>
         <Tab id="tab1">Tab 1</Tab>
-        <Tab id="tab2">Tab 2</Tab>
-        <Tab id="tab3">Tab 3</Tab>
-        <Tab id="tab4">Tab 4</Tab>
       </TabList>
       <TabPanel id="tab1">Tab content 1</TabPanel>
-      <TabPanel id="tab2">Tab content 2</TabPanel>
-      <TabPanel id="tab3">Tab content 3</TabPanel>
-      <TabPanel id="tab4">Tab content 4</TabPanel>
     </Tabs>
   ),
 };

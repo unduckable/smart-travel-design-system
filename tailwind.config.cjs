@@ -8,10 +8,6 @@ module.exports = {
     },
   ],
   theme: {
-    // borderRadius: {
-    //   md: "8px",
-    //   "3xl": "360px",
-    // },
     fontWeight: {
       normal: "400",
       bold: "700",
