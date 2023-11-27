@@ -20,3 +20,6 @@ export type { ISwitch } from "./components/switch";
 
 export { Icon } from "./components/icon";
 export type { IIcon } from "./components/icon";
+
+export { Avatar } from "./components/avatar";
+export type { IAvatar } from "./components/avatar";

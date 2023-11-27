@@ -1,4 +1,4 @@
-import { Button, Icon } from "@/src";
+import { Avatar, Button, Icon } from "@/src";
 import React from "react";
 
 export default function () {
@@ -9,6 +9,7 @@ export default function () {
       </Button>
 
       <Icon className="s-text-red-500" />
+      <Avatar />
     </div>
   );
 }
