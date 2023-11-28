@@ -1,4 +1,6 @@
-import { Check, Close, Plus } from "@/src/icons";
+import Check from "@/src/icons/Check";
+import Close from "@/src/icons/Close";
+import Plus from "@/src/icons/Plus";
 import type { Meta, StoryObj } from "@storybook/react";
 import React from "react";
 import { Badge } from ".";
