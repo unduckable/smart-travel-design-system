@@ -1,7 +1,7 @@
 import { TestProps } from "@/src/utils";
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
-import { FC, forwardRef } from "react";
+import { FC, ReactNode, forwardRef } from "react";
 import {
   OverlayArrow,
   Tooltip as BaseTooltip,
@@ -10,23 +10,26 @@ import {
   TooltipTriggerComponentProps,
 } from "react-aria-components";
 
-const tooltipClasses = cva(["st-tooltip s-flex", "s-py-2 s-px-3.5 s-bg-gray-900 s-text-white s-text-xs s-rounded-md"], {
-  variants: {
-    isDisabled: {
-      true: "s-opacity-50 s-pointer-events-none",
-    },
-    placement: {
-      top: "s-mb-3",
-      "top left": "s-mb-3",
-      "top right": "s-mb-3",
-      bottom: "s-mt-3",
-      "bottom left": "s-mt-3",
-      "bottom right": "s-mt-3",
-      left: "s-mr-3",
-      right: "s-ml-3",
+const tooltipClasses = cva(
+  ["st-tooltip s-flex", "s-py-2 s-px-3.5 s-bg-gray-900 s-text-white-900 s-text-xs s-rounded-md"],
+  {
+    variants: {
+      isDisabled: {
+        true: "s-opacity-50 s-pointer-events-none",
+      },
+      placement: {
+        top: "s-mb-3",
+        "top left": "s-mb-3",
+        "top right": "s-mb-3",
+        bottom: "s-mt-3",
+        "bottom left": "s-mt-3",
+        "bottom right": "s-mt-3",
+        left: "s-mr-3",
+        right: "s-ml-3",
+      },
     },
   },
-});
+);
 
 const arrowClasses = cva([], {
   variants: {
@@ -45,8 +48,8 @@ const arrowClasses = cva([], {
 
 export interface ITooltip extends VariantProps<typeof tooltipClasses>, TooltipTriggerComponentProps, TestProps {
   className?: string;
-  children: React.ReactNode;
-  content?: React.ReactNode | string;
+  children: ReactNode;
+  content?: ReactNode;
   contentProps?: Omit<BaseTooltipProps, "children" | "placement">;
 }
 

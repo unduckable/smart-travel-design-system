@@ -1,7 +1,7 @@
 import { TestProps } from "@/src/utils";
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
-import { FC, forwardRef } from "react";
+import { FC, ReactNode, forwardRef } from "react";
 import {
   Label,
   TagGroup as BaseTagGroup,
@@ -23,7 +23,7 @@ export interface ITagGroup extends VariantProps<typeof tagGroupClasses>, BaseTag
   description?: string;
   errorMessage?: string;
   items?: Iterable<object>[];
-  renderEmptyState?: () => React.ReactNode;
+  renderEmptyState?: () => ReactNode;
 }
 
 export const TagGroup: FC<ITagGroup> = forwardRef<HTMLDivElement, ITagGroup>((props, ref) => {

@@ -18,7 +18,7 @@ const switchWrapperClasses = cva(
 );
 const switchClasses = cva(
   [
-    "s-flex s-w-7 s-cursor-pointer s-rounded-3xl s-p-0.5 s-transition s-duration-200 s-ease-in-out s-outline-none",
+    "s-flex s-w-7 s-cursor-pointer s-rounded-full s-p-0.5 s-transition s-duration-200 s-ease-in-out s-outline-none",
     "group-hover:s-bg-gray-300 group-focus:s-outline-2 group-focus:s-outline-blue-600",
   ],
   {
@@ -40,7 +40,7 @@ export const Switch: FC<ISwitch> = forwardRef<HTMLInputElement, ISwitch>((props,
     <BaseSwitch ref={ref} {...rest} className={wrapperClasses}>
       <>
         <div className={classes}>
-          <span className="s-h-3 s-w-3 s-transform s-rounded-3xl s-bg-white-900 s-shadow s-transition s-duration-200 s-ease-in-out s-translate-x-0 group-selected:s-translate-x-[100%]" />
+          <span className="s-h-3 s-w-3 s-transform s-rounded-full s-bg-white-900 s-shadow s-transition s-duration-200 s-ease-in-out s-translate-x-0 group-selected:s-translate-x-[100%]" />
         </div>
         {children}
       </>

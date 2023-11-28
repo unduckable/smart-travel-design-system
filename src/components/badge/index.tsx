@@ -1,14 +1,14 @@
-import { Icon } from "@/src/components/icon";
+import { Icon } from "@/src";
 import { TestProps } from "@/src/utils";
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
-import { FC, forwardRef } from "react";
+import { FC, ReactNode, forwardRef } from "react";
 import { Button, ButtonProps } from "react-aria-components";
 
 export interface IBadge extends VariantProps<typeof badgeClasses>, Omit<ButtonProps, "children">, TestProps {
-  prefixIcon?: React.ReactElement;
-  suffixIcon?: React.ReactElement;
-  children?: React.ReactNode;
+  prefixIcon?: FC;
+  suffixIcon?: FC;
+  children?: ReactNode;
 }
 
 const badgeClasses = cva(["st-badge s-flex s-text-xs s-p-1 s-outline-none"], {
@@ -25,7 +25,7 @@ const badgeClasses = cva(["st-badge s-flex s-text-xs s-p-1 s-outline-none"], {
     },
     shape: {
       rounded: "s-rounded-md",
-      pill: "s-rounded-3xl",
+      pill: "s-rounded-full",
     },
     isOutlined: {
       true: "s-border-[1px] s-border-solid",

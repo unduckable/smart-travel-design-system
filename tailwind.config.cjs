@@ -10,11 +10,12 @@ module.exports = {
   theme: {
     borderRadius: {
       md: "8px",
-      "3xl": "360px",
+      full: "9999px",
       // TODO: Add missing values from figma
     },
     fontWeight: {
       normal: "400",
+      medium: "500",
       bold: "700",
     },
     fontSize: {
@@ -53,7 +54,7 @@ module.exports = {
         900: "#121217",
       },
       blue: {
-        50: "#FOF8FF",
+        50: "#F0F8FF",
         100: "#DBEFFF",
         200: "#ADDAFF",
         300: "#70BFFF",
