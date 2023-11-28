@@ -1,0 +1,37 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as DialogStories from './_.stories';
+
+  <Meta of={DialogStories} />
+
+# Dialog
+
+- [Overview](#overview)
+- [Props](#props)
+- [Variants](#variants)
+- [Tips](#tips)
+- [Examples](#examples)
+
+## Overview
+A dialog is a type of modal window that appears in front of app content to provide critical information, or prompt for a decision to be made. 
+
+  <Canvas of={DialogStories.Default} />
+
+
+## Props
+
+  <Controls of={DialogStories.Default} />
+
+
+## Variant
+### Custom icon
+  <Canvas of={DialogStories.Icons} />
+
+### Destructive
+  <Canvas of={DialogStories.Destructive} />
+
+## Tips 
+➡️ Dialog component is used to interrupt the user with a mandatory confirmation or action.  
+➡️ By default, Modal will be closed by: dragging down or the closing buttons.  
+
+
+## Examples

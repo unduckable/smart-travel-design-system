@@ -138,6 +138,7 @@ module.exports = {
         800: "#e5e5e5",
         900: "#ffffff",
       },
+      black: '#000000',
       transparent: "transparent",
       disabled: "#A9A9BC",
     },
