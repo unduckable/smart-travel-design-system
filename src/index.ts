@@ -41,3 +41,9 @@ export type {
   IFloatingButton,
   IFloatingButtonGroup,
 } from "./components/floating-button";
+
+export { Dropdown } from "./components/dropdown";
+export type { IDropdown, IDropdownItem } from "./components/dropdown";
+
+export { Select } from "./components/select";
+export type { ISelect } from "./components/select";

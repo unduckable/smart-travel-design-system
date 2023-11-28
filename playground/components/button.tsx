@@ -1,4 +1,15 @@
-import { Alert, Avatar, AvatarGroup, Button, FloatingButton, FloatingButtonGroup, Icon, Link } from "@/src";
+import {
+  Alert,
+  Avatar,
+  AvatarGroup,
+  Button,
+  Dropdown,
+  FloatingButton,
+  FloatingButtonGroup,
+  Icon,
+  Link,
+  Select,
+} from "@/src";
 import React from "react";
 
 export default function () {
@@ -34,6 +45,25 @@ export default function () {
         <FloatingButton />
         <FloatingButton />
       </FloatingButtonGroup>
+
+      <Dropdown
+        triggerElement={<Button>Hello World</Button>}
+        onAction={(v) => console.log(v)}
+        style={{ width: "300px" }}
+        items={[
+          { id: "1", content: "hi" },
+          { id: "2", content: "hi2" },
+        ]}
+      />
+
+      <Select
+        items={[
+          { id: "1", content: "Cat" },
+          { id: "2", content: "Dog" },
+          { id: "3", content: "Panda" },
+          { id: "4", content: "Snake" },
+        ]}
+      />
     </div>
   );
 }
