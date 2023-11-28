@@ -50,16 +50,16 @@ export const Slider: FC<ISlider> = forwardRef<HTMLInputElement, ISlider>((props,
       <SliderTrack className="s-relative s-w-full s-h-7">
         {({ state }) => (
           <>
-            <div className="s-absolute s-h-1 s-top-[50%] s-translate-y-[-50%] s-w-full s-rounded-3xl s-bg-blue-300/40" />
+            <div className="s-absolute s-h-1 s-top-[50%] s-translate-y-[-50%] s-w-full s-rounded-full s-bg-blue-300/40" />
             <div
-              className="s-absolute s-h-1 s-top-[50%] s-translate-y-[-50%] s-rounded-3xl s-bg-blue-500"
+              className="s-absolute s-h-1 s-top-[50%] s-translate-y-[-50%] s-rounded-full s-bg-blue-500"
               style={getProgressStyle(state)}
             />
             {state.values.map((_, i) => (
               <SliderThumb
                 key={i}
                 index={i}
-                className="s-h-4 s-w-4 s-top-[50%] s-rounded-3xl s-border s-border-solid s-border-blue-800/75 s-bg-white-900 s-transition s-dragging:bg-purple-100 s-outline-none s-focus-visible:ring-2 s-ring-black"
+                className="s-h-4 s-w-4 s-top-[50%] s-rounded-full s-border s-border-solid s-border-blue-800/75 s-bg-white-900 s-transition s-dragging:bg-purple-100 s-outline-none s-focus-visible:ring-2 s-ring-black"
               />
             ))}
           </>

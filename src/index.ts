@@ -23,3 +23,27 @@ export type { IIcon } from "./components/icon";
 
 export { Avatar } from "./components/avatar";
 export type { IAvatar } from "./components/avatar";
+
+export { AvatarGroup } from "./components/avatar-group";
+export type { IAvatarGroup } from "./components/avatar-group";
+
+export { Link } from "./components/link";
+export type { ILink } from "./components/link";
+
+export { Alert } from "./components/alert";
+export type { IAlert, IAlertAction } from "./components/alert";
+
+export {
+  FloatingButton,
+  FloatingButtonGroup,
+} from "./components/floating-button";
+export type {
+  IFloatingButton,
+  IFloatingButtonGroup,
+} from "./components/floating-button";
+
+export { Dropdown } from "./components/dropdown";
+export type { IDropdown, IDropdownItem } from "./components/dropdown";
+
+export { Select } from "./components/select";
+export type { ISelect } from "./components/select";

@@ -1,9 +1,9 @@
+import { Button } from "@/src";
 import { TestProps } from "@/src/utils";
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
 import { FC, forwardRef } from "react";
 import { Tag as BaseTag, TagProps as BaseTagProps } from "react-aria-components";
-import { Button } from "../../src/components/button";
 
 const tagClasses = cva(
   [

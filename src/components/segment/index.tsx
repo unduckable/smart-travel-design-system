@@ -10,7 +10,7 @@ export interface ISegment extends VariantProps<typeof segmentClasses>, TestProps
   className?: string;
 }
 
-const segmentClasses = cva(["st-segment", "s-p-1 s-inline-flex s-bg-gray-100 s-rounded-3xl"], {
+const segmentClasses = cva(["st-segment", "s-p-1 s-inline-flex s-bg-gray-100 s-rounded-full"], {
   variants: {
     size: {
       small: "",

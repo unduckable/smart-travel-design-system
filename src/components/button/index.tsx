@@ -11,12 +11,12 @@ const buttonClasses = cva(["st-button s-text-sm s-border-[1px] s-outline-none"],
     intent: {
       primary: "s-text-white-900",
       secondary: "s-border-transparent",
-      "secondary-outline": "s-shadow-xs ",
+      "secondary-outline": "s-shadow-xs",
       tertiary: "s-border-transparent",
     },
     shape: {
       round: "s-rounded-md",
-      pill: "s-rounded-3xl",
+      pill: "s-rounded-full",
       rectangle: "s-rounded-none",
     },
     size: {
@@ -41,7 +41,7 @@ const buttonClasses = cva(["st-button s-text-sm s-border-[1px] s-outline-none"],
     {
       isDestructive: false,
       intent: "secondary-outline",
-      className: "s-border-gray-200",
+      className: "s-border-gray-200 s-bg-white-900 hover:s-bg-blue-50",
     },
     {
       isDestructive: false,
