@@ -1,0 +1,36 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as ModalStories from './_.stories';
+
+  <Meta of={ModalStories} />
+
+# Modal
+
+- [Overview](#overview)
+- [Props](#props)
+- [Variants](#variants)
+- [Tips](#tips)
+- [Examples](#examples)
+
+## Overview
+
+
+  <Canvas of={ModalStories.Default} />
+
+
+## Props
+
+  <Controls of={ModalStories.Default} />
+
+
+## Variants
+
+
+
+## Tips 
+➡️ All modals must have a title and a close button.  
+➡️ By default, Modal will be closed by: dragging down or the closing buttons.
+
+
+## Examples
+A modal with a title, body, and footer.
+  <Canvas of={ModalStories.GenericModal} />
