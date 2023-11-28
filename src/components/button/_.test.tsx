@@ -19,7 +19,7 @@ describe("test button", () => {
     expect(element).toHaveAttribute("type", "button");
 
     rerender(<Button isDisabled>Button</Button>);
-    expect(element).toHaveAttribute("disabled", "true");
+    expect(element).toHaveAttribute("disabled", "");
   });
 
   it("triggers event on press", () => {
