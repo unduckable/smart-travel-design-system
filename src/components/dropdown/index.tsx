@@ -49,7 +49,7 @@ export const Dropdown: FC<IDropdown> = forwardRef<HTMLDivElement, IDropdown>((pr
   return (
     <MenuTrigger {...props}>
       {triggerElement}
-      <Popover>
+      <Popover className="s-w-[--trigger-width]">
         <Menu {...props} ref={ref} className={classes}>
           {(item) => {
             if (item.separation) {

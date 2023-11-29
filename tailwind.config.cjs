@@ -9,6 +9,7 @@ module.exports = {
   ],
   theme: {
     borderRadius: {
+      sm: "4px",
       md: "8px",
       full: "9999px",
       // TODO: Add missing values from figma
