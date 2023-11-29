@@ -13,6 +13,27 @@ import {
 import React from "react";
 
 export default function () {
+  const [fieldState, setFieldState] = React.useState({
+    selectedKey: null,
+    inputValue: "",
+  });
+
+  const onSelectionChange = (id) => {
+    console.log(222, id);
+    // setFieldState({
+    //   inputValue: null,
+    //   selectedKey: id,
+    // });
+  };
+
+  const onInputChange = (value: string) => {
+    console.log(111, value);
+    setFieldState((prevState) => ({
+      inputValue: value,
+      selectedKey: value === "" ? null : prevState.selectedKey,
+    }));
+  };
+
   return (
     <div>
       <Button id="23" onPress={() => alert(213)}>
@@ -49,7 +70,6 @@ export default function () {
       <Dropdown
         triggerElement={<Button>Hello World</Button>}
         onAction={(v) => console.log(v)}
-        style={{ width: "300px" }}
         items={[
           { id: "1", content: "hi" },
           { id: "2", content: "hi2" },
@@ -58,11 +78,36 @@ export default function () {
 
       <Select
         items={[
-          { id: "1", content: "Cat" },
-          { id: "2", content: "Dog" },
-          { id: "3", content: "Panda" },
-          { id: "4", content: "Snake" },
+          {
+            id: "1",
+            content: "Cat",
+            helpText: "Help text",
+            image: "https://placehold.co/400",
+          },
+          {
+            id: "2",
+            content: "Dog",
+            helpText: "Help text",
+            image: "https://placehold.co/400",
+          },
+          {
+            id: "3",
+            content: "Panda",
+            helpText: "Help text",
+            image: "https://placehold.co/400",
+          },
+          {
+            id: "4",
+            content: "Snake",
+            helpText: "Help text",
+            image: "https://placehold.co/400",
+          },
         ]}
+        label="Pick a engineering major"
+        selectedKeys={fieldState.selectedKey}
+        inputValue={fieldState.inputValue}
+        onSelectionChange={onSelectionChange}
+        onInputChange={onInputChange}
       />
     </div>
   );

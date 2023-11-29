@@ -1,7 +1,7 @@
 import { TestProps } from "@/src/utils";
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
-import { FC, forwardRef } from "react";
+import { FC, ReactNode, forwardRef } from "react";
 import { Checkbox as BaseCheckbox, CheckboxProps as BaseCheckboxProps } from "react-aria-components";
 
 export interface ICheckbox extends VariantProps<typeof checkboxClasses>, BaseCheckboxProps, TestProps {}
@@ -16,7 +16,7 @@ const checkboxClasses = cva(["st-checkbox s-flex s-items-center"], {
 });
 const checkClasses = cva(
   [
-    "s-w-4 s-h-4 s-mr-2 s-rounded s-border-2 s-rounded-4 s-transition-all s-flex s-items-center s-justify-center s-outline-none",
+    "s-w-4 s-h-4 s-rounded s-border-2 s-rounded-sm s-transition-all s-flex s-items-center s-justify-center s-outline-none",
   ],
   {
     variants: {
@@ -98,7 +98,7 @@ export const Checkbox: FC<ICheckbox> = forwardRef<HTMLInputElement, ICheckbox>((
               {isIndeterminate ? <rect x={1} y={7.5} width={15} height={3} /> : <polyline points="1 9 7 14 15 4" />}
             </svg>
           </div>
-          {children}
+          {children && <div className="s-ml-2">{children as ReactNode}</div>}
         </>
       )}
     </BaseCheckbox>
@@ -106,6 +106,5 @@ export const Checkbox: FC<ICheckbox> = forwardRef<HTMLInputElement, ICheckbox>((
 });
 
 Checkbox.defaultProps = {
-  children: "Checkbox",
   isDisabled: false,
 };

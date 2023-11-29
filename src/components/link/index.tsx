@@ -16,8 +16,8 @@ const linkClasses = cva(
   {
     variants: {
       size: {
-        small: "s-h-5 s-text-sm",
-        medium: "s-h-6 s-text-sm",
+        sm: "s-h-5 s-text-sm",
+        md: "s-h-6 s-text-sm",
       },
       color: {
         gray: "s-text-gray-500 hover:s-text-gray-600 focus:s-text-500 disabled:s-text-gray-300",
@@ -41,12 +41,12 @@ export const Link: FC<ILink> = forwardRef<HTMLAnchorElement, ILink>((props, ref)
 
   const prefixElement =
     isValidElement(prefix) && prefix.type === Icon
-      ? cloneElement(prefix as ReactElement, { className: "s-mr-2" })
+      ? cloneElement(prefix as ReactElement, { className: "s-mr-2", size })
       : null;
 
   const suffixElement =
     isValidElement(suffix) && suffix.type === Icon
-      ? cloneElement(suffix as ReactElement, { className: "s-ml-2" })
+      ? cloneElement(suffix as ReactElement, { className: "s-ml-2", size })
       : null;
 
   const classes = linkClasses({
@@ -67,7 +67,7 @@ export const Link: FC<ILink> = forwardRef<HTMLAnchorElement, ILink>((props, ref)
 
 Link.defaultProps = {
   children: "",
-  size: "medium",
+  size: "md",
   isDisabled: false,
   color: "blue",
 };

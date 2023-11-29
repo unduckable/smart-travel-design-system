@@ -9,7 +9,7 @@
     }
 
     .st-button + .st-button {
-      @apply s-border-r-[1px] s-border-gray-100;
+      @apply s-border-l-gray-100;
     }
   }
 

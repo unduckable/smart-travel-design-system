@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./src/**/*.{js,ts,jsx,tsx}"], // TODO: exclude storybook and test files
   safelist: [
     {
       pattern: /(text|font|shadow)-./,
@@ -9,6 +9,7 @@ module.exports = {
   ],
   theme: {
     borderRadius: {
+      sm: "4px",
       md: "8px",
       full: "9999px",
       // TODO: Add missing values from figma
