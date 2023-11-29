@@ -10,7 +10,7 @@ export interface IButtonGroup extends VariantProps<typeof btnGroupClasses>, Test
   className?: string;
 }
 
-const btnGroupClasses = cva(["st-button-group s-inline-flex s-border-2 s-rounded-md"], {
+const btnGroupClasses = cva(["st-button-group s-inline-flex s-border s-rounded-md"], {
   variants: {
     size: {
       medium: "",

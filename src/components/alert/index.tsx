@@ -116,18 +116,20 @@ export const Alert: FC<IAlert> = forwardRef<HTMLDivElement, IAlert>((props, ref)
           <div className="s-px-2 s-flex s-flex-col s-gap-1 s-w-full">
             {titleElement}
             {contentElement}
-            <div className="s-flex s-gap-2 s-mt-2">
-              {primaryAction && (
-                <Button {...buttonProps} onPress={primaryAction?.action}>
-                  {primaryAction?.content}
-                </Button>
-              )}
-              {secondaryAction && (
-                <Button {...buttonProps} onPress={secondaryAction?.action}>
-                  {secondaryAction?.content}
-                </Button>
-              )}
-            </div>
+            {(primaryAction || secondaryAction) && (
+              <div className="s-flex s-gap-2 s-mt-2">
+                {primaryAction && (
+                  <Button {...buttonProps} onPress={primaryAction?.action}>
+                    {primaryAction?.content}
+                  </Button>
+                )}
+                {secondaryAction && (
+                  <Button {...buttonProps} onPress={secondaryAction?.action}>
+                    {secondaryAction?.content}
+                  </Button>
+                )}
+              </div>
+            )}
           </div>
         </div>
         {closeElement}
@@ -159,7 +161,7 @@ export const Alert: FC<IAlert> = forwardRef<HTMLDivElement, IAlert>((props, ref)
 Alert.defaultProps = {
   type: "expanded",
   color: "blue",
-  title: "",
+  title: "Alert",
   content: "",
   visible: true,
 };

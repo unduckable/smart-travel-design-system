@@ -1,6 +1,6 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["./src/**/*.{js,ts,jsx,tsx}"],
+  content: ["./src/**/*.{js,ts,jsx,tsx}"], // TODO: exclude storybook and test files
   safelist: [
     {
       pattern: /(text|font|shadow)-./,

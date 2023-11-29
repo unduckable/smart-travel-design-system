@@ -104,18 +104,7 @@ const initialClasses = cva(["st-avatar-initial", "s-text-white-900", "s-leading-
   },
 });
 
-const iconClasses = cva(["st-avatar-placeholder", "s-text-gray-400"], {
-  variants: {
-    size: {
-      xs: "s-w-4",
-      sm: "s-w-5",
-      md: "s-w-6",
-      lg: "s-w-7",
-      xl: "s-w-8",
-      "2xl": "s-w-10",
-    },
-  },
-});
+const iconClasses = cva(["st-avatar-placeholder", "s-text-gray-400"]);
 
 export const Avatar: FC<IAvatar> = forwardRef<HTMLDivElement, IAvatar>((props, ref) => {
   const { className, type, initial, status, notification, size, image } = props;
@@ -135,7 +124,7 @@ export const Avatar: FC<IAvatar> = forwardRef<HTMLDivElement, IAvatar>((props, r
     <div ref={ref} className={classes}>
       {status && <span className={statusClasses} />}
       {type === "initial" && <span className={initialClasses({ size })}>{initial}</span>}
-      {type === "placeholder" && <Icon source={User} className={iconClasses({ size })} />}
+      {type === "placeholder" && <Icon size={size} source={User} className={iconClasses()} />}
       {type === "image" && <img src={image} className={imageClasses} alt="avatar" />}
       {notification && <span className={notificationClasses} />}
     </div>
@@ -145,8 +134,8 @@ export const Avatar: FC<IAvatar> = forwardRef<HTMLDivElement, IAvatar>((props, r
 Avatar.defaultProps = {
   type: "initial",
   size: "md",
-  status: true,
-  notification: true,
+  status: false,
+  notification: false,
   initial: "A",
   image: "",
 };
