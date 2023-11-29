@@ -3,6 +3,7 @@ import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
 import { FC, ReactNode, forwardRef } from "react";
 import {
+  Button,
   OverlayArrow,
   Tooltip as BaseTooltip,
   TooltipProps as BaseTooltipProps,
@@ -59,7 +60,8 @@ export const Tooltip: FC<ITooltip> = forwardRef<HTMLInputElement, ITooltip>((pro
 
   return (
     <TooltipTrigger isDisabled={isDisabled} {...rest}>
-      {children}
+      {/* TODO: Find a way to avoid wrapping trigger inside React Aria Button */}
+      <Button className="s-flex s-cursor-default">{children}</Button>
       <BaseTooltip ref={ref} placement={placement} {...contentProps} className={classes}>
         <OverlayArrow>
           <svg width="24" height="8" viewBox="0 0 24 8" fill="currentColor" className={arrowClasses({ placement })}>
