@@ -15,6 +15,9 @@ export default meta;
 
 type Story = StoryObj<typeof Modal>;
 export const Default: Story = {
+  parameters: {
+    docs: { source: { type: "code" } },
+  },
   render: () => {
     const [isOpen, setIsOpen] = React.useState(false);
     return (

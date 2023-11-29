@@ -11,7 +11,12 @@ const preview: Preview = {
       },
     },
     docs: {
-      source: { type: "dynamic" },
+      source: {
+        type: "dynamic",
+        transform: (code: string) => {
+          return code.startsWith("{") ? code.match(/^(.|\n)*render: ((.|\n|\t)*}\n)/)?.[2] : code;
+        },
+      },
     },
   },
 };
