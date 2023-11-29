@@ -1,9 +1,9 @@
 import { Canvas, Controls, Meta } from "@storybook/blocks";
 import * as TextAreaStories from './_.stories';
 
-<Meta of={TextAreaStories} />
+  <Meta of={TextAreaStories} />
 
-# TextArea
+# Text Area
 
 - [Overview](#overview)
 - [Props](#props)
@@ -11,21 +11,29 @@ import * as TextAreaStories from './_.stories';
 - [Tips](#tips)
 - [Examples](#examples)
 
+
 ## Overview
 A text area lets users enter long form text which spans over multiple lines.
-<Canvas of={TextAreaStories.Default} />
+  <Canvas of={TextAreaStories.Default} />
 
 
 ## Props
 
-<Controls of={TextAreaStories.Default} />
+  <Controls of={TextAreaStories.Default} />
 
 
 ## Variants
+### Resize
 
-### States
+  <Canvas of={TextAreaStories.Resize} />
 
-<Canvas of={TextAreaStories.Variants} />
+### Validation
+  
+    <Canvas of={TextAreaStories.Validation} />
+
+### Disabled
+
+  <Canvas of={TextAreaStories.Variants} />
 
 
 ## Tips 
