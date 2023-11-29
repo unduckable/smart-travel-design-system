@@ -1,5 +1,9 @@
+import Check from "@/src/icons/Check";
+import Close from "@/src/icons/Close";
+import Flag from "@/src/icons/Flag";
 import type { Meta, StoryObj } from "@storybook/react";
 import React, { useCallback } from "react";
+import { Icon } from "../icon";
 import { Button } from "./";
 
 type Story = StoryObj<typeof Button>;
@@ -16,7 +20,7 @@ const Wrapper = (Story) => (
   </div>
 );
 
-export const Default: Story = {};
+export const Default: Story = { args: { children: "Button" } };
 export const Shapes: Story = {
   decorators: [Wrapper],
   render: () => {
@@ -107,6 +111,20 @@ export const DestructiveIntentsSmall: Story = {
       </>
     );
   },
+};
+export const Icons: Story = {
+  decorators: [Wrapper],
+  render: () => (
+    <>
+      <Button size="medium" prefixIcon={<Icon source={<Check />} />} intent="primary">
+        Left icon
+      </Button>
+      <Button size="medium" suffixIcon={<Icon source={<Close />} />} intent="primary">
+        Right icon
+      </Button>
+      <Button size="medium" suffixIcon={<Icon source={<Close />} />} intent="primary" isIconOnly />
+    </>
+  ),
 };
 export const Sizes: Story = {
   decorators: [Wrapper],
