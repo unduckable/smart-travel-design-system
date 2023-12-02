@@ -13,6 +13,9 @@ export const Default: Story = {
   args: {
     className: "s-w-96",
     label: "Slider",
+    tooltip: "This is a slider",
+    helperText: "Helper text",
+    defaultValue: 33,
   },
 };
 export const Variants: Story = {

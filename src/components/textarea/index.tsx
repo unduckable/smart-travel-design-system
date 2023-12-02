@@ -73,9 +73,11 @@ export const TextArea: FC<ITextArea> = forwardRef<HTMLInputElement, ITextArea>((
             ) : (
               <span className="s-text-gray-500"> (optional)</span>
             )}
-            <Tooltip content={tooltip}>
-              <Icon source={<Information />} className="s-text-gray-200" />
-            </Tooltip>
+            {!!tooltip && (
+              <Tooltip content={tooltip}>
+                <Icon source={<Information />} className="s-text-gray-200" />
+              </Tooltip>
+            )}
           </Label>
           <BaseTextArea className={inputClasses({ isDisabled, isInvalid, resize })} placeholder={placeholder} />
           {isInvalid ? (
