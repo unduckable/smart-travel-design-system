@@ -10,6 +10,9 @@ export default {
     },
   ],
   theme: {
+    screens: {
+      desktop: "768px",
+    },
     borderRadius: {
       sm: "4px",
       md: "8px",
