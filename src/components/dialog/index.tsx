@@ -5,11 +5,11 @@ import type { VariantProps } from "class-variance-authority";
 import React, { FC, ReactNode, forwardRef } from "react";
 import { Dialog as BaseDialog, Modal, ModalOverlay, ModalOverlayProps as BaseModalProps } from "react-aria-components";
 import { Button } from "../button";
-import { Icon } from "../icon";
+import { IIcon, Icon } from "../icon";
 
 export interface IDialog extends VariantProps<typeof dialogClasses>, Omit<BaseModalProps, "children">, TestProps {
   isOpen?: boolean;
-  icon?: React.ReactElement;
+  icon?: IIcon["source"];
   description?: string | ReactNode;
   title?: string | ReactNode;
   isDestructive?: boolean;
@@ -39,10 +39,15 @@ export const Dialog: FC<IDialog> = forwardRef<HTMLDivElement, IDialog>((props, r
           <h2 className="s-mt-4 s-text-gray-900 s-text-lg s-font-bold">{title}</h2>
           <p className="s-mt-4 s-text-gray-900 s-text-sm">{description}</p>
           <div className="s-mt-6 s-flex s-justify-end s-gap-2">
-            <Button className="s-w-full" intent="secondary-outline" onPress={onCancel}>
+            <Button className="s-w-full s-justify-center" intent="secondary-outline" onPress={onCancel}>
               Cancel
             </Button>
-            <Button className="s-w-full" intent="primary" onPress={onConfirm} isDestructive={isDestructive}>
+            <Button
+              className="s-w-full s-justify-center"
+              intent="primary"
+              onPress={onConfirm}
+              isDestructive={isDestructive}
+            >
               Confirm
             </Button>
           </div>
@@ -54,7 +59,7 @@ export const Dialog: FC<IDialog> = forwardRef<HTMLDivElement, IDialog>((props, r
 
 Dialog.defaultProps = {
   isOpen: false,
-  icon: <Message />,
+  icon: Message,
   title: "Title",
   description: "Description",
   isDestructive: false,

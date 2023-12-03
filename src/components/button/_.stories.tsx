@@ -116,13 +116,13 @@ export const Icons: Story = {
   decorators: [Wrapper],
   render: () => (
     <>
-      <Button size="medium" prefixIcon={<Icon source={<Check />} />} intent="primary">
+      <Button size="medium" prefixIcon={Check} intent="primary">
         Left icon
       </Button>
-      <Button size="medium" suffixIcon={<Icon source={<Close />} />} intent="primary">
+      <Button size="medium" suffixIcon={Close} intent="primary">
         Right icon
       </Button>
-      <Button size="medium" suffixIcon={<Icon source={<Close />} />} intent="primary" isIconOnly />
+      <Button size="medium" suffixIcon={Close} intent="primary" isIconOnly />
     </>
   ),
 };

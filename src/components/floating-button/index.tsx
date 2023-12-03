@@ -1,5 +1,5 @@
 import { Icon } from "@/src";
-import { AirplayToTv } from "@/src/icons";
+import AirplayToTv from "@/src/icons/AirplayToTv";
 import { TestProps } from "@/src/utils";
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";

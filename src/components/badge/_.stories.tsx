@@ -16,7 +16,7 @@ type Story = StoryObj<typeof Badge>;
 export const Default: Story = {
   args: {
     children: "This is a Badge",
-    suffixIcon: <Check />,
+    suffixIcon: Check,
     isOutlined: true,
   },
 };
@@ -65,13 +65,13 @@ export const Outlines: Story = {
 export const Icons: Story = {
   render: () => (
     <div className="s-flex s-gap-4">
-      <Badge color="blue" prefixIcon={<Check />}>
+      <Badge color="blue" prefixIcon={Check}>
         Prefix Icon
       </Badge>
-      <Badge color="red" suffixIcon={<Close />}>
+      <Badge color="red" suffixIcon={Close}>
         Suffix Icon
       </Badge>
-      <Badge color="green" prefixIcon={<Plus />} />
+      <Badge color="green" prefixIcon={Plus} />
     </div>
   ),
 };

@@ -44,7 +44,7 @@ export const Icons: Story = {
           isOpen={isOpen}
           title="Dialog with custom icon"
           description="A dialog is a type of modal window that appears in front of app content to provide critical information, or prompt for a decision to be made."
-          icon={<AnnotationWarning />}
+          icon={AnnotationWarning}
           onCancel={() => setIsOpen(false)}
           onOpenChange={setIsOpen}
         />
@@ -63,7 +63,7 @@ export const Destructive: Story = {
         </Button>
         <Dialog
           isOpen={isOpen}
-          icon={<Trash />}
+          icon={Trash}
           title="Are you sure you want to delete this?"
           description=""
           isDestructive

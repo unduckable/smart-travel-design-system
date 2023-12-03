@@ -3,11 +3,11 @@ import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
 import { FC, forwardRef, isValidElement } from "react";
 import { Button as BaseButton, ButtonProps as BaseButtonProps } from "react-aria-components";
-import { Icon } from "../icon";
+import { IIcon, Icon } from "../icon";
 
 export interface IButton extends VariantProps<typeof buttonClasses>, Omit<BaseButtonProps, "children">, TestProps {
-  prefixIcon?: React.ReactElement;
-  suffixIcon?: React.ReactElement;
+  prefixIcon?: IIcon["source"];
+  suffixIcon?: IIcon["source"];
   children?: React.ReactNode;
 }
 
@@ -135,9 +135,9 @@ export const Button: FC<IButton> = forwardRef<HTMLButtonElement, IButton>((props
 
   return (
     <BaseButton ref={ref} {...rest} className={classes} isDisabled={isDisabled}>
-      {isValidElement(prefixIcon) && prefixIcon.type === Icon ? prefixIcon : null}
+      {prefixIcon && <Icon source={prefixIcon} inheritColor />}
       {children}
-      {isValidElement(suffixIcon) && suffixIcon.type === Icon ? suffixIcon : null}
+      {suffixIcon && <Icon source={suffixIcon} inheritColor />}
     </BaseButton>
   );
 });
