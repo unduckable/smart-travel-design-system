@@ -11,7 +11,7 @@ export default {
   ],
   theme: {
     screens: {
-      desktop: "768px",
+      lg: "768px",
     },
     borderRadius: {
       sm: "4px",
@@ -48,6 +48,9 @@ export default {
       invalid: "0px 0px 0px 1px #F53D6B",
     },
     colors: {
+      accent: {
+        blue: "#F0FAFF",
+      },
       gray: {
         50: "#F7F7F8",
         100: "#EBEBEF",
