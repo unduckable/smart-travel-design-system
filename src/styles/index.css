@@ -4,7 +4,7 @@
 
 @layer base {
   html {
-    @apply text-gray-900;
+    @apply s-text-gray-900;
   }
 }
 
