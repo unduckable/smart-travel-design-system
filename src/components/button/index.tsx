@@ -12,7 +12,7 @@ export interface IButton extends VariantProps<typeof buttonClasses>, Omit<BaseBu
 }
 
 const buttonClasses = cva(
-  ["st-button s-flex s-items-center s-gap-1 s-text-sm s-border-[1px] s-outline-none s-leading-none"],
+  ["st-button s-flex s-justify-center s-items-center s-gap-1 s-text-sm s-border-[1px] s-outline-none s-leading-none"],
   {
     variants: {
       intent: {
@@ -32,7 +32,7 @@ const buttonClasses = cva(
         xs: "s-h-5",
       },
       isIconOnly: {
-        true: "",
+        true: "s-aspect-square",
       },
       isDisabled: {
         true: "s-cursor-not-allowed s-opacity-50",
