@@ -1,5 +1,7 @@
-/** @type {import('tailwindcss').Config} */
-module.exports = {
+import type { Config } from "tailwindcss";
+import * as reactAriaComponentsPlugin from "tailwindcss-react-aria-components";
+
+export default {
   content: ["./src/**/*.{js,ts,jsx,tsx}"], // TODO: exclude storybook and test files
   safelist: [
     {
@@ -8,6 +10,9 @@ module.exports = {
     },
   ],
   theme: {
+    screens: {
+      lg: "768px",
+    },
     borderRadius: {
       sm: "4px",
       md: "8px",
@@ -40,8 +45,12 @@ module.exports = {
       "2xl": "0px 25px 50px -12px rgba(18, 18, 23, 0.25)",
       overlay:
         "0px 2px 4px 0px rgba(18, 18, 23, 0.0399), 0px 5px 8px 0px rgba(18, 18, 23, 0.04), 0px 10px 18px 0px rgba(18, 18, 23, 0.03), 0px 24px 48px 0px rgba(18, 18, 23, 0.03), 0px 0px 0px 1px rgba(18, 18, 23, 0.1)",
+      invalid: "0px 0px 0px 1px #F53D6B",
     },
     colors: {
+      accent: {
+        blue: "#F0FAFF",
+      },
       gray: {
         50: "#F7F7F8",
         100: "#EBEBEF",
@@ -138,10 +147,17 @@ module.exports = {
         800: "#e5e5e5",
         900: "#ffffff",
       },
+      black: "#000000",
       transparent: "transparent",
       disabled: "#A9A9BC",
     },
+    extend: {
+      transitionProperty: {
+        width: "width",
+        height: "height",
+      },
+    },
   },
-  plugins: [require("tailwindcss-react-aria-components")],
+  plugins: [reactAriaComponentsPlugin.default],
   prefix: "s-",
-};
+} satisfies Config;

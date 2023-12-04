@@ -1,0 +1,32 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as DatePickerStories from './_.stories';
+
+  <Meta of={DatePickerStories} />
+
+# Date Picker
+
+- [Overview](#overview)
+- [Props](#props)
+- [Variants](#variants)
+
+## Overview
+A date picker allows users to select a date value or a date range.
+  <Canvas of={DatePickerStories.Default} />
+
+
+## Props
+  <Controls of={DatePickerStories.Default} />
+
+
+## Variants
+### Single date
+  <Canvas of={DatePickerStories.Single} />
+
+### Date range
+  <Canvas of={DatePickerStories.Ranged} />
+
+### Highlighted dates & Unavailable dates
+  <Canvas of={DatePickerStories.Highlighted} />
+
+### With Footer
+  <Canvas of={DatePickerStories.Footer} />
