@@ -100,7 +100,7 @@ export const Slider: FC<ISlider> = forwardRef<HTMLInputElement, ISlider>((props,
         {isRequired ? <span className="s-text-red-500">*</span> : <span className=" s-text-gray-300">(optional)</span>}
         {!!tooltip && (
           <Tooltip content={tooltip}>
-            <Icon source={<Information />} className="s-text-gray-200" />
+            <Icon source={Information} className="s-text-gray-200" />
           </Tooltip>
         )}
       </Label>
