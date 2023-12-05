@@ -3,6 +3,12 @@ import "../src/styles/index.css";
 
 const preview: Preview = {
   parameters: {
+    options: {
+      storySort: {
+        order: ["Welcome", "Icons", "Components"],
+        method: "alphabetical",
+      },
+    },
     actions: { argTypesRegex: "^on[A-Z].*" },
     controls: {
       matchers: {
