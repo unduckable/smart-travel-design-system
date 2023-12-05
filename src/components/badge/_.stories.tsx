@@ -31,7 +31,6 @@ export const Colors: Story = {
       <Badge color="pink">Pink</Badge>
       <Badge color="yellow">Yellow</Badge>
       <Badge color="orange">Orange</Badge>
-      <Badge color="purple">Purple</Badge>
     </div>
   ),
 };
