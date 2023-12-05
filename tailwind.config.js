@@ -1,6 +1,4 @@
-import type { Config } from "tailwindcss";
-import * as reactAriaComponentsPlugin from "tailwindcss-react-aria-components";
-
+/** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx}"], // TODO: exclude storybook and test files
   safelist: [
@@ -158,6 +156,6 @@ export default {
       },
     },
   },
-  plugins: [reactAriaComponentsPlugin.default],
+  plugins: [require("tailwindcss-react-aria-components")],
   prefix: "s-",
-} satisfies Config;
+};
