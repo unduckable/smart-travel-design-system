@@ -12,11 +12,11 @@ export interface IIcon extends VariantProps<typeof iconClasses>, TestProps {
 const iconClasses = cva(["st-icon", "s-flex", "s-text-current"], {
   variants: {
     size: {
-      xs: "s-h-4, s-w-4",
-      sm: "s-h-5, s-w-5",
-      md: "s-h-6, s-w-6",
-      lg: "s-h-7, s-w-7",
-      xl: "s-h-8, s-w-8",
+      xs: "s-h-4 s-w-4",
+      sm: "s-h-5 s-w-5",
+      md: "s-h-6 s-w-6",
+      lg: "s-h-7 s-w-7",
+      xl: "s-h-8 s-w-8",
       "2xl": "s-w-10",
     },
   },
