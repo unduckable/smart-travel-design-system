@@ -122,7 +122,7 @@ export const Icons: Story = {
       <Button size="medium" suffixIcon={Close} intent="primary">
         Right icon
       </Button>
-      <Button size="medium" suffixIcon={Close} intent="primary" isIconOnly />
+      <Button size="medium" suffixIcon={Close} intent="primary" isSquare />
     </>
   ),
 };

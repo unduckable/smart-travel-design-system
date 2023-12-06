@@ -31,7 +31,7 @@ const buttonClasses = cva(
         medium: "s-h-10",
         xs: "s-h-5",
       },
-      isIconOnly: {
+      isSquare: {
         true: "s-aspect-square",
       },
       isDisabled: {
@@ -46,27 +46,27 @@ const buttonClasses = cva(
       // Sizes
       {
         size: "small",
-        isIconOnly: false,
+        isSquare: false,
         className: "s-py-1.5 s-px-2",
       },
       {
         size: "medium",
-        isIconOnly: false,
+        isSquare: false,
         className: "s-py-2 s-px-3",
       },
       {
         size: "xs",
-        isIconOnly: true,
+        isSquare: true,
         className: "s-p-0.5 s-w-5 [&_.st-icon]:s-w-4 [&_.st-icon]:s-h-4",
       },
       {
         size: "small",
-        isIconOnly: true,
+        isSquare: true,
         className: "s-p-1.5 s-w-8 [&_.st-icon]:s-w-5 [&_.st-icon]:s-h-5",
       },
       {
         size: "medium",
-        isIconOnly: true,
+        isSquare: true,
         className: "s-p-2 s-w-10",
       },
 
@@ -121,7 +121,7 @@ export const Button: FC<IButton> = forwardRef<HTMLButtonElement, IButton>((props
   const {
     children,
     className,
-    isIconOnly,
+    isSquare,
     isDisabled,
     isDestructive,
     intent,
@@ -131,7 +131,7 @@ export const Button: FC<IButton> = forwardRef<HTMLButtonElement, IButton>((props
     shape,
     ...rest
   } = props;
-  const classes = buttonClasses({ isDisabled, isDestructive, isIconOnly, intent, size, className, shape });
+  const classes = buttonClasses({ isDisabled, isDestructive, isSquare, intent, size, className, shape });
 
   return (
     <BaseButton ref={ref} {...rest} className={classes} isDisabled={isDisabled}>
@@ -148,6 +148,6 @@ Button.defaultProps = {
   size: "medium",
   shape: "round",
   isDestructive: false,
-  isIconOnly: false,
+  isSquare: false,
   isDisabled: false,
 };

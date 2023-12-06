@@ -174,7 +174,7 @@ export const DatePicker: FC<IDatePicker> = forwardRef<HTMLDivElement, IDatePicke
                     intent="tertiary"
                     size="small"
                     className="s-absolute s-left-0"
-                    isIconOnly
+                    isSquare
                     isDisabled={state.isPreviousVisibleRangeInvalid()}
                   >
                     <Icon source={ChevronLeft} className="" />
@@ -199,7 +199,7 @@ export const DatePicker: FC<IDatePicker> = forwardRef<HTMLDivElement, IDatePicke
               <MonthGrid state={state} offset={{ months: 1 }} isDateHighlighted={isDateHighlighted} isRange={isRange}>
                 <div className="s-flex s-flex-col s-gap-2">
                   <div className="s-text-center s-relative s-py-2">
-                    <Button slot="next" intent="tertiary" size="small" className="s-absolute s-right-0" isIconOnly>
+                    <Button slot="next" intent="tertiary" size="small" className="s-absolute s-right-0" isSquare>
                       <Icon source={ChevronRight} className="" />
                     </Button>
                     <p className="s-leading-8 s-h-8">

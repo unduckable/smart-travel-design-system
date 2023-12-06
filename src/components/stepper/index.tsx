@@ -86,7 +86,7 @@ export const Stepper: React.FC<IStepper> = forwardRef<HTMLDivElement, IStepper>(
               />
             )}
             <Button
-              isIconOnly={true || index < activeStep}
+              isSquare={true || index < activeStep}
               prefixIcon={index < activeStep ? Check : undefined}
               intent="primary"
               size="small"
