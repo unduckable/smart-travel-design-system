@@ -2,13 +2,13 @@ import { TestProps } from "@/src/utils";
 import { Children, FC, ReactNode, forwardRef, isValidElement } from "react";
 import { Menu, MenuItem, MenuTrigger, Popover } from "react-aria-components";
 
-import type { MenuItemProps, MenuProps, MenuTriggerProps } from "react-aria-components";
+import type { Key, MenuItemProps, MenuProps, MenuTriggerProps } from "react-aria-components";
 
 import { Button } from "@/src";
 import { cva } from "class-variance-authority";
 
 export interface IDropdownItem {
-  id: string;
+  id: Key;
   content: string;
   separation?: boolean;
 }

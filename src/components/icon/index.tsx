@@ -7,6 +7,7 @@ export interface IIcon extends VariantProps<typeof iconClasses>, TestProps {
   source?: FC;
   className?: string;
   inheritColor?: boolean;
+  onClick?: () => void;
 }
 
 const iconClasses = cva(["st-icon", "s-flex", "s-text-current"], {
@@ -23,14 +24,14 @@ const iconClasses = cva(["st-icon", "s-flex", "s-text-current"], {
 });
 
 export const Icon: FC<IIcon> = forwardRef<HTMLSpanElement, IIcon>((props, ref) => {
-  const { source, className, size } = props;
+  const { source, className, size, ...rest } = props;
   const Component = source;
   const classes = iconClasses({ className, size });
 
   if (!source) return null;
 
   return (
-    <span className={classes} ref={ref}>
+    <span className={classes} ref={ref} {...rest}>
       <Component />
     </span>
   );
@@ -40,4 +41,5 @@ Icon.defaultProps = {
   source: AirplayToTv,
   inheritColor: true,
   size: "md",
+  onClick: () => {},
 };

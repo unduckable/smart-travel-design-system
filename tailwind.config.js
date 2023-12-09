@@ -12,6 +12,7 @@ export default {
       lg: "768px",
     },
     borderRadius: {
+      none: "0px",
       sm: "4px",
       md: "8px",
       full: "9999px",
@@ -149,6 +150,7 @@ export default {
       black: "#000000",
       transparent: "transparent",
       disabled: "#A9A9BC",
+      invalid: "#F53D6B",
     },
     extend: {
       transitionProperty: {
