@@ -75,7 +75,7 @@ export const TextArea: FC<ITextArea> = forwardRef<HTMLInputElement, ITextArea>((
             )}
             {!!tooltip && (
               <Tooltip content={tooltip}>
-                <Icon source={<Information />} className="s-text-gray-200" />
+                <Icon source={Information} className="s-text-gray-200" />
               </Tooltip>
             )}
           </Label>

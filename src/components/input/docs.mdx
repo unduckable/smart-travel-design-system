@@ -1,0 +1,56 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as InputStories from "./_.stories";
+
+<Meta of={InputStories} />
+
+# Input
+
+- [Overview](#overview)
+- [Props](#props)
+- [Variants](#variants)
+- [Tips](#tips)
+- [Examples](#examples)
+
+## Overview
+
+An input field includes a label and a text field users can type text into. They typically appear in forms and dialogs.
+
+<Canvas of={InputStories.Default} />
+
+## Props
+
+<Controls of={InputStories.Default} />
+
+## Variants
+
+Input fields can be customized with many addons.
+
+### Left addons
+
+<Canvas of={InputStories.LeftAddon} />
+
+### Right addons
+
+<Canvas of={InputStories.RightAddon} />
+
+### External
+
+<Canvas of={InputStories.External} />
+
+### State - Disabled
+
+<Canvas of={InputStories.Disabled} />
+
+### State - Invalid
+
+<Canvas of={InputStories.Invalid} />
+
+## Tips
+
+➡️ Always use placeholder in input field  
+➡️ Icons can be used to message alerts as well. Pair them with error messages to provide redundant alerts.  
+➡️ Character or word counters should be used if there is a character or word limit.
+
+## Examples
+
+<Canvas of={InputStories.Examples} />

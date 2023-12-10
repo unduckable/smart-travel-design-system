@@ -1,0 +1,52 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as CarouselStories from "./_.stories";
+
+<Meta of={CarouselStories} />
+
+# Carousel
+
+- [Overview](#overview)
+- [Props](#props)
+- [Variants](#variants)
+- [Tips](#tips)
+- [Examples](#examples)
+
+## Overview
+
+A carousel component shows a collection of items that can be scrolled on and off the screen
+
+<Canvas of={CarouselStories.Default} />
+
+## Props
+
+<Controls of={CarouselStories.Default} />
+
+## Variants
+
+### Snap mode
+
+Snap mode is the default mode for the carousel. It snaps to the nearest item when the user stops scrolling.
+
+<Canvas of={CarouselStories.Snap} />
+
+### Free mode
+
+Free mode allows the user to scroll to any position in the carousel.
+
+<Canvas of={CarouselStories.Free} />
+
+### Slides per view
+
+The number of slides per view can be set to any number. The default is 1.
+
+<Canvas of={CarouselStories.SlidesPerView} />
+
+### Pagination
+
+Pagination can be added to the carousel to show the current position.
+
+<Canvas of={CarouselStories.Pagination} />
+
+## Tips
+
+## Examples

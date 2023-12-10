@@ -26,11 +26,11 @@ export const Default: Story = {
         <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} onOpenChange={setIsOpen}>
           <header className="s-flex s-items-center s-justify-between s-p-4 s-border-solid s-border-b-2 s-border-gray-100">
             <button type="button" className="s-p-1">
-              <Icon source={<ChevronLeft />} />
+              <Icon source={ChevronLeft} />
             </button>
             <h1 className="s-text-sm s-font-bold">Modal title</h1>
             <button type="button" className="s-p-1" onClick={() => setIsOpen(false)}>
-              <Icon source={<Close />} />
+              <Icon source={Close} />
             </button>
           </header>
         </Modal>
@@ -53,11 +53,11 @@ export const GenericModal: Story = {
           <div className="s-flex s-flex-col s-h-full">
             <header className="s-flex s-items-center s-justify-between s-p-4 s-border-solid s-border-b-2 s-border-gray-100">
               <button type="button" className="s-p-1">
-                <Icon source={<ChevronLeft />} />
+                <Icon source={ChevronLeft} />
               </button>
               <h1 className="s-text-sm s-font-bold">Modal title</h1>
               <button type="button" className="s-p-1" onClick={onClose}>
-                <Icon source={<Close />} />
+                <Icon source={Close} />
               </button>
             </header>
             <main className="s-flex-1">

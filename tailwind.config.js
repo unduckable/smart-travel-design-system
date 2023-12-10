@@ -1,6 +1,4 @@
-import type { Config } from "tailwindcss";
-import * as reactAriaComponentsPlugin from "tailwindcss-react-aria-components";
-
+/** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx}"], // TODO: exclude storybook and test files
   safelist: [
@@ -14,8 +12,10 @@ export default {
       lg: "768px",
     },
     borderRadius: {
+      none: "0px",
       sm: "4px",
       md: "8px",
+      lg: "12px",
       full: "9999px",
       // TODO: Add missing values from figma
     },
@@ -46,6 +46,7 @@ export default {
       overlay:
         "0px 2px 4px 0px rgba(18, 18, 23, 0.0399), 0px 5px 8px 0px rgba(18, 18, 23, 0.04), 0px 10px 18px 0px rgba(18, 18, 23, 0.03), 0px 24px 48px 0px rgba(18, 18, 23, 0.03), 0px 0px 0px 1px rgba(18, 18, 23, 0.1)",
       invalid: "0px 0px 0px 1px #F53D6B",
+      none: "none",
     },
     colors: {
       accent: {
@@ -150,6 +151,7 @@ export default {
       black: "#000000",
       transparent: "transparent",
       disabled: "#A9A9BC",
+      invalid: "#F53D6B",
     },
     extend: {
       transitionProperty: {
@@ -158,6 +160,6 @@ export default {
       },
     },
   },
-  plugins: [reactAriaComponentsPlugin.default],
+  plugins: [require("tailwindcss-react-aria-components")],
   prefix: "s-",
-} satisfies Config;
+};

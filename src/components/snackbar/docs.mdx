@@ -1,0 +1,44 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as SnackbarStories from "./_.stories";
+
+<Meta of={SnackbarStories} />
+
+# Snackbar
+
+- [Overview](#overview)
+- [Props](#props)
+- [Variants](#variants)
+- [Tips](#tips)
+- [Examples](#examples)
+
+## Overview
+
+A snackbar is a message object that presents timely information, including confirmation of actions, alerts, and errors.
+
+<Canvas of={SnackbarStories.Default} />
+
+## Props
+
+<Controls of={SnackbarStories.Default} />
+
+## Variants
+
+### Default
+
+<Canvas of={SnackbarStories.Default} />
+
+### Actions
+
+<Canvas of={SnackbarStories.Actions} />
+
+## Tips
+
+➡️ Use toast notifications immediately after a specific event such as a user action that does not relate to an object on the page. Toast used as a feedback loop to a user’s action.  
+➡️ Toasts should appear one at a time, and only disappear when no longer required.  
+➡️ Always be clear, concise and, where possible, give follow up actions to allow the user to become more informed or resolve the issue.  
+➡️ Always provide an action button or option to undo.  
+➡️ Toast should overlay permanent UI elements without blocking important actions.
+
+## Examples
+
+<Canvas of={SnackbarStories.Destructive} />

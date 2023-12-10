@@ -1,0 +1,27 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as NavigationBarStories from './_.stories';
+
+  <Meta of={NavigationBarStories} />
+
+# Navigation Bar
+
+- [Overview](#overview)
+- [Props](#props)
+- [Tips](#tips)
+- [Examples](#examples)
+
+## Overview
+A Navigation bar allows users switch between views on smaller devices 
+  <Canvas of={NavigationBarStories.Default} />
+
+
+## Props
+
+  <Controls of={NavigationBarStories.Default} />
+
+## Tips
+➡️ Can contain 3-5 navigation items of equal importance  
+➡️ Navigation items don't change. They should be the same across all views.  
+
+## Examples
+  <Canvas of={NavigationBarStories.Example} />
