@@ -1,0 +1,38 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as Stories from "./_.stories";
+
+<Meta of={Stories} />
+
+# Hotel Card
+
+- [Overview](#overview)
+- [Props](#props)
+- [Variants](#variants)
+- [Tips](#tips)
+- [Examples](#examples)
+
+## Overview
+
+A hotel card is a card that displays information about a hotel.
+
+<Canvas of={Stories.Default} />
+
+## Props
+
+<Controls of={Stories.Default} />
+
+## Variants
+
+### Compact hotel card
+
+<Canvas of={Stories.Compact} />
+
+### Full hotel card
+
+<Canvas of={Stories.Full} />
+
+## Tips
+
+- Use the `full` variant when you have enough screen space to display a lot of information.
+
+## Examples

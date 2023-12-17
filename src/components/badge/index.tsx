@@ -21,6 +21,7 @@ const badgeClasses = cva(["st-badge s-flex s-text-xs s-p-1 s-outline-none"], {
       pink: "s-border-pink-200 s-text-pink-800 s-bg-pink-100",
       yellow: "s-border-yellow-200 s-text-yellow-800 s-bg-yellow-100",
       orange: "s-border-orange-200 s-text-orange-800 s-bg-orange-100",
+      custom: "",
     },
     shape: {
       rounded: "s-rounded-md",
