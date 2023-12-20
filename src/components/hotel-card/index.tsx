@@ -100,7 +100,7 @@ export const HotelCard: FC<IHotelCard> = forwardRef<HTMLDivElement, IHotelCard>(
               isSquare
               intent="primary"
               prefixIcon={Share}
-              className="s-rounded-[999px] s-bg-gray-900 s-border-0 hover:s-bg-gray-900 s-outline-0 s-mb-2"
+              className="s-rounded-[999px] s-bg-gray-900 s-border-none hover:s-bg-gray-900 s-outline-0 s-mb-2"
               size="small"
               onPress={onShare}
             />
@@ -108,7 +108,7 @@ export const HotelCard: FC<IHotelCard> = forwardRef<HTMLDivElement, IHotelCard>(
               isSquare
               intent="primary"
               prefixIcon={Heart}
-              className="s-rounded-[999px] s-bg-gray-900 s-border-0 hover:s-bg-gray-900 s-outline-0"
+              className="s-rounded-[999px] s-bg-gray-900 s-border-none hover:s-bg-gray-900 s-outline-0"
               size="small"
               onPress={onLike}
             />

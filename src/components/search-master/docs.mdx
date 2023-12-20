@@ -1,0 +1,44 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as Stories from "./_.stories";
+
+<Meta of={Stories} />
+
+# Search master
+
+- [Overview](#overview)
+- [Props](#props)
+- [Variants](#variants)
+- [Tips](#tips)
+- [Examples](#examples)
+
+## Overview
+
+A search master is used to display filters & inputs used to search flights, hotels.
+
+<Canvas of={Stories.Default} />
+
+## Props
+
+<Controls of={Stories.Default} />
+
+## Variants
+
+### Hotel search master
+
+<Canvas of={Stories.Hotel} />
+
+### Flight search master
+
+<Canvas of={Stories.Flight} />
+
+### Compact variants
+
+<Canvas of={Stories.CompactHotel} />
+
+<Canvas of={Stories.CompactFlight} />
+
+## Tips
+
+- Use the `vertical` variant when you need to display a lot of information.
+
+## Examples
