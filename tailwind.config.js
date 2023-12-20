@@ -1,3 +1,5 @@
+import { BREAKPOINTS } from "./src/constants";
+
 /** @type {import('tailwindcss').Config} */
 export default {
   content: ["./src/**/*.{js,ts,jsx,tsx}"], // TODO: exclude storybook and test files
@@ -8,9 +10,7 @@ export default {
     },
   ],
   theme: {
-    screens: {
-      lg: "768px",
-    },
+    screens: BREAKPOINTS,
     borderRadius: {
       none: "0px",
       sm: "4px",
