@@ -1,5 +1,7 @@
 import type { StorybookConfig } from "@storybook/react-vite";
 
+const propsBlackListWords = ["aria", "form"];
+
 const config: StorybookConfig = {
   stories: ["../src/storybook/welcome.mdx", "../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
   addons: [
@@ -29,7 +31,7 @@ const config: StorybookConfig = {
         allowSyntheticDefaultImports: false,
         esModuleInterop: false,
       },
-      propFilter: () => true,
+      propFilter: (props) => propsBlackListWords.every((word) => !props.name.includes(word)),
     },
   },
 };
