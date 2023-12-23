@@ -46,6 +46,7 @@
     "*.{css,json,md,yaml,yml,js,ts,tsx}": "npx @biomejs/biome check --apply"
   },
   "dependencies": {
+    "@internationalized/date": "^3.5.1",
     "class-variance-authority": "^0.7.0",
     "framer-motion": "^10.16.5",
     "react-aria": "^3.29.1",

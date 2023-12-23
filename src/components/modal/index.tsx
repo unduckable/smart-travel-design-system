@@ -38,7 +38,7 @@ const modalClasses = cva("st-modal", {
 });
 
 export const Modal: FC<IModal> = forwardRef<HTMLDialogElement, IModal>((props, ref) => {
-  const { children, isOpen, onClose, onOpenChange } = props;
+  const { children, isOpen, onClose, onOpenChange, ...rest } = props;
   const h = window.innerHeight - SHEET_MARGIN;
   const y = useMotionValue(h);
   const bgOpacity = useTransform(y, [0, h], [0.4, 0]);
@@ -52,15 +52,16 @@ export const Modal: FC<IModal> = forwardRef<HTMLDialogElement, IModal>((props, r
           onOpenChange={onOpenChange}
           className="s-fixed s-inset-0 s-z-10"
           style={{ backgroundColor: bg as unknown as string }}
+          {...rest}
         >
           <MotionModal
             ref={ref}
-            className="s-bg-white-900 s-h-[150vh] s-pb-[calc(50vh+34px)] s-absolute s-bottom-0 s-w-full s-rounded-t-md s-shadow-lg s-will-change-transform"
+            className="s-absolute s-bottom-0 s-w-full s-rounded-t-md s-bg-white-900 s-pb-[calc(50vh+34px)] s-shadow-lg s-will-change-transform"
             initial={{ y: h }}
             animate={{ y: 0 }}
             exit={{ y: h }}
             transition={staticTransition}
-            style={{ y, top: SHEET_MARGIN }}
+            style={{ y, bottom: "calc(-50vh - 34px)" }}
             drag="y"
             dragConstraints={{ top: 0 }}
             onDragEnd={(_, { offset, velocity }) => {

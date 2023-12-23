@@ -6,31 +6,19 @@ const Icon = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     <path
       d="M8.0625 5.4375L5.4375 8.0625L8.0625 10.6875"
       stroke="#8A8AA3"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
-    <path
-      d="M15.9375 8.0625H5.4375"
-      stroke="#8A8AA3"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
+    <path d="M15.9375 8.0625H5.4375" stroke="#8A8AA3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
     <path
       d="M15.9375 13.3125L18.5625 15.9375L15.9375 18.5625"
       stroke="#8A8AA3"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
-    <path
-      d="M8.0625 15.9375H18.5625"
-      stroke="#8A8AA3"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
-    />
+    <path d="M8.0625 15.9375H18.5625" stroke="#8A8AA3" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" />
   </svg>
 );
 const TwoWayArrow = forwardRef(Icon);

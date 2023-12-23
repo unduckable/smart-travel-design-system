@@ -14,19 +14,24 @@ import { Icon } from "../icon";
 
 export interface ISearch extends VariantProps<typeof searchClasses>, TestProps {
   className?: string;
-  arrivalLocationLabel: string;
-  departureLocationLabel: string;
-  arrivalLocation: string;
-  departureLocation: string;
-  arrivalDateLabel: string;
-  departureDateLabel: string;
-  arrivalDate?: string;
-  departureDate?: string;
+  toLocationLabel: string;
+  fromLocationLabel?: string;
+  toLocation: string;
+  fromLocation?: string;
+  toDateLabel: string;
+  fromDateLabel: string;
+  toDate?: string;
+  fromDate?: string;
   travelersLabel: string;
   nights?: number;
   travelers?: string;
   searchLabel?: string;
   onSearch?: () => void;
+  onPressFromLocation?: () => void;
+  onPressToLocation?: () => void;
+  onPressFromDate?: () => void;
+  onPressToDate?: () => void;
+  onPressTravelers?: () => void;
 }
 
 const searchClasses = cva(["st-search-master", "s-shadow-overlay s-rounded-md"], {
@@ -47,19 +52,24 @@ export const SearchMaster: FC<ISearch> = forwardRef<HTMLDivElement, ISearch>((pr
     className,
     type,
     size,
-    arrivalDate,
-    departureDate,
+    toDate,
+    fromDate,
     nights,
     travelers,
     searchLabel,
-    arrivalDateLabel,
-    departureDateLabel,
-    arrivalLocationLabel,
-    departureLocationLabel,
-    arrivalLocation,
-    departureLocation,
+    toDateLabel,
+    fromDateLabel,
+    toLocationLabel,
+    fromLocationLabel,
+    toLocation,
+    fromLocation,
     travelersLabel,
     onSearch,
+    onPressFromLocation,
+    onPressToLocation,
+    onPressToDate,
+    onPressFromDate,
+    onPressTravelers,
   } = props;
 
   return (
@@ -70,23 +80,18 @@ export const SearchMaster: FC<ISearch> = forwardRef<HTMLDivElement, ISearch>((pr
         }`}
       >
         <div className="s-flex s-h-full s-items-center">
-          <Icon
-            source={type === "hotel" ? Search : Airplane}
-            size="md"
-            inheritColor
-            className="s-ml-3 s-mr-2 s-text-gray-300"
-          />
+          <Icon source={type === "hotel" ? Search : Airplane} size="md" className="s-ml-3 s-mr-2 s-text-gray-300" />
         </div>
         {type === "hotel" ? (
-          <div className="s-col-span-3 s-py-2.5 s-pr-6">
-            <p className="s-mb-1 s-text-xs s-text-gray-500">{arrivalLocationLabel}</p>
-            <p className="s-text-sm">{arrivalLocation}</p>
-          </div>
+          <Group className="s-col-span-3 s-cursor-pointer s-py-2.5 s-pr-6" onClick={onPressToLocation}>
+            <p className="s-mb-1 s-text-xs s-text-gray-500">{toLocationLabel}</p>
+            <p className="s-text-sm">{toLocation}</p>
+          </Group>
         ) : (
           <>
-            <div className="s-relative s-py-2.5 s-pr-6">
-              <p className="s-mb-1 s-text-xs s-text-gray-500">{arrivalLocationLabel}</p>
-              <p className="s-text-sm">{arrivalLocation}</p>
+            <Group className="s-relative s-cursor-pointer s-py-2.5 s-pr-6" onClick={onPressFromLocation}>
+              <p className="s-mb-1 s-text-xs s-text-gray-500">{fromLocationLabel}</p>
+              <p className="s-text-sm">{fromLocation}</p>
               <Button
                 intent="secondary-outline"
                 isSquare
@@ -94,12 +99,12 @@ export const SearchMaster: FC<ISearch> = forwardRef<HTMLDivElement, ISearch>((pr
                 suffixIcon={TwoWayArrow}
                 size="small"
               />
-            </div>
+            </Group>
             <hr className="s-h-11 s-w-[1px] s-bg-gray-100 s-py-1" />
-            <div className="s-px-6 s-py-2.5">
-              <p className="s-mb-1 s-text-xs s-text-gray-500">{departureLocationLabel}</p>
-              <p className="s-text-sm">{departureLocation}</p>
-            </div>
+            <Group className="s-cursor-pointer s-px-6 s-py-2.5" onClick={onPressToLocation}>
+              <p className="s-mb-1 s-text-xs s-text-gray-500">{toLocationLabel}</p>
+              <p className="s-text-sm">{toLocation}</p>
+            </Group>
           </>
         )}
       </div>
@@ -108,13 +113,16 @@ export const SearchMaster: FC<ISearch> = forwardRef<HTMLDivElement, ISearch>((pr
           <hr className="s-h-11 s-w-[1px] s-bg-gray-100 s-py-1" />
         ) : (
           <div className="s-flex s-h-full s-items-center">
-            <Icon source={Briefcase} size="md" inheritColor className="s-ml-3 s-mr-2 s-text-gray-300" />
+            <Icon source={Briefcase} size="md" className="s-ml-3 s-mr-2 s-text-gray-300" />
           </div>
         )}
 
-        <div className={`s-relative s-py-2.5 ${size === "compact" ? "s-pr-6" : "s-px-6"}`}>
-          <p className="s-mb-1 s-text-xs s-text-gray-500">{arrivalDateLabel}</p>
-          <p className="s-text-sm">{arrivalDate}</p>
+        <Group
+          className={`s-cursor-pointer s-relative s-py-2.5 ${size === "compact" ? "s-pr-6" : "s-px-6"}`}
+          onClick={onPressFromDate}
+        >
+          <p className="s-mb-1 s-text-xs s-text-gray-500">{fromDateLabel}</p>
+          <p className="s-text-sm">{fromDate}</p>
           {type === "flight" ? (
             <Button
               intent="secondary-outline"
@@ -134,22 +142,22 @@ export const SearchMaster: FC<ISearch> = forwardRef<HTMLDivElement, ISearch>((pr
               {nights}
             </Button>
           )}
-        </div>
+        </Group>
         <hr className="s-h-11 s-w-[1px] s-bg-gray-100 s-py-1" />
-        <div className="s-px-6 s-py-2.5">
-          <p className="s-mb-1 s-text-xs s-text-gray-500">{departureDateLabel}</p>
-          <p className="s-text-sm">{departureDate}</p>
-        </div>
+        <Group className="s-cursor-pointer s-px-6 s-py-2.5" onClick={onPressToDate}>
+          <p className="s-mb-1 s-text-xs s-text-gray-500">{toDateLabel}</p>
+          <p className="s-text-sm">{toDate}</p>
+        </Group>
       </div>
       {size === "inline" ? (
         <hr className="s-h-11 s-w-[1px] s-bg-gray-100 s-py-1" />
       ) : (
         <Icon source={User} size="md" inheritColor className="s-ml-3 s-mr-2 s-text-gray-300" />
       )}
-      <div className={`s-py-2.5 ${size === "compact" ? "s-pr-6" : "s-px-6"}`}>
+      <Group className={`s-py-2.5 ${size === "compact" ? "s-pr-6" : "s-px-6"}`} onClick={onPressTravelers}>
         <p className="s-mb-1 s-text-xs s-text-gray-500">{travelersLabel}</p>
         <p className="s-text-sm">{travelers}</p>
-      </div>
+      </Group>
       {size === "inline" && (
         <Button intent="primary" className="s-h-[60px] s-flex-1 s-rounded-l-none s-outline-0" onPress={onSearch}>
           {searchLabel}
@@ -162,10 +170,10 @@ export const SearchMaster: FC<ISearch> = forwardRef<HTMLDivElement, ISearch>((pr
 SearchMaster.defaultProps = {
   type: "hotel",
   size: "inline",
-  arrivalDateLabel: "Arrive on",
-  arrivalLocationLabel: "Arrive to",
-  departureDateLabel: "Departure date",
-  departureLocationLabel: "Departure location",
+  toDateLabel: "Arrive on",
+  toLocationLabel: "Arrive to",
+  fromDateLabel: "from date",
+  fromLocationLabel: "from location",
   searchLabel: "Search",
   onSearch: () => {},
 };

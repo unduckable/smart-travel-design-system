@@ -14,23 +14,23 @@ const Icon = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
     <path
       d="M12.9249 8.46765L8.35475 6.23465C8.0272 6.07468 7.65787 6.02098 7.29833 6.08106C6.93879 6.14114 6.60699 6.312 6.34925 6.56977L5.66675 7.25227L10.7514 10.642"
       stroke="#8A8AA3"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M13.3589 13.2494L16.7486 18.3341L17.4311 17.6516C17.6888 17.3937 17.8595 17.0619 17.9194 16.7023C17.9793 16.3428 17.9255 15.9735 17.7654 15.6461L15.5333 11.0759"
       stroke="#8A8AA3"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
     <path
       d="M11.1433 15.4667L6.85585 17.4346C6.81523 17.4532 6.76989 17.4589 6.72594 17.4509C6.68198 17.443 6.64152 17.4217 6.60998 17.3901C6.57844 17.3585 6.55734 17.3179 6.54952 17.274C6.5417 17.23 6.54753 17.1847 6.56622 17.1441L8.5341 12.8566L15.4212 5.97035C15.7671 5.62448 16.2363 5.43018 16.7254 5.43018C17.2146 5.43018 17.6837 5.62448 18.0296 5.97035C18.3755 6.31625 18.5698 6.78538 18.5698 7.27453C18.5698 7.76369 18.3755 8.23282 18.0296 8.57872L11.1433 15.4667Z"
       stroke="#8A8AA3"
-      stroke-width="1.5"
-      stroke-linecap="round"
-      stroke-linejoin="round"
+      strokeWidth="1.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
     />
   </svg>
 );
