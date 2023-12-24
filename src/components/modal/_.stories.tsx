@@ -24,7 +24,7 @@ export const Default: Story = {
       <>
         <Button onPress={() => setIsOpen(true)}>Open modal</Button>
         <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} onOpenChange={setIsOpen}>
-          <header className="s-flex s-items-center s-justify-between s-p-4 s-border-solid s-border-b-2 s-border-gray-100">
+          <header className="s-flex s-items-center s-justify-between s-border-b-2 s-border-solid s-border-gray-100 s-p-4 s-pb-[calc(90vh-34px)]">
             <button type="button" className="s-p-1">
               <Icon source={ChevronLeft} />
             </button>
@@ -50,8 +50,8 @@ export const GenericModal: Story = {
       <>
         <Button onPress={() => setIsOpen(true)}>Open modal</Button>
         <Modal isOpen={isOpen} onClose={onClose} onOpenChange={setIsOpen}>
-          <div className="s-flex s-flex-col s-h-full">
-            <header className="s-flex s-items-center s-justify-between s-p-4 s-border-solid s-border-b-2 s-border-gray-100">
+          <div className="s-flex s-h-full s-min-h-[calc(100vh-34px)] s-flex-col">
+            <header className="s-flex s-items-center s-justify-between s-border-b-2 s-border-solid s-border-gray-100 s-p-4">
               <button type="button" className="s-p-1">
                 <Icon source={ChevronLeft} />
               </button>
@@ -63,7 +63,7 @@ export const GenericModal: Story = {
             <main className="s-flex-1">
               <h2 className="s-m-4">Modal content</h2>
             </main>
-            <footer className="s-flex s-justify-end s-justify-self-end s-pt-6 s-px-4 s-pb-10">
+            <footer className="s-flex s-justify-end s-justify-self-end s-px-4 s-pb-10 s-pt-6">
               <Button className="s-mr-4" intent="tertiary" size="medium" onPress={onClose}>
                 Clear all
               </Button>

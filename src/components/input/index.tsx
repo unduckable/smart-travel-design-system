@@ -33,6 +33,7 @@ export interface IInput extends VariantProps<typeof inputWrapperClasses>, BaseTe
   isExternal?: boolean;
   prefixSelect?: Omit<IDropdown<IDropdownItem>, "className" | "triggerElement">;
   suffixSelect?: Omit<IDropdown<IDropdownItem>, "className" | "triggerElement">;
+  hideLabel?: boolean;
 }
 
 const inputWrapperClasses = cva(["st-textfield"], {
@@ -111,6 +112,7 @@ export const Input: FC<IInput> = forwardRef<HTMLInputElement, IInput>((props, re
     prefixSelect,
     suffixSelect,
     buttonAddon,
+    hideLabel,
     ...rest
   } = props;
   const classes = inputWrapperClasses({ className, isDisabled });
@@ -122,23 +124,25 @@ export const Input: FC<IInput> = forwardRef<HTMLInputElement, IInput>((props, re
     <TextField ref={ref} {...rest} className={classes} isInvalid={isInvalid} isDisabled={isDisabled}>
       {({ isInvalid }) => (
         <>
-          <Label className="s-flex s-items-center s-text-sm s-gap-1">
-            <span className="s-text-gray-900">{label} </span>
-            {isRequired ? (
-              <span className="s-text-red-500">*</span>
-            ) : (
-              <span className=" s-text-gray-500">(optional)</span>
-            )}
-            {!!tooltip && (
-              <Tooltip content={tooltip}>
-                <Icon source={Information} className="s-text-gray-200" />
-              </Tooltip>
-            )}
-          </Label>
+          {!hideLabel && (
+            <Label className="s-flex s-items-center s-gap-1 s-text-sm">
+              <span className="s-text-gray-900">{label} </span>
+              {isRequired ? (
+                <span className="s-text-red-500">*</span>
+              ) : (
+                <span className="s-text-gray-500">(optional)</span>
+              )}
+              {!!tooltip && (
+                <Tooltip content={tooltip}>
+                  <Icon source={Information} className="s-text-gray-200" />
+                </Tooltip>
+              )}
+            </Label>
+          )}
 
           <div className="s-mt-2 s-flex s-items-center">
             {isExternal && (
-              <p className="s-h-10 s-text-gray-500 s-text-sm s-py-2.5 s-px-4 s-border-[1px] s-rounded-l-md s-border-r-0 s-border-gray-200">
+              <p className="s-h-10 s-rounded-l-md s-border-[1px] s-border-r-0 s-border-gray-200 s-px-4 s-py-2.5 s-text-sm s-text-gray-500">
                 https://
               </p>
             )}
@@ -152,7 +156,7 @@ export const Input: FC<IInput> = forwardRef<HTMLInputElement, IInput>((props, re
                   triggerElement={
                     <Button
                       intent="tertiary"
-                      className="s-outline-0 s-h-6 s-ml-2 [&]:s-gap-0 [&]:s-p-0"
+                      className="s-ml-2 s-h-6 s-outline-0 [&]:s-gap-0 [&]:s-p-0"
                       suffixIcon={ChevronDown}
                     >
                       {prefixSelect.items.find((item) => item.id === selectedPrefixItem)?.content}
@@ -161,7 +165,7 @@ export const Input: FC<IInput> = forwardRef<HTMLInputElement, IInput>((props, re
                   onAction={(item) => setSelectedPrefixItem(item)}
                 />
               )}
-              {!isExternal && prefixAddon && <p className="s-text-sm s-px-2">{prefixAddon}</p>}
+              {!isExternal && prefixAddon && <p className="s-px-2 s-text-sm">{prefixAddon}</p>}
               {!isExternal && prefixIcon && (
                 <Icon
                   {...prefixIcon}
@@ -182,7 +186,7 @@ export const Input: FC<IInput> = forwardRef<HTMLInputElement, IInput>((props, re
                   size="md"
                 />
               )}
-              {suffixAddon && <p className="s-text-sm s-px-2">{suffixAddon}</p>}
+              {suffixAddon && <p className="s-px-2 s-text-sm">{suffixAddon}</p>}
               {suffixSelect && (
                 <Dropdown
                   {...suffixSelect}
@@ -192,7 +196,7 @@ export const Input: FC<IInput> = forwardRef<HTMLInputElement, IInput>((props, re
                   triggerElement={
                     <Button
                       intent="tertiary"
-                      className="s-outline-0 s-h-6 s-ml-2 [&]:s-gap-0 [&]:s-p-0"
+                      className="s-ml-2 s-h-6 s-outline-0 [&]:s-gap-0 [&]:s-p-0"
                       suffixIcon={ChevronDown}
                     >
                       {suffixSelect.items.find((item) => item.id === selectedSuffixItem)?.content}
@@ -206,18 +210,18 @@ export const Input: FC<IInput> = forwardRef<HTMLInputElement, IInput>((props, re
               <Button
                 {...buttonAddon}
                 intent="tertiary"
-                className="s-outline-0 s-opacity-100 [&]:s-gap-0 [&]:s-px-2 s-border-[1px] s-border-l-0 [&]:s-border-gray-200 [&]:s-rounded-l-none"
+                className="s-border-[1px] s-border-l-0 s-opacity-100 s-outline-0 [&]:s-gap-0 [&]:s-rounded-l-none [&]:s-border-gray-200 [&]:s-px-2"
                 isDisabled={isDisabled}
               />
             )}
           </div>
 
           {isInvalid && !errorMessage ? (
-            <FieldError className="s-mt-2 s-text-red-500 s-text-sm" />
+            <FieldError className="s-mt-2 s-text-sm s-text-red-500" />
           ) : isInvalid && errorMessage ? (
-            <FieldError className="s-mt-2 s-text-red-500 s-text-sm">{errorMessage}</FieldError>
+            <FieldError className="s-mt-2 s-text-sm s-text-red-500">{errorMessage}</FieldError>
           ) : (
-            <Text slot="description" className="s-mt-2 s-text-gray-500 s-text-sm">
+            <Text slot="description" className="s-mt-2 s-text-sm s-text-gray-500">
               {helperText}
             </Text>
           )}
@@ -229,6 +233,7 @@ export const Input: FC<IInput> = forwardRef<HTMLInputElement, IInput>((props, re
 
 Input.defaultProps = {
   label: "Label",
+  hideLabel: false,
   placeholder: "",
   tooltip: "",
   helperText: "",

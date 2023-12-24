@@ -1,0 +1,40 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as LoaderStories from "./_.stories";
+
+<Meta of={LoaderStories} />
+
+# Loader
+
+- [Overview](#overview)
+- [Props](#props)
+- [Variants](#variants)
+- [Tips](#tips)
+- [Examples](#examples)
+
+## Overview
+
+A loader indicates to user waiting state.
+
+<Canvas of={LoaderStories.Default} />
+
+## Props
+
+<Controls of={LoaderStories.Default} />
+
+## Variants
+
+### Spinning loader
+
+<Canvas of={LoaderStories.Spinning} />
+
+### Linear loader
+
+<Canvas of={LoaderStories.Linear} />
+
+## Tips
+
+➡️ Use this loader to load small parts of the system, not the whole pages.  
+➡️ Use sizes of loader in context to its position. The bigger the loading area gets, the bigger loader should be used.  
+➡️ Always place loader in context to the loading content.
+
+## Examples

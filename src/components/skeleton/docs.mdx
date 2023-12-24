@@ -1,0 +1,39 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as SkeletonStories from "./_.stories";
+
+<Meta of={SkeletonStories} />
+
+# Skeleton
+
+- [Overview](#overview)
+- [Props](#props)
+- [Variants](#variants)
+- [Tips](#tips)
+- [Examples](#examples)
+
+## Overview
+
+A skeleton loading component indicates content and ui loading that will appear after its loaded.
+
+<Canvas of={SkeletonStories.Default} />
+
+## Props
+
+<Controls of={SkeletonStories.Default} />
+
+## Variants
+
+### Shapes
+
+<Canvas of={SkeletonStories.Shapes} />
+
+### Text sizes
+
+<Canvas of={SkeletonStories.Sizes} />
+
+## Tips
+
+➡️ Mimic the user interface that is going to be loaded as much as possible  
+➡️ Animation on the skeleton is a repeating color pulse should move from left to right to indicate the lading state
+
+## Examples

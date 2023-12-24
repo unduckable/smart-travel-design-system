@@ -32,7 +32,7 @@ export interface IDatePicker
   isDateHighlighted?: (date: CalendarDate) => boolean;
 }
 
-const datePickerClasses = cva(["st-date-picker"], {
+const datePickerClasses = cva(["st-date-picker s-inline-block s-shadow-overlay lg:s-p-4"], {
   variants: {},
 });
 
@@ -130,7 +130,7 @@ const INITIAL_MONTH_COUNT = 5;
 const MAX_MONTHS_VISIBLE = 12 * 100;
 
 export const DatePicker: FC<IDatePicker> = forwardRef<HTMLDivElement, IDatePicker>((props, ref) => {
-  const { children, dayNames, monthNames, isDateHighlighted, isRange, ...rest } = props;
+  const { className, children, dayNames, monthNames, isDateHighlighted, isRange, ...rest } = props;
   const [breakpoint] = useState(getCurrentBreakpoint());
   const [monthCount, setMonthCount] = useState(INITIAL_MONTH_COUNT);
   const sentry = useRef(null);
@@ -159,16 +159,16 @@ export const DatePicker: FC<IDatePicker> = forwardRef<HTMLDivElement, IDatePicke
   const CalendarComponent = isRange ? RangeCalendar : Calendar;
 
   return (
-    <BaseDatePicker className="lg:s-p-4 s-shadow-overlay s-inline-block" {...rest} ref={ref}>
+    <BaseDatePicker className={datePickerClasses({ className })} {...rest} ref={ref}>
       <CalendarComponent
-        className="s-w-fit s-flex s-flex-col lg:s-flex-row s-gap-4 s-max-h-screen lg:s-max-h-fit"
+        className="s-flex s-max-h-screen s-w-fit s-flex-col s-gap-4 lg:s-max-h-fit lg:s-flex-row"
         visibleDuration={{ months: breakpoint === "lg" ? 2 : MAX_MONTHS_VISIBLE }}
       >
         {({ state }) =>
           breakpoint === "lg" ? (
             <>
               <MonthGrid state={state} isDateHighlighted={isDateHighlighted} isRange={isRange}>
-                <div className="s-text-center s-relative s-py-2">
+                <div className="s-relative s-py-2 s-text-center">
                   <Button
                     slot="previous"
                     intent="tertiary"
@@ -179,7 +179,7 @@ export const DatePicker: FC<IDatePicker> = forwardRef<HTMLDivElement, IDatePicke
                   >
                     <Icon source={ChevronLeft} className="" />
                   </Button>
-                  <p className="s-leading-8 s-h-8">
+                  <p className="s-h-8 s-leading-8">
                     {monthNames[state.visibleRange.start.month - 1]} - {state.visibleRange.start.year}
                   </p>
                 </div>
@@ -198,11 +198,11 @@ export const DatePicker: FC<IDatePicker> = forwardRef<HTMLDivElement, IDatePicke
 
               <MonthGrid state={state} offset={{ months: 1 }} isDateHighlighted={isDateHighlighted} isRange={isRange}>
                 <div className="s-flex s-flex-col s-gap-2">
-                  <div className="s-text-center s-relative s-py-2">
+                  <div className="s-relative s-py-2 s-text-center">
                     <Button slot="next" intent="tertiary" size="small" className="s-absolute s-right-0" isSquare>
                       <Icon source={ChevronRight} className="" />
                     </Button>
-                    <p className="s-leading-8 s-h-8">
+                    <p className="s-h-8 s-leading-8">
                       {monthNames[state.visibleRange.end.month - 1]} - {state.visibleRange.end.year}
                     </p>
                   </div>
@@ -221,7 +221,7 @@ export const DatePicker: FC<IDatePicker> = forwardRef<HTMLDivElement, IDatePicke
             </>
           ) : (
             <>
-              <div className="s-px-4 s-text-sm s-flex s-w-fit s-items-center s-justify-center">
+              <div className="s-flex s-w-fit s-items-center s-justify-center s-px-4 s-text-sm">
                 {dayNames.map((day, index) => (
                   <div
                     key={index}
@@ -231,7 +231,7 @@ export const DatePicker: FC<IDatePicker> = forwardRef<HTMLDivElement, IDatePicke
                   </div>
                 ))}
               </div>
-              <div className="s-px-4 s-flex-1 s-overflow-scroll">
+              <div className="s-flex-1 s-overflow-scroll s-px-4">
                 {Array.from(Array(monthCount)).map((_, i) => (
                   <MonthGrid
                     key={i}
@@ -241,8 +241,8 @@ export const DatePicker: FC<IDatePicker> = forwardRef<HTMLDivElement, IDatePicke
                     offset={{ months: i }}
                   >
                     <div className="s-flex s-flex-col s-gap-2">
-                      <div className="s-text-left s-relative s-py-2">
-                        <p className="s-leading-6 s-h-6">
+                      <div className="s-relative s-py-2 s-text-left">
+                        <p className="s-h-6 s-leading-6">
                           {monthNames[state.visibleRange.start.cycle("month", i).month - 1]} -
                           {state.visibleRange.start.add({ months: i }).year}
                         </p>

@@ -1,0 +1,42 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as Stories from "./_.stories";
+
+<Meta of={Stories} />
+
+# Simple Card
+
+- [Overview](#overview)
+- [Props](#props)
+- [Variants](#variants)
+- [Tips](#tips)
+- [Examples](#examples)
+
+## Overview
+
+A simple card is a card with a title, a description and more optional information. It can be used to display a simple information or a link to a page.
+
+<Canvas of={Stories.Default} />
+
+## Props
+
+<Controls of={Stories.Default} />
+
+## Variants
+
+### Vertical variant
+
+<Canvas of={Stories.Vertical} />
+
+### Horizontal variant
+
+<Canvas of={Stories.Horizontal} />
+
+### Custom icon
+
+<Canvas of={Stories.Icon} />
+
+## Tips
+
+- Use the `vertical` variant when you need to display a lot of information.
+
+## Examples
