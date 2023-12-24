@@ -21,29 +21,32 @@ export interface IAlert extends VariantProps<typeof alertClasses>, TestProps {
   secondaryAction?: IAlertAction;
 }
 
-const alertClasses = cva(["st-alert", "s-p-3", "s-flex", "s-gap-1", "s-relative"], {
-  variants: {
-    type: {
-      inline: "s-rounded-md",
-      expanded: "",
-    },
-    color: {
-      gray: "s-bg-gray-50",
-      blue: "s-bg-blue-50",
-      green: "s-bg-green-50",
-      yellow: "s-bg-yellow-50",
-      red: "s-bg-red-50",
-    },
-    visible: {
-      false: "s-hidden",
+const alertClasses = cva(
+  ["st-alert", "s-p-3", "s-flex", "s-gap-1", "s-relative", "dark:s-bg-white-900 dark:s-bg-opacity-10"],
+  {
+    variants: {
+      type: {
+        inline: "s-rounded-md",
+        expanded: "",
+      },
+      color: {
+        gray: "s-bg-gray-50",
+        blue: "s-bg-blue-50",
+        green: "s-bg-green-50",
+        yellow: "s-bg-yellow-50",
+        red: "s-bg-red-50",
+      },
+      visible: {
+        false: "s-hidden",
+      },
     },
   },
-});
+);
 
 const iconClasses = cva(["st-alert-icon"], {
   variants: {
     color: {
-      gray: "s-text-gray-200",
+      gray: "s-text-gray-200 dark:s-text-white-900 dark:s-opacity-30",
       blue: "s-text-blue-500",
       green: "s-text-green-500",
       yellow: "s-text-yellow-500",
@@ -55,16 +58,16 @@ const iconClasses = cva(["st-alert-icon"], {
 const titleClasses = cva(["st-alert-title", "s-font-medium", "s-text-sm"], {
   variants: {
     color: {
-      gray: "s-text-gray-900",
-      blue: "s-text-blue-800",
-      green: "s-text-green-800",
-      yellow: "s-text-yellow-800",
-      red: "s-text-red-800",
+      gray: "s-text-gray-900 dark:s-text-white-900",
+      blue: "s-text-blue-800 dark:s-text-blue-500",
+      green: "s-text-green-800 dark:s-text-green-500",
+      yellow: "s-text-yellow-800 dark:s-text-yellow-500",
+      red: "s-text-red-800 dark:s-text-red-500",
     },
   },
 });
 
-const contentClasses = cva(["st-alert-title", "s-font-normal", "s-text-sm"], {
+const contentClasses = cva(["st-alert-title", "s-font-normal", "s-text-sm dark:s-text-white-900 dark:s-opacity-50"], {
   variants: {
     color: {
       gray: "s-text-gray-500",
@@ -79,7 +82,7 @@ const contentClasses = cva(["st-alert-title", "s-font-normal", "s-text-sm"], {
 const lineClasses = cva(["st-alert-line", "s-absolute", "s-left-0", "s-top-0", "s-h-full", "s-w-[2px]"], {
   variants: {
     color: {
-      gray: "s-bg-gray-200",
+      gray: "s-bg-gray-200 dark:s-bg-white-900 dark:s-bg-opacity-20",
       blue: "s-bg-blue-500",
       green: "s-bg-green-500",
       yellow: "s-bg-yellow-500",
@@ -105,19 +108,20 @@ export const Alert: FC<IAlert> = forwardRef<HTMLDivElement, IAlert>((props, ref)
     shape: "round",
     intent: "secondary-outline",
     isDestructive: color === "red",
+    className: `dark:s-bg-transparent ${color === "red" ? "" : "dark:s-text-white-900"}`,
   } as IButton;
 
   if (type === "expanded") {
     return (
       <div ref={ref} className={classes}>
         <div className={lineClasses({ color })} />
-        <div className="s-flex-1 s-flex s-ml-[2px]">
+        <div className="s-ml-[2px] s-flex s-flex-1">
           {iconElement}
-          <div className="s-px-2 s-flex s-flex-col s-gap-1 s-w-full">
+          <div className="s-flex s-w-full s-flex-col s-gap-1 s-px-2">
             {titleElement}
             {contentElement}
             {(primaryAction || secondaryAction) && (
-              <div className="s-flex s-gap-2 s-mt-2">
+              <div className="s-mt-2 s-flex s-gap-2">
                 {primaryAction && (
                   <Button {...buttonProps} onPress={primaryAction?.action}>
                     {primaryAction?.content}
@@ -139,10 +143,10 @@ export const Alert: FC<IAlert> = forwardRef<HTMLDivElement, IAlert>((props, ref)
 
   return (
     <div ref={ref} className={classes}>
-      <div className="s-flex-1 s-flex">
+      <div className="s-flex s-flex-1">
         {iconElement}
-        <div className="s-px-2 s-flex s-justify-between s-items-center s-w-full">
-          <div className="s-flex s-gap-2 s-items-center">
+        <div className="s-flex s-w-full s-items-center s-justify-between s-px-2">
+          <div className="s-flex s-items-center s-gap-2">
             {titleElement}
             {contentElement}
           </div>
