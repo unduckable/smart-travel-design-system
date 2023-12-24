@@ -17,6 +17,6 @@
       "@/*": ["./*"]
     }
   },
-  "include": ["src", "playground", "test", "_in_progress"],
+  "include": ["src", "playground", "test", "_in_progress", ".storybook/*"],
   "exclude": [".archive"]
 }

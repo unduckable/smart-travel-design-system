@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
+body.s-dark,
+body.s-dark .docs-story {
+  @apply s-bg-black;
+}
+
 @layer base {
   html {
     @apply s-text-gray-900;
