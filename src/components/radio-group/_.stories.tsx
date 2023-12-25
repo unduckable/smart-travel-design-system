@@ -23,7 +23,7 @@ export const Default: Story = {
 export const Variants: Story = {
   render: () => (
     <>
-      <RadioGroup label="Radio group" isReadOnly defaultValue="2">
+      <RadioGroup label="Radio group" isReadOnly defaultValue="2" tooltip="This is a radio group">
         <Radio value="1">Regular</Radio>
         <Radio value="2">Selected</Radio>
         <Radio value="3" isDisabled>

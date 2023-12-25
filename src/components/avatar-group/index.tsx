@@ -17,7 +17,7 @@ const avatarGroupClasses = cva(
     "s-flex",
     "[&>*]:s-box-content",
     "[&>*]:s-border-2",
-    "[&>*]:s-border-white-900",
+    "[&>*]:s-border-white-900 dark:[&>*]:s-border-black",
     "[&>*:first-child]:s-ml-[-2px]",
   ],
   {
@@ -38,7 +38,7 @@ const gapClasses = cva(
   [
     "st-avatar-group-gap",
     "s-relative",
-    "s-bg-gray-200",
+    "s-bg-gray-200 dark:s-bg-overlay",
     "s-rounded-full",
     "s-flex",
     "s-items-center",

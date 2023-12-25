@@ -39,7 +39,7 @@ const buttonClasses = cva(
       },
       isDestructive: {
         true: "focus:s-outline-red-500",
-        false: "focus:s-outline-blue-500",
+        false: "dark:s-text-white-900 focus:s-outline-blue-500",
       },
     },
     compoundVariants: [
@@ -74,44 +74,42 @@ const buttonClasses = cva(
       {
         isDestructive: false,
         intent: "primary",
-        className: "s-bg-blue-500 s-border-blue-500 hover:s-bg-blue-600 hover:s-border-blue-600",
+        className: "s-bg-blue-500 s-border-blue-500 hover:s-bg-blue-600",
       },
       {
         isDestructive: false,
         intent: "secondary-outline",
-        className: "s-border-gray-200 s-bg-white-900 hover:s-bg-blue-50",
+        className: [
+          "s-border-gray-200 hover:s-bg-gray-50",
+          "dark:s-border-white-900 dark:s-border-opacity-20 dark:hover:s-bg-white-900 dark:hover:s-bg-opacity-10",
+        ],
       },
       {
         isDestructive: false,
         intent: "secondary",
-        className: "s-border-gray-200 hover:s-bg-gray-100",
+        className: "s-border-gray-200 hover:s-bg-gray-50 dark:hover:s-bg-white-900 dark:hover:s-bg-opacity-10",
       },
 
       // Destructive
       {
         isDestructive: true,
         intent: ["secondary", "secondary-outline", "tertiary"],
-        className: "s-text-red-700",
+        className: "s-text-red-700 dark:s-text-red-500",
       },
       {
         isDestructive: true,
         intent: "primary",
-        className: "s-bg-red-500 hover:s-bg-red-600 s-border-red-500 hover:s-border-red-600",
+        className: "s-bg-red-500 s-border-red-500 hover:s-bg-red-600",
       },
       {
         isDestructive: true,
         intent: "secondary-outline",
-        className: "s-border-red-500 hover:s-bg-red-50",
+        className: "s-border-red-500 hover:s-bg-red-50 dark:hover:s-bg-white-900 dark:hover:s-bg-opacity-10",
       },
       {
         isDestructive: true,
         intent: "secondary",
-        className: "s-border-red-50 hover:s-bg-red-100",
-      },
-      {
-        isDestructive: true,
-        intent: "tertiary",
-        className: "hover:s-bg-red-50",
+        className: "s-border-red-50 hover:s-bg-red-50 dark:hover:s-bg-white-900 dark:hover:s-bg-opacity-10",
       },
     ],
   },

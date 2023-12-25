@@ -4,23 +4,31 @@ import type { VariantProps } from "class-variance-authority";
 import { FC, forwardRef, useState } from "react";
 import { Group } from "react-aria-components";
 import { Button } from "../button";
+import { Icon } from "../icon";
 
 export interface ISegment extends VariantProps<typeof segmentClasses>, TestProps {
-  options: Array<{ label?: string; isDisabled?: boolean; icon?: string }>;
+  options: Array<{ label?: string; isDisabled?: boolean; icon?: FC }>;
   className?: string;
 }
 
-const segmentClasses = cva(["st-segment", "s-p-1 s-inline-flex s-bg-gray-100 s-rounded-full"], {
-  variants: {
-    size: {
-      small: "",
-      medium: "",
-    },
-    isDisabled: {
-      true: "s-pointer-events-none s-text-disabled",
+const segmentClasses = cva(
+  [
+    "st-segment",
+    "s-h-fit s-p-1 s-inline-flex s-bg-gray-100 s-rounded-full",
+    "dark:s-bg-white-900 dark:s-bg-opacity-20",
+  ],
+  {
+    variants: {
+      size: {
+        small: "",
+        medium: "",
+      },
+      isDisabled: {
+        true: "s-pointer-events-none s-text-disabled",
+      },
     },
   },
-});
+);
 
 const segmentItemClasses = cva("s-leading-none focus:s-outline-transparent", {
   variants: {
@@ -29,7 +37,7 @@ const segmentItemClasses = cva("s-leading-none focus:s-outline-transparent", {
       medium: "s-h-[32px]",
     },
     active: {
-      true: "s-bg-white-900 s-shadow-sm",
+      true: "s-bg-white-900 s-shadow-sm dark:s-bg-gray-900",
     },
   },
 });
@@ -41,7 +49,7 @@ export const Segment: FC<ISegment> = forwardRef<HTMLInputElement, ISegment>((pro
 
   return (
     <Group ref={ref} {...rest} className={classes}>
-      {options.map(({ label, isDisabled }, index) => (
+      {options.map(({ label, isDisabled, icon }, index) => (
         <Button
           key={index}
           intent="tertiary"
@@ -51,7 +59,7 @@ export const Segment: FC<ISegment> = forwardRef<HTMLInputElement, ISegment>((pro
           onPress={() => setActiveItem(index)}
           isDisabled={isDisabled}
         >
-          {/* TODO: Add icon support */}
+          {icon && <Icon source={icon} size={size === "medium" ? "md" : "sm"} />}
           {label}
         </Button>
       ))}

@@ -62,6 +62,9 @@ export const Outlines: Story = {
 };
 
 export const Icons: Story = {
+  parameters: {
+    docs: { source: { type: "code" } },
+  },
   render: () => (
     <div className="s-flex s-gap-4">
       <Badge color="blue" prefixIcon={Check}>

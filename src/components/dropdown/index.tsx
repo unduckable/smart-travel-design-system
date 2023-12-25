@@ -25,18 +25,20 @@ const dropdownClasses = cva([
   "st-dropdown",
   "s-py-2",
   "s-rounded-md",
-  "s-bg-white-900",
+  "s-bg-white-900 dark:s-bg-overlay",
   "s-shadow-xs",
-  "s-border",
-  "s-border-gray-100",
+  "s-border s-border-gray-100",
+  "dark:s-border-white-900 dark:s-border-opacity-5",
   "s-outline-none",
   "s-overflow-hidden",
 ]);
 const dropdownItemClasses = cva([
   "st-dropdown-item",
   "st-dropdown-item s-p-2 s-text-gray-900 s-font-normal s-text-sm s-leading-5",
+  "dark:s-text-[rgba(255,255,255,0.8)]",
   "s-outline-none",
   "hover:s-bg-gray-50 hover:s-cursor-pointer",
+  "dark:hover:s-bg-white-900 dark:hover:s-bg-opacity-5",
 ]);
 
 export const Dropdown: FC<IDropdown> = forwardRef<HTMLDivElement, IDropdown>((props, ref) => {

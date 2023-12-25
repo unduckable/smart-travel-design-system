@@ -18,7 +18,12 @@ import { Dropdown, IDropdown, IDropdownItem } from "../dropdown";
 import { IIcon, Icon } from "../icon";
 import { Tooltip } from "../tooltip";
 
-export interface IInput extends VariantProps<typeof inputWrapperClasses>, BaseTextFieldProps, TestProps {
+type OmittedTextFieldProps = "onCompositionEnd" | "onCompositionStart" | "onCompositionUpdate";
+
+export interface IInput
+  extends VariantProps<typeof inputWrapperClasses>,
+    Omit<BaseTextFieldProps, OmittedTextFieldProps>,
+    TestProps {
   label?: string;
   errorMessage?: string;
   placeholder?: string;
@@ -33,6 +38,9 @@ export interface IInput extends VariantProps<typeof inputWrapperClasses>, BaseTe
   isExternal?: boolean;
   prefixSelect?: Omit<IDropdown<IDropdownItem>, "className" | "triggerElement">;
   suffixSelect?: Omit<IDropdown<IDropdownItem>, "className" | "triggerElement">;
+  /**
+   * Whether to hide the labels above the input
+   */
   hideLabel?: boolean;
 }
 
@@ -40,6 +48,7 @@ const inputWrapperClasses = cva(["st-textfield"], {
   variants: {
     isDisabled: {
       true: "[&_*]:s-cursor-not-allowed s-text-disabled",
+      false: "dark:s-text-[rgba(255,255,255,0.8)]",
     },
   },
 });
@@ -59,7 +68,7 @@ const innerInputClasses = cva(
       isInvalid: {
         true: "s-border-invalid focus-within:s-outline-invalid focus-within:s-outline-1 focus-within:s-border-invalid",
         false:
-          "s-border-gray-200 focus-within:s-outline-blue-500 focus-within:s-outline-1 focus-within:s-border-blue-500",
+          "s-border-gray-200 dark:s-border-white-900 dark:s-border-opacity-20 focus-within:s-outline-blue-500 focus-within:s-outline-1 focus-within:s-border-blue-500",
       },
       isDisabled: {
         true: "s-text-disabled [&]:s-border-gray-200",
@@ -69,7 +78,7 @@ const innerInputClasses = cva(
       {
         isExternal: true,
         isInvalid: false,
-        className: "s-border-l-gray-100",
+        className: "s-border-l-gray-100 dark:s-border-l-white-900 dark:s-border-opacity-20",
       },
       {
         hasButtonAddon: true,
@@ -115,26 +124,30 @@ export const Input: FC<IInput> = forwardRef<HTMLInputElement, IInput>((props, re
     hideLabel,
     ...rest
   } = props;
-  const classes = inputWrapperClasses({ className, isDisabled });
-
   const [selectedPrefixItem, setSelectedPrefixItem] = useState(prefixSelect?.items[0].id);
   const [selectedSuffixItem, setSelectedSuffixItem] = useState(suffixSelect?.items[0].id);
 
   return (
-    <TextField ref={ref} {...rest} className={classes} isInvalid={isInvalid} isDisabled={isDisabled}>
+    <TextField
+      ref={ref}
+      {...rest}
+      className={inputWrapperClasses({ className, isDisabled })}
+      isInvalid={isInvalid}
+      isDisabled={isDisabled}
+    >
       {({ isInvalid }) => (
         <>
           {!hideLabel && (
             <Label className="s-flex s-items-center s-gap-1 s-text-sm">
-              <span className="s-text-gray-900">{label} </span>
+              <span className="s-text-gray-900 dark:s-text-white-900">{label} </span>
               {isRequired ? (
                 <span className="s-text-red-500">*</span>
               ) : (
-                <span className="s-text-gray-500">(optional)</span>
+                <span className="s-text-gray-500 dark:s-text-white-900 dark:s-opacity-50">(optional)</span>
               )}
               {!!tooltip && (
                 <Tooltip content={tooltip}>
-                  <Icon source={Information} className="s-text-gray-200" />
+                  <Icon source={Information} className="s-text-gray-200 dark:s-text-white-900 dark:s-opacity-30" />
                 </Tooltip>
               )}
             </Label>
@@ -142,7 +155,7 @@ export const Input: FC<IInput> = forwardRef<HTMLInputElement, IInput>((props, re
 
           <div className="s-mt-2 s-flex s-items-center">
             {isExternal && (
-              <p className="s-h-10 s-rounded-l-md s-border-[1px] s-border-r-0 s-border-gray-200 s-px-4 s-py-2.5 s-text-sm s-text-gray-500">
+              <p className="s-h-10 s-rounded-l-md s-border-[1px] s-border-r-0 s-border-gray-200 s-px-4 s-py-2.5 s-text-sm s-text-gray-500 dark:s-border-white-900 dark:s-border-opacity-20">
                 https://
               </p>
             )}
@@ -150,7 +163,6 @@ export const Input: FC<IInput> = forwardRef<HTMLInputElement, IInput>((props, re
               {!isExternal && prefixSelect && (
                 <Dropdown
                   {...prefixSelect}
-                  // isDisabled={isDisabled}
                   className="s-mr-2"
                   selectedKeys={[selectedPrefixItem]}
                   triggerElement={
@@ -174,8 +186,10 @@ export const Input: FC<IInput> = forwardRef<HTMLInputElement, IInput>((props, re
                 />
               )}
               <BaseInput
-                className={`s-flex-1 s-outline-0 s-px-2 s-py-0.5 s-text-sm ${
-                  isDisabled ? "s-text-disabled placeholder:s-gray-200" : "placeholder:s-gray-500"
+                className={`s-flex-1 s-outline-0 s-px-2 s-py-0.5 s-text-sm s-bg-transparent ${
+                  isDisabled
+                    ? "s-text-disabled placeholder:s-gray-200 dark:placeholder:s-text-white-900 dark:placeholder:s-opacity-30"
+                    : "placeholder:s-gray-500"
                 }`}
                 placeholder={placeholder}
               />
@@ -190,7 +204,6 @@ export const Input: FC<IInput> = forwardRef<HTMLInputElement, IInput>((props, re
               {suffixSelect && (
                 <Dropdown
                   {...suffixSelect}
-                  // isDisabled={isDisabled}
                   className="s-mr-2"
                   selectedKeys={[selectedSuffixItem]}
                   triggerElement={
@@ -210,7 +223,7 @@ export const Input: FC<IInput> = forwardRef<HTMLInputElement, IInput>((props, re
               <Button
                 {...buttonAddon}
                 intent="tertiary"
-                className="s-border-[1px] s-border-l-0 s-opacity-100 s-outline-0 [&]:s-gap-0 [&]:s-rounded-l-none [&]:s-border-gray-200 [&]:s-px-2"
+                className="s-border-[1px] s-border-l-0 s-opacity-100 s-outline-0 dark:s-border-white-900 dark:s-border-opacity-20 [&]:s-gap-0 [&]:s-rounded-l-none [&]:s-border-gray-200 [&]:s-px-2"
                 isDisabled={isDisabled}
               />
             )}
@@ -247,4 +260,5 @@ Input.defaultProps = {
   isExternal: false,
   isRequired: false,
   isInvalid: false,
+  isDisabled: false,
 };

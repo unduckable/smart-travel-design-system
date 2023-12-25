@@ -12,7 +12,7 @@ import {
 } from "react-aria-components";
 
 const tooltipClasses = cva(
-  ["st-tooltip s-flex", "s-py-2 s-px-3.5 s-bg-gray-900 s-text-white-900 s-text-xs s-rounded-md"],
+  ["st-tooltip s-flex", "s-py-2 s-px-3.5 s-bg-gray-900 dark:s-bg-gray-800 s-text-white-900 s-text-xs s-rounded-md"],
   {
     variants: {
       isDisabled: {
@@ -32,7 +32,7 @@ const tooltipClasses = cva(
   },
 );
 
-const arrowClasses = cva([], {
+const arrowClasses = cva(["s-text-gray-900 dark:s-text-gray-800"], {
   variants: {
     placement: {
       top: "",
@@ -67,7 +67,7 @@ export const Tooltip: FC<ITooltip> = forwardRef<HTMLInputElement, ITooltip>((pro
           <svg width="24" height="8" viewBox="0 0 24 8" fill="currentColor" className={arrowClasses({ placement })}>
             <path
               d="M0.832284 0H23.379C19.1366 0 14.8943 4.53165 13.055 6.77361C12.5938 7.33581 11.6697 7.30068 11.2421 6.71249C9.59782 4.45039 5.73929 0 0.832284 0Z"
-              fill="#121217"
+              fill="currentColor"
             />
           </svg>
         </OverlayArrow>

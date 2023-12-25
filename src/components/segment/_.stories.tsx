@@ -1,3 +1,5 @@
+import Minus from "@/src/icons/Minus";
+import Plus from "@/src/icons/Plus";
 import type { Meta, StoryObj } from "@storybook/react";
 import { Segment } from ".";
 
@@ -39,6 +41,17 @@ export const Disabled: Story = {
         options={[{ label: "Option 1" }, { label: "Disabled", isDisabled: true }, { label: "Option 3" }]}
         size="medium"
       />
+    );
+  },
+};
+
+export const Examples: Story = {
+  render() {
+    return (
+      <div className="s-flex s-flex-col s-items-start s-gap-4">
+        <Segment options={[{ icon: Plus }, { icon: Minus }]} size="small" />
+        <Segment options={[{ label: "Days" }, { label: "Months" }, { label: "Years" }]} size="medium" />
+      </div>
     );
   },
 };
