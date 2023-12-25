@@ -56,7 +56,7 @@ export const Full: Story = {
     voucher: (
       <div className="s-flex s-items-center">
         <Icon source={Discounts} size="md" className="s-mr-1" />
-        <p className="s-text-xs">Mã giảm giá</p>
+        <p className="s-text-xs dark:s-text-white-500">Mã giảm giá</p>
       </div>
     ),
   },

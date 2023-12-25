@@ -29,7 +29,7 @@ export interface IModal extends VariantProps<typeof modalClasses>, Omit<BaseModa
   onOpenChange: (isOpen: boolean) => void;
 }
 
-const modalClasses = cva("st-modal", {
+const modalClasses = cva("st-modal s-bg-white-900 dark:s-bg-black", {
   variants: {
     isDisabled: {
       true: "s-opacity-50 s-pointer-events-none",

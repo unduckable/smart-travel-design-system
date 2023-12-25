@@ -20,7 +20,7 @@ const avatarClasses = cva(
       type: {
         image: "",
         initial: "",
-        placeholder: "s-bg-gray-100 dark:s-bg-white-900 dark:s-bg-opacity-10",
+        placeholder: "s-bg-gray-100 dark:s-bg-white-100",
       },
       size: {
         xs: "s-w-6 s-h-6",

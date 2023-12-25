@@ -10,20 +10,17 @@ export interface IButtonGroup extends VariantProps<typeof btnGroupClasses>, Test
   className?: string;
 }
 
-const btnGroupClasses = cva(
-  ["st-button-group s-inline-flex s-border s-rounded-md dark:s-border-white-900 dark:s-border-opacity-20"],
-  {
-    variants: {
-      size: {
-        medium: "",
-        small: "",
-      },
-      isDisabled: {
-        true: "s-pointer-events-none s-opacity-50",
-      },
+const btnGroupClasses = cva(["st-button-group s-inline-flex s-border s-rounded-md dark:s-border-white-200"], {
+  variants: {
+    size: {
+      medium: "",
+      small: "",
+    },
+    isDisabled: {
+      true: "s-pointer-events-none s-opacity-50",
     },
   },
-);
+});
 
 export const ButtonGroup: FC<IButtonGroup> = forwardRef<HTMLDivElement, IButtonGroup>((props, ref) => {
   const { buttonsProps, className, isDisabled, size, ...rest } = props;

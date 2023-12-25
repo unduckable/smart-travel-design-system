@@ -23,7 +23,7 @@ export const Default: Story = {
   render: () => {
     return (
       <div className="s-flex s-w-full s-gap-4">
-        <Icon source={Plus} className="dark:s-text-white-900 dark:s-opacity-50" />
+        <Icon source={Plus} className="dark:s-text-white-500" />
       </div>
     );
   },
@@ -34,12 +34,12 @@ export const Size: Story = {
   render: () => {
     return (
       <div className="s-flex s-w-full s-gap-4">
-        <Icon source={Plus} className="dark:s-text-white-900 dark:s-opacity-50" size="xs" />
-        <Icon source={Plus} className="dark:s-text-white-900 dark:s-opacity-50" size="sm" />
-        <Icon source={Plus} className="dark:s-text-white-900 dark:s-opacity-50" size="md" />
-        <Icon source={Plus} className="dark:s-text-white-900 dark:s-opacity-50" size="lg" />
-        <Icon source={Plus} className="dark:s-text-white-900 dark:s-opacity-50" size="xl" />
-        <Icon source={Plus} className="dark:s-text-white-900 dark:s-opacity-50" size="2xl" />
+        <Icon source={Plus} className="dark:s-text-white-500" size="xs" />
+        <Icon source={Plus} className="dark:s-text-white-500" size="sm" />
+        <Icon source={Plus} className="dark:s-text-white-500" size="md" />
+        <Icon source={Plus} className="dark:s-text-white-500" size="lg" />
+        <Icon source={Plus} className="dark:s-text-white-500" size="xl" />
+        <Icon source={Plus} className="dark:s-text-white-500" size="2xl" />
       </div>
     );
   },

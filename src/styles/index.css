@@ -20,7 +20,7 @@ body.s-dark .docs-story {
     }
 
     .st-button + .st-button {
-      @apply s-border-l-gray-100 dark:s-border-l-white-900 dark:s-border-opacity-20;
+      @apply s-border-l-gray-100 dark:s-border-l-white-200;
     }
   }
 

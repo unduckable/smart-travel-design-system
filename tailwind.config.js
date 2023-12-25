@@ -47,6 +47,7 @@ export default {
       overlay:
         "0px 2px 4px 0px rgba(18, 18, 23, 0.0399), 0px 5px 8px 0px rgba(18, 18, 23, 0.04), 0px 10px 18px 0px rgba(18, 18, 23, 0.03), 0px 24px 48px 0px rgba(18, 18, 23, 0.03), 0px 0px 0px 1px rgba(18, 18, 23, 0.1)",
       invalid: "0px 0px 0px 1px #F53D6B",
+      dark: "0px 2px 4px 0px rgba(18, 18, 23, 0.04), 0px 5px 8px 0px rgba(18, 18, 23, 0.04), 0px 10px 18px 0px rgba(18, 18, 23, 0.03), 0px 24px 48px 0px rgba(18, 18, 23, 0.03), 0px 0px 0px 1px rgba(255, 255, 255, 0.24)",
       none: "none",
     },
     colors: {
@@ -151,7 +152,8 @@ export default {
       },
       black: "#000000",
       transparent: "transparent",
-      overlay: "#292929",
+      dark: "#292929",
+      loader: "#26272D",
       disabled: "#A9A9BC",
       invalid: "#F53D6B",
     },

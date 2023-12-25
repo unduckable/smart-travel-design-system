@@ -24,10 +24,10 @@ const switchClasses = cva(
   {
     variants: {
       isDisabled: {
-        true: "s-bg-gray-100 dark:s-bg-white-900 dark:s-bg-opacity-20 dark:[&_span]:s-bg-opacity-20",
+        true: "s-bg-gray-100 dark:s-bg-white-200 dark:[&_span]:s-bg-opacity-20",
         false: [
           "s-bg-gray-200 group-selected:s-bg-blue-500 group-selected:group-hover:s-bg-blue-600",
-          "dark:group-selected:s-bg-blue-400 dark:group-selected:group-hover:s-bg-blue-500 dark:s-bg-white-900 dark:s-bg-opacity-30 dark:group-hover:s-bg-opacity-40 dark:group-selected:group-hover:s-bg-opacity-100",
+          "dark:group-selected:s-bg-blue-400 dark:group-selected:group-hover:s-bg-blue-500 dark:s-bg-white-300 dark:group-hover:s-bg-opacity-40 dark:group-selected:group-hover:s-bg-opacity-100",
         ],
       },
     },

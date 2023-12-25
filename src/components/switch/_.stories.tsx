@@ -57,7 +57,7 @@ export const WithLabel: Story = {
               <span className="s-text-gray-900 dark:s-text-white-900">Label</span>
               <span className="s-text-red-500">*</span>
               <Tooltip content="This is a required switch input">
-                <Icon source={Information} className="s-text-gray-200 dark:s-text-white-900 dark:s-opacity-30" />
+                <Icon source={Information} className="s-text-gray-200 dark:s-text-white-300" />
               </Tooltip>
             </label>
             <p className="s-mt-1 s-text-sm s-text-gray-500">Helper text</p>
@@ -69,9 +69,9 @@ export const WithLabel: Story = {
           <div>
             <label className="s-ml-2 s-flex s-items-center s-gap-1 s-text-sm">
               <span className="s-text-gray-900 dark:s-text-white-900">Label</span>
-              <span className="s-text-gray-500 dark:s-text-white-900 dark:s-opacity-50">(optional)</span>
+              <span className="s-text-gray-500 dark:s-text-white-500">(optional)</span>
               <Tooltip content="This is an optional switch input">
-                <Icon source={Information} className="s-text-gray-200 dark:s-text-white-900 dark:s-opacity-30" />
+                <Icon source={Information} className="s-text-gray-200 dark:s-text-white-300" />
               </Tooltip>
             </label>
             <p className="s-mt-1 s-text-sm s-text-gray-500">Helper text</p>
@@ -91,14 +91,13 @@ export const Group: Story = {
           <span className="s-font-medium">Label</span>
           <span className="s-text-red-500"> *</span>
           <Tooltip content="This is a switch group">
-            <Icon source={Information} className="s-text-gray-200 dark:s-text-white-900 dark:s-opacity-30" />
+            <Icon source={Information} className="s-text-gray-200 dark:s-text-white-300" />
           </Tooltip>
         </p>
         <div className="s-mt-2 s-flex s-flex-col s-gap-2">
           {options.map((item) => (
             <div>
-              <Switch className="s-mr-2" />{" "}
-              <span className="s-font-normal dark:s-text-white-900 dark:s-opacity-80">{item} </span>
+              <Switch className="s-mr-2" /> <span className="s-font-normal dark:s-text-white-800">{item} </span>
             </div>
           ))}
         </div>

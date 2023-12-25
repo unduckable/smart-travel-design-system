@@ -8,7 +8,7 @@ const radioClasses = cva(["st-radio s-flex"], {
   variants: {
     isDisabled: {
       true: "s-opacity-50 s-pointer-events-none",
-      false: "dark:s-text-[rgba(255,255,255,0.8)]",
+      false: "dark:s-text-white-800",
     },
   },
 });

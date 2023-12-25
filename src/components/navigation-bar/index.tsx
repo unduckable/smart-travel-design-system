@@ -17,13 +17,16 @@ export interface INavigationBar extends TestProps {
   onChange?: (id: INavItems["id"]) => void;
 }
 
-const navClasses = cva("s-flex s-justify-between s-border-t-[1px] s-border-gray-200 s-pt-2");
+const navClasses = cva([
+  "s-flex s-justify-between s-border-t-[1px] s-border-gray-200 s-pt-2",
+  "dark:s-border-white-100",
+]);
 
 const navigationItemClasses = cva("s-flex-1 s-flex s-flex-col s-items-center s-outline-none", {
   variants: {
     isActive: {
       true: "s-text-blue-500",
-      false: "s-text-gray-500",
+      false: "s-text-gray-500 dark:s-text-white-500",
     },
   },
 });
@@ -41,7 +44,11 @@ export const NavigationBar: FC<INavigationBar> = forwardRef<HTMLDivElement, INav
             })}
             onPress={() => onChange(item.id)}
           >
-            <Icon source={item.icon} inheritColor className={activeItem === item.id ? "" : "s-text-gray-400"} />
+            <Icon
+              source={item.icon}
+              inheritColor
+              className={activeItem === item.id ? "" : "s-text-gray-400 dark:s-text-white-900"}
+            />
             <span className="s-text-[10px]">{item.label}</span>
           </Button>
         );

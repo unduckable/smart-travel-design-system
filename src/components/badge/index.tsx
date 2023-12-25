@@ -12,17 +12,13 @@ export interface IBadge extends VariantProps<typeof badgeClasses>, Omit<ButtonPr
 }
 
 const badgeClasses = cva(
-  [
-    "st-badge",
-    "s-flex s-text-xs s-p-1 s-outline-none dark:s-bg-white-900",
-    "dark:s-bg-opacity-10 dark:s-border-white-900 dark:s-border-opacity-10",
-  ],
+  ["st-badge", "s-flex s-text-xs s-p-1 s-outline-none dark:s-bg-white-100 dark:s-border-white-200"],
   {
     variants: {
       color: {
         green: "s-border-green-200 s-text-green-800 s-bg-green-100 dark:s-text-green-500",
         red: "s-border-red-200 s-text-red-800 s-bg-red-100 dark:s-text-red-500",
-        gray: "s-border-gray-200 s-text-gray-800 s-bg-gray-100 dark:s-text-white-900 dark:s-opacity-80",
+        gray: "s-border-gray-200 s-text-gray-800 s-bg-gray-100 dark:s-text-white-800",
         blue: "s-border-blue-200 s-text-blue-800 s-bg-blue-100 dark:s-text-blue-500",
         pink: "s-border-pink-200 s-text-pink-800 s-bg-pink-100 dark:s-text-pink-500",
         yellow: "s-border-yellow-200 s-text-yellow-800 s-bg-yellow-100 dark:s-text-yellow-500",

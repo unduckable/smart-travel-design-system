@@ -79,15 +79,12 @@ const buttonClasses = cva(
       {
         isDestructive: false,
         intent: "secondary-outline",
-        className: [
-          "s-border-gray-200 hover:s-bg-gray-50",
-          "dark:s-border-white-900 dark:s-border-opacity-20 dark:hover:s-bg-white-900 dark:hover:s-bg-opacity-10",
-        ],
+        className: ["s-border-gray-200 hover:s-bg-gray-50", "dark:s-border-white-200 dark:hover:s-bg-white-100"],
       },
       {
         isDestructive: false,
         intent: "secondary",
-        className: "s-border-gray-200 hover:s-bg-gray-50 dark:hover:s-bg-white-900 dark:hover:s-bg-opacity-10",
+        className: "s-border-gray-200 hover:s-bg-gray-50 dark:hover:s-bg-white-100",
       },
 
       // Destructive

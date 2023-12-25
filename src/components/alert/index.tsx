@@ -21,32 +21,29 @@ export interface IAlert extends VariantProps<typeof alertClasses>, TestProps {
   secondaryAction?: IAlertAction;
 }
 
-const alertClasses = cva(
-  ["st-alert", "s-p-3", "s-flex", "s-gap-1", "s-relative", "dark:s-bg-white-900 dark:s-bg-opacity-10"],
-  {
-    variants: {
-      type: {
-        inline: "s-rounded-md",
-        expanded: "",
-      },
-      color: {
-        gray: "s-bg-gray-50",
-        blue: "s-bg-blue-50",
-        green: "s-bg-green-50",
-        yellow: "s-bg-yellow-50",
-        red: "s-bg-red-50",
-      },
-      visible: {
-        false: "s-hidden",
-      },
+const alertClasses = cva(["st-alert", "s-p-3", "s-flex", "s-gap-1", "s-relative", "dark:s-bg-white-100"], {
+  variants: {
+    type: {
+      inline: "s-rounded-md",
+      expanded: "",
+    },
+    color: {
+      gray: "s-bg-gray-50",
+      blue: "s-bg-blue-50",
+      green: "s-bg-green-50",
+      yellow: "s-bg-yellow-50",
+      red: "s-bg-red-50",
+    },
+    visible: {
+      false: "s-hidden",
     },
   },
-);
+});
 
 const iconClasses = cva(["st-alert-icon"], {
   variants: {
     color: {
-      gray: "s-text-gray-200 dark:s-text-white-900 dark:s-opacity-30",
+      gray: "s-text-gray-200 dark:s-text-white-300",
       blue: "s-text-blue-500",
       green: "s-text-green-500",
       yellow: "s-text-yellow-500",
@@ -67,7 +64,7 @@ const titleClasses = cva(["st-alert-title", "s-font-medium", "s-text-sm"], {
   },
 });
 
-const contentClasses = cva(["st-alert-title", "s-font-normal", "s-text-sm dark:s-text-white-900 dark:s-opacity-50"], {
+const contentClasses = cva(["st-alert-title", "s-font-normal", "s-text-sm dark:s-text-white-500"], {
   variants: {
     color: {
       gray: "s-text-gray-500",
@@ -82,7 +79,7 @@ const contentClasses = cva(["st-alert-title", "s-font-normal", "s-text-sm dark:s
 const lineClasses = cva(["st-alert-line", "s-absolute", "s-left-0", "s-top-0", "s-h-full", "s-w-[2px]"], {
   variants: {
     color: {
-      gray: "s-bg-gray-200 dark:s-bg-white-900 dark:s-bg-opacity-20",
+      gray: "s-bg-gray-200 dark:s-bg-white-200",
       blue: "s-bg-blue-500",
       green: "s-bg-green-500",
       yellow: "s-bg-yellow-500",

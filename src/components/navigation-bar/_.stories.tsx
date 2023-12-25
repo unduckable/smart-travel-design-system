@@ -20,6 +20,7 @@ type Story = StoryObj<typeof NavigationBar>;
 export const Default: Story = {
   args: {
     className: "s-w-96",
+    activeItem: "home",
     items: [
       { icon: Home, label: "Home", id: "home" },
       { icon: Settings, label: "Settings", id: "settings" },

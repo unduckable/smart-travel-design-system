@@ -18,7 +18,11 @@ export interface IDialog extends VariantProps<typeof dialogClasses>, Omit<BaseMo
   onCancel?: () => void;
 }
 
-const dialogClasses = cva(["st-dialog", "s-rounded-md s-bg-white-900 s-p-6 s-min-w-[295px] s-max-w-[520px]"]);
+const dialogClasses = cva([
+  "st-dialog",
+  "s-rounded-md s-bg-white-900 s-p-6 s-min-w-[295px] s-max-w-[520px]",
+  "dark:s-bg-dark",
+]);
 
 export const Dialog: FC<IDialog> = forwardRef<HTMLDivElement, IDialog>((props, ref) => {
   const { className, isOpen, icon, description, title, isDestructive, onConfirm, onCancel, onOpenChange, ...rest } =
@@ -35,9 +39,9 @@ export const Dialog: FC<IDialog> = forwardRef<HTMLDivElement, IDialog>((props, r
     >
       <Modal className={classes} onOpenChange={onOpenChange}>
         <BaseDialog role="alertdialog" className="s-outline-none s-relative">
-          <Icon source={icon} inheritColor className="s-text-gray-400 s-w-[48px] s-h-[48px]" />
-          <h2 className="s-mt-4 s-text-gray-900 s-text-lg s-font-bold">{title}</h2>
-          <p className="s-mt-4 s-text-gray-900 s-text-sm">{description}</p>
+          <Icon source={icon} inheritColor className="s-text-gray-400 s-w-[48px] s-h-[48px] dark:s-text-white-500" />
+          <h2 className="s-mt-4 s-text-gray-900 s-text-lg s-font-bold dark:s-text-white-900">{title}</h2>
+          <p className="s-mt-4 s-text-gray-900 s-text-sm dark:s-text-white-800">{description}</p>
           <div className="s-mt-6 s-flex s-justify-end s-gap-2">
             <Button className="s-w-full s-justify-center" intent="secondary-outline" onPress={onCancel}>
               Cancel

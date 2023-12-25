@@ -6,7 +6,7 @@ export interface ISkeleton extends VariantProps<typeof loaderClasses>, TestProps
   className?: string;
 }
 
-const loaderClasses = cva("st-loader s-rounded-md s-bg-gray-100 s-animate-pulse", {
+const loaderClasses = cva("st-loader s-rounded-md s-bg-gray-50 dark:s-bg-loader s-animate-pulse", {
   variants: {
     type: {
       rectangle: "s-w-8 s-h-8",

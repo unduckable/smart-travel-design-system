@@ -9,8 +9,8 @@ export interface ICheckbox extends VariantProps<typeof checkboxClasses>, BaseChe
 const checkboxClasses = cva(["st-checkbox s-flex s-items-center"], {
   variants: {
     isDisabled: {
-      true: "s-pointer-events-none s-text-disabled dark:s-text-[rgba(255,255,255,0.3)]",
-      false: "dark:s-text-[rgba(255,255,255,0.8)]",
+      true: "s-pointer-events-none s-text-disabled dark:s-text-white-300",
+      false: "dark:s-text-white-800",
     },
   },
   compoundVariants: [],
@@ -24,7 +24,7 @@ const checkClasses = cva(
       isIndeterminate: { true: "s-text-white-900" },
       isFocused: { true: "s-outline-2 s-outline-blue-600" },
       isDisabled: {
-        true: "s-border-gray-200 dark:s-border-white-900 dark:s-border-opacity-10 dark:s-bg-white-900 dark:s-bg-opacity-10",
+        true: "s-border-gray-200 dark:s-border-white-200 dark:s-bg-white-100",
         false: "",
       },
     },
@@ -32,12 +32,12 @@ const checkClasses = cva(
       {
         isDisabled: true,
         isSelected: true,
-        className: "s-bg-gray-200 dark:s-border-none dark:s-bg-white-900 dark:s-bg-opacity-20",
+        className: "s-bg-gray-200 dark:s-border-none dark:s-bg-white-200",
       },
       {
         isDisabled: true,
         isIndeterminate: true,
-        className: "s-bg-gray-200 dark:s-border-none dark:s-bg-white-900 dark:s-bg-opacity-20",
+        className: "s-bg-gray-200 dark:s-border-none dark:s-bg-white-200",
       },
       {
         isDisabled: true,
@@ -59,14 +59,14 @@ const checkClasses = cva(
         isSelected: false,
         isIndeterminate: false,
         isDisabled: false,
-        className: "s-border-gray-200 dark:s-border-white-900 dark:s-border-opacity-30",
+        className: "s-border-gray-200 dark:s-border-white-300",
       },
       {
         isHovered: true,
         isIndeterminate: false,
         isSelected: false,
         isDisabled: false,
-        className: "s-border-gray-300 dark:hover:s-border-white-900 dark:hover:s-border-opacity-40",
+        className: "s-border-gray-300 dark:hover:s-border-white-400",
       },
     ],
   },

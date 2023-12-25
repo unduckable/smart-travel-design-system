@@ -41,7 +41,7 @@ export const RadioGroup: FC<IRadioGroup> = forwardRef<HTMLDivElement, IRadioGrou
         {isRequired ? <span className="s-text-red-500"> *</span> : <span className="s-text-gray-300"> (optional)</span>}
         {!!tooltip && (
           <Tooltip content={tooltip}>
-            <Icon source={Information} className="s-text-gray-200 dark:s-text-white-900 dark:s-opacity-30" />
+            <Icon source={Information} className="s-text-gray-200 dark:s-text-white-300" />
           </Tooltip>
         )}
       </Label>

@@ -34,10 +34,13 @@ const stepClasses = cva(["s-m-0.5 focus:s-outline-0"], {
     },
     isActive: {
       true: "s-bg-blue-500 s-text-white hover:s-bg-blue-500",
-      false: "s-bg-gray-200 s-border-gray-200 hover:s-bg-gray-200 hover:s-border-gray-200",
+      false:
+        "s-bg-gray-200 s-border-gray-200 hover:s-bg-gray-200 hover:s-border-gray-200 dark:s-bg-white-200 dark:s-border-none",
     },
   },
 });
+
+const labelClasses = cva(["s-my-2 s-font-medium s-text-sm dark:s-text-white-800"]);
 
 const lineClasses = cva("", {
   variants: {
@@ -61,7 +64,7 @@ const lineClasses = cva("", {
     {
       isVisible: true,
       isActive: false,
-      className: "s-bg-gray-200",
+      className: "s-bg-gray-200 dark:s-bg-white-200",
     },
   ],
 });
@@ -109,7 +112,7 @@ export const Stepper: React.FC<IStepper> = forwardRef<HTMLDivElement, IStepper>(
             />
           </div>
           <div>
-            <p className="s-my-2 s-font-medium s-text-sm">{step}</p>
+            <p className={labelClasses()}>{step}</p>
             {!isHorizontal && (typeof children === "function" ? children(index) : children)}
           </div>
         </div>
