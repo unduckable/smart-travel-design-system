@@ -6,7 +6,7 @@ import { Group } from "react-aria-components";
 import { Button } from "../button";
 import { Icon } from "../icon";
 
-export interface Snackbar extends VariantProps<typeof snackbarClasses>, TestProps {
+export interface ISnackbar extends VariantProps<typeof snackbarClasses>, TestProps {
   children?: string | ReactNode;
   className?: string;
   action?: string | ReactNode;
@@ -20,7 +20,7 @@ const snackbarClasses = cva([
   "dark:s-bg-gray-50 dark:s-text-gray-900",
 ]);
 
-export const Snackbar: FC<Snackbar> = forwardRef((props, ref) => {
+export const Snackbar: FC<ISnackbar> = forwardRef((props, ref) => {
   const { className, action, children, onClose, onAction } = props;
   return (
     <Group className={snackbarClasses({ className })}>
