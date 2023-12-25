@@ -29,7 +29,7 @@ const pageHeaderClasses = cva("s-flex s-pt-[60px] s-w-full s-max-w-full s-px-6 s
   },
 });
 
-const backClasses = cva("s-text-gray-400 s-outline-0", {
+const backClasses = cva("s-text-gray-400 dark:s-text-white-500 s-outline-0", {
   variants: {
     type: {
       search: "[&.st-button]:s-p-0 s-border-none s-w-6",
@@ -43,7 +43,7 @@ const compactTitleClasses = cva("hover:s-bg-transparent s-outline-0", {
   variants: {
     type: {
       search: [
-        "s-flex-1 s-text-left [&]:s-justify-start [&]:s-px-2 [&]:s-py-1 s-text-gray-400 s-min-w-0",
+        "s-flex-1 s-text-left [&]:s-justify-start [&]:s-px-2 [&]:s-py-1 s-text-gray-400 dark:s-text-white-500 s-min-w-0",
         "[&_.st-page-header-title]:s-text-xs",
       ],
       compact: [
@@ -63,7 +63,7 @@ const actionsContainerClasses = cva("s-flex", {
     },
   },
 });
-const actionsClasses = cva("s-text-gray-400 s-outline-0", {
+const actionsClasses = cva("s-text-gray-400 dark:s-text-white-500 s-outline-0", {
   variants: {
     type: {
       search: "[&.st-button]:s-p-1 s-border-none s-w-8",
@@ -89,9 +89,13 @@ export const PageHeader: FC<IPageHeader> = forwardRef<HTMLDivElement, IPageHeade
         className={compactTitleClasses({ type })}
         onPress={onSearch}
       >
-        <span className="s-flex s-flex-col s-justify-start s-text-gray-900 s-gap-0.5 s-max-w-[calc(100%-28px)]">
-          <span className="s-font-bold s-leading-none s-truncate st-page-header-title">{title}</span>
-          <span className="s-text-xs s-font-normal s-leading-none s-truncate">{description}</span>
+        <span className="s-flex s-max-w-[calc(100%-28px)] s-flex-col s-justify-start s-gap-0.5 s-text-gray-900">
+          <span className="st-page-header-title s-truncate s-font-bold s-leading-none s-text-gray-900 dark:s-text-white-900">
+            {title}
+          </span>
+          <span className="s-truncate s-text-xs s-font-normal s-leading-none s-text-gray-900 dark:s-text-white-800">
+            {description}
+          </span>
         </span>
       </Button>
       <div className={actionsContainerClasses({ type })}>
@@ -109,8 +113,8 @@ export const PageHeader: FC<IPageHeader> = forwardRef<HTMLDivElement, IPageHeade
       </div>
       {type === "comfort" && (
         <div className="s-w-full">
-          <h1 className="s-font-bold s-text-xl">{title}</h1>
-          <p className="s-font-normal s-text-xs">{description}</p>
+          <h1 className="s-text-xl s-font-bold s-text-gray-900 dark:s-text-white-900">{title}</h1>
+          <p className="s-text-xs s-font-normal s-text-gray-900 dark:s-text-white-800">{description}</p>
         </div>
       )}
     </header>

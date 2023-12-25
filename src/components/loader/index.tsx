@@ -14,7 +14,7 @@ const loaderClasses = cva("st-loader", {
   variants: {
     type: {
       spinner: "s-text-blue-500",
-      linear: "s-h-0.5 s-bg-gray-100 s-relative",
+      linear: "s-h-0.5 s-bg-gray-100 s-relative dark:s-bg-white-100",
     },
   },
 });
@@ -59,7 +59,10 @@ export const Loader: FC<ILoader> = forwardRef<HTMLDivElement, ILoader>((props, r
     </div>
   ) : (
     <div className={loaderClasses({ className, type })} ref={ref}>
-      <span className="s-absolute s-left-0 s-top-0 s-bottom-0 s-bg-blue-500" style={{ width: `${100 * value}%` }} />
+      <span
+        className="s-absolute s-left-0 s-top-0 s-bottom-0 s-bg-blue-500 dark:s-bg-blue-400"
+        style={{ width: `${100 * value}%` }}
+      />
     </div>
   );
 });

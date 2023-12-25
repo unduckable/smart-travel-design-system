@@ -32,26 +32,35 @@ export interface IDatePicker
   isDateHighlighted?: (date: CalendarDate) => boolean;
 }
 
-const datePickerClasses = cva(["st-date-picker s-inline-block s-shadow-overlay lg:s-p-4"], {
-  variants: {},
-});
+const datePickerClasses = cva(
+  [
+    "st-date-picker s-inline-block s-shadow-overlay lg:s-p-4 s-rounded-none lg:s-rounded-md",
+    "dark:s-bg-dark dark:s-border-[1px] dark:s-border-white-900 dark:s-border-opacity-5",
+  ],
+  {
+    variants: {},
+  },
+);
 
 const tableCellClasses = cva(
   [
-    "s-w-11 s-h-11 s-flex s-items-center s-justify-center s-rounded-md s-outline-none",
+    "s-w-11 s-h-11 s-flex s-items-center s-justify-center s-rounded-md s-outline-none s-outline-offset-0",
     "outside-month:s-pointer-events-none outside-month:s-hidden",
   ],
   {
     variants: {
       isHighlighted: {
-        true: "s-bg-green-100 s-border s-border-green-200 hover:s-border-green-200",
+        true: [
+          "s-bg-green-100 s-border s-border-green-200 hover:s-border-green-200 dark:s-bg-white-100 dark:s-border-white-100",
+        ],
       },
       isRange: {
         true: "",
       },
       isDisabled: {
-        true: "s-text-disabled s-cursor-not-allowed",
-        false: "hover:s-border-gray-200 hover:s-border",
+        true: "s-text-disabled s-cursor-not-allowed dark:s-text-white-300",
+        false:
+          "dark:s-text-white-800 hover:s-border-gray-200 hover:s-border dark:hover:s-border-white-900 dark:hover:s-border-opacity-10",
       },
       isWeekend: {
         true: "",
@@ -63,17 +72,22 @@ const tableCellClasses = cva(
         isDisabled: false,
         className: [
           "s-white-90 selected:s-bg-accent-blue selected:s-rounded-none hover:s-border-transparent",
-          `[&:not([data-selection-start]):not([data-selection-end])]:s-w-12
-           [&:not([data-selection-start]):not([data-selection-end])]:s-h-12`,
+          "[&:not([data-selection-start]):not([data-selection-end])]:s-w-12",
+          "[&:not([data-selection-start]):not([data-selection-end])]:s-h-12",
+          "dark:selected:[&:not([data-selection-start]):not([data-selection-end])]:s-bg-white-900",
+          "dark:selected:[&:not([data-selection-start]):not([data-selection-end])]:s-bg-opacity-10",
           "selection-start:s-m-0.5 selection-start:s-text-white-900 selection-start:s-rounded-md selection-start:s-bg-blue-500 selection-start:s-outline-blue-500",
           "selection-end:s-m-0.5 selection-end:s-text-white-900 selection-end:s-rounded-md selection-end:s-bg-blue-500 selection-end:s-outline-blue-500",
+          "selection-start:s-border-2 selection-start:s-border-white-900 selection-end:s-border-2 selection-end:s-border-white-900",
         ],
       },
       {
         isRange: false,
         isDisabled: false,
-        className:
-          "s-m-0.5 selected:s-text-white-900 selected:s-bg-blue-500 selected:s-border-none selected:s-outline-blue-500",
+        className: [
+          "s-m-0.5 selected:s-text-white-900 selected:s-bg-blue-500 selected:s-outline-blue-500",
+          "selected:s-border-solid selected:s-border-2 selected:s-border-white-900 dark:selected:s-text-white-900",
+        ],
       },
       {
         isWeekend: true,
@@ -90,8 +104,8 @@ const headerClasses = cva(
   {
     variants: {
       isWeekend: {
-        true: "s-text-red-500",
-        false: "s-text-gray-500",
+        true: "s-text-red-500 dark:s-border-opacity-10",
+        false: "s-text-gray-500 dark:s-text-white-500 dark:s-border-opacity-10",
       },
     },
   },
@@ -173,13 +187,13 @@ export const DatePicker: FC<IDatePicker> = forwardRef<HTMLDivElement, IDatePicke
                     slot="previous"
                     intent="tertiary"
                     size="small"
-                    className="s-absolute s-left-0"
+                    className="s-absolute s-left-0 dark:s-text-white-900"
                     isSquare
                     isDisabled={state.isPreviousVisibleRangeInvalid()}
                   >
                     <Icon source={ChevronLeft} className="" />
                   </Button>
-                  <p className="s-h-8 s-leading-8">
+                  <p className="s-h-8 s-leading-8 dark:s-text-white-900">
                     {monthNames[state.visibleRange.start.month - 1]} - {state.visibleRange.start.year}
                   </p>
                 </div>
@@ -202,7 +216,7 @@ export const DatePicker: FC<IDatePicker> = forwardRef<HTMLDivElement, IDatePicke
                     <Button slot="next" intent="tertiary" size="small" className="s-absolute s-right-0" isSquare>
                       <Icon source={ChevronRight} className="" />
                     </Button>
-                    <p className="s-h-8 s-leading-8">
+                    <p className="s-h-8 s-leading-8 dark:s-text-white-900">
                       {monthNames[state.visibleRange.end.month - 1]} - {state.visibleRange.end.year}
                     </p>
                   </div>

@@ -24,7 +24,7 @@ export const Default: Story = {
       <>
         <Button onPress={() => setIsOpen(true)}>Open modal</Button>
         <Modal isOpen={isOpen} onClose={() => setIsOpen(false)} onOpenChange={setIsOpen}>
-          <header className="s-flex s-items-center s-justify-between s-border-b-2 s-border-solid s-border-gray-100 s-p-4 s-pb-[calc(90vh-34px)]">
+          <header className="s-flex s-items-center s-justify-between s-border-b-2 s-border-solid s-border-gray-100 s-p-4 s-pb-[calc(90vh-34px)] dark:s-bg-black dark:s-text-white-900">
             <button type="button" className="s-p-1">
               <Icon source={ChevronLeft} />
             </button>
@@ -50,8 +50,8 @@ export const GenericModal: Story = {
       <>
         <Button onPress={() => setIsOpen(true)}>Open modal</Button>
         <Modal isOpen={isOpen} onClose={onClose} onOpenChange={setIsOpen}>
-          <div className="s-flex s-h-full s-min-h-[calc(100vh-34px)] s-flex-col">
-            <header className="s-flex s-items-center s-justify-between s-border-b-2 s-border-solid s-border-gray-100 s-p-4">
+          <div className="s-flex s-h-full s-min-h-[calc(100vh-34px)] s-flex-col dark:s-bg-black dark:s-text-white-900">
+            <header className="s-flex s-items-center s-justify-between s-border-b-2 s-border-solid s-border-gray-100 s-p-4 dark:s-border-gray-800">
               <button type="button" className="s-p-1">
                 <Icon source={ChevronLeft} />
               </button>

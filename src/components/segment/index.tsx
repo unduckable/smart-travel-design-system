@@ -12,11 +12,7 @@ export interface ISegment extends VariantProps<typeof segmentClasses>, TestProps
 }
 
 const segmentClasses = cva(
-  [
-    "st-segment",
-    "s-h-fit s-p-1 s-inline-flex s-bg-gray-100 s-rounded-full",
-    "dark:s-bg-white-900 dark:s-bg-opacity-20",
-  ],
+  ["st-segment", "s-h-fit s-p-1 s-inline-flex s-bg-gray-100 s-rounded-full", "dark:s-bg-white-200"],
   {
     variants: {
       size: {

@@ -32,7 +32,7 @@ const sliderClasses = cva(["st-slider"], {
 const valueClasses = cva(
   [
     "st-tooltip s-relative s-w-fit s-h-fit s-py-2 s-px-3.5 s-bg-gray-900 s-text-white-900 s-text-xs s-rounded-md",
-    "s-left-1/2 -s-translate-x-1/2 s-bg-gray-800",
+    "s-left-1/2 -s-translate-x-1/2 dark:s-bg-gray-800",
   ],
   {
     variants: {
@@ -49,10 +49,7 @@ const valueClasses = cva(
 );
 
 const thumbClasses = cva(
-  [
-    "s-top-1/2 s-rounded-full s-shadow-sm s-border-[1px] s-border-gray-100",
-    "dark:s-border-white-900 dark:s-border-opacity-10",
-  ],
+  ["s-top-1/2 s-rounded-full s-shadow-sm s-border-[1px] s-border-gray-100", "dark:s-border-white-100"],
   {
     variants: {
       isDragging: {
@@ -60,7 +57,7 @@ const thumbClasses = cva(
         false: "s-w-6 s-h-6",
       },
       isDisabled: {
-        true: "s-bg-gray-200 dark:s-bg-white-900 dark:s-bg-opacity-10",
+        true: "s-bg-gray-200 dark:s-bg-white-100",
         false: "s-bg-white-900 dark:s-bg-gray-900",
       },
     },
@@ -70,7 +67,7 @@ const thumbClasses = cva(
 const trackClasses = cva(["s-absolute s-h-0.5 s-top-1/2 s-translate-y-[-50%] s-rounded-full "], {
   variants: {
     isDisabled: {
-      true: "s-bg-disabled dark:s-bg-white-900 dark:s-bg-opacity-30",
+      true: "s-bg-disabled dark:s-bg-white-300",
       false: "s-bg-blue-500",
     },
   },
@@ -103,21 +100,19 @@ export const Slider: FC<ISlider> = forwardRef<HTMLInputElement, ISlider>((props,
         {isRequired ? (
           <span className="s-text-red-500">*</span>
         ) : (
-          <span className="s-text-gray-300 dark:s-text-white-900 dark:s-opacity-50">(optional)</span>
+          <span className="s-text-gray-300 dark:s-text-white-500">(optional)</span>
         )}
         {!!tooltip && (
           <Tooltip content={tooltip}>
-            <Icon source={Information} className="s-text-gray-200 dark:s-text-white-900 dark:s-opacity-30" />
+            <Icon source={Information} className="s-text-gray-200 dark:s-text-white-300" />
           </Tooltip>
         )}
       </Label>
-      <div className="s-w-full s-text-sm s-leading-none s-text-gray-500 dark:s-text-white-900 dark:s-opacity-50">
-        {helperText}
-      </div>
+      <div className="s-w-full s-text-sm s-leading-none s-text-gray-500 dark:s-text-white-500">{helperText}</div>
       <SliderTrack className="s-relative s-my-4 s-h-7 s-w-full">
         {({ state, isDisabled }) => (
           <>
-            <div className="s-absolute s-top-1/2 s-h-0.5 s-w-full s-translate-y-[-50%] s-rounded-full s-bg-gray-200 dark:s-bg-white-900 dark:s-bg-opacity-20" />
+            <div className="s-absolute s-top-1/2 s-h-0.5 s-w-full s-translate-y-[-50%] s-rounded-full s-bg-gray-200 dark:s-bg-white-200" />
             <div className={trackClasses({ isDisabled })} style={getProgressStyle(state)} />
             {state.values.map((value, i) => (
               <SliderThumb

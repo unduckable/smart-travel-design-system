@@ -1,6 +1,15 @@
 import type { StorybookConfig } from "@storybook/react-vite";
 
-const propsBlackListWords = ["aria", "form", "excludeFromTabOrder", "slot"];
+const blackListPatterns = [
+  /aria/,
+  /form/,
+  /^excludeFromTabOrder$/,
+  /^slot$/,
+  /^keyboardActivation$/,
+  /^onCompositionEnd$/,
+  /^onCompositionStart$/,
+  /^onCompositionUpdate$/,
+];
 
 const config: StorybookConfig = {
   stories: ["../src/storybook/welcome.mdx", "../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
@@ -32,7 +41,7 @@ const config: StorybookConfig = {
         allowSyntheticDefaultImports: false,
         esModuleInterop: false,
       },
-      propFilter: (props) => propsBlackListWords.every((word) => !props.name.includes(word)),
+      propFilter: (props) => blackListPatterns.every((pattern) => !pattern.test(props.name)),
     },
   },
 };

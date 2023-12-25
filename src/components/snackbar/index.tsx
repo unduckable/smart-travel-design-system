@@ -17,6 +17,7 @@ export interface Snackbar extends VariantProps<typeof snackbarClasses>, TestProp
 const snackbarClasses = cva([
   "st-snackbar",
   "s-flex s-items-center s-h-12  s-bg-gray-900 s-rounded-lg s-text-white-900 s-text-sm",
+  "dark:s-bg-gray-50 dark:s-text-gray-900",
 ]);
 
 export const Snackbar: FC<Snackbar> = forwardRef((props, ref) => {
@@ -25,11 +26,22 @@ export const Snackbar: FC<Snackbar> = forwardRef((props, ref) => {
     <Group className={snackbarClasses({ className })}>
       <p className="s-flex-1 s-m-0 s-p-3 s-pl-4">{children}</p>
       {action && (
-        <Button intent="tertiary" size="small" className="s-text-blue-500 [&]:s-h-12 s-outline-0" onPress={onAction}>
+        <Button
+          intent="tertiary"
+          size="small"
+          className="s-text-blue-500 [&]:s-h-12 s-outline-0 dark:s-text-blue-400"
+          onPress={onAction}
+        >
           {action}
         </Button>
       )}
-      <Button intent="tertiary" size="small" isSquare className="[&]:s-h-12 s-outline-0" onPress={onClose}>
+      <Button
+        intent="tertiary"
+        size="small"
+        isSquare
+        className="[&]:s-h-12 s-outline-0 dark:s-text-gray-400"
+        onPress={onClose}
+      >
         <Icon source={Close} />
       </Button>
     </Group>

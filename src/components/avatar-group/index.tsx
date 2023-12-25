@@ -38,7 +38,7 @@ const gapClasses = cva(
   [
     "st-avatar-group-gap",
     "s-relative",
-    "s-bg-gray-200 dark:s-bg-overlay",
+    "s-bg-gray-200 dark:s-bg-dark",
     "s-rounded-full",
     "s-flex",
     "s-items-center",
