@@ -151,6 +151,7 @@ export default {
       },
       black: "#000000",
       transparent: "transparent",
+      overlay: "#292929",
       disabled: "#A9A9BC",
       invalid: "#F53D6B",
     },

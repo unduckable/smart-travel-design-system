@@ -1,7 +1,7 @@
 import { Canvas, Controls, Meta } from "@storybook/blocks";
-import * as ButtonGroupStories from './_.stories';
+import * as ButtonGroupStories from "./_.stories";
 
-  <Meta of={ButtonGroupStories} />
+<Meta of={ButtonGroupStories} />
 
 # Button Group
 
@@ -12,30 +12,36 @@ import * as ButtonGroupStories from './_.stories';
 - [Examples](#examples)
 
 ## Overview
+
 ButtonGroup can be used to group related options. To emphasize groups of related toggle buttons, a group should share a common container.
-  <Canvas of={ButtonGroupStories.Default} />
+
+<Canvas of={ButtonGroupStories.Default} />
 
 ## Props
-  <Controls of={ButtonGroupStories.Default} />
+
+<Controls of={ButtonGroupStories.Default} />
 
 ## Variants
 
 ### Sizes
 
-  <Canvas of={ButtonGroupStories.Sizes} />
+<Canvas of={ButtonGroupStories.Sizes} />
 
 ### Disabled
-Set disable button for something that isn’t usable. Use a tooltip on hover in order to indicate the reason of the disabled action.
-  <Canvas of={ButtonGroupStories.Disabled} />
 
+Set disable button for something that isn’t usable. Use a tooltip on hover in order to indicate the reason of the disabled action.
+
+<Canvas of={ButtonGroupStories.Disabled} />
 
 ## Tips
+
 ➡️ Group together calls to action that are related to each other.  
 ➡️ Use when all the actions in the group take place immediately in one click. If one or more actions does not immediately happen in one click, either use a different component, or remove those actions from the group.  
 ➡️ Only should be used in groups of up to six buttons if the buttons contain an icon with no text.  
 ➡️ The main action of a button group will be in selected mode.  
 ➡️ Keep the content short and actionable. For longer actions, use the Dropdown component.  
-➡️ Button group is used to diplay the same content in diffrent view, if you need to present diffrent content, use Tabs.  
-
+➡️ Button group is used to diplay the same content in diffrent view, if you need to present diffrent content, use Tabs.
 
 ## Examples
+
+<Canvas of={ButtonGroupStories.Examples} />

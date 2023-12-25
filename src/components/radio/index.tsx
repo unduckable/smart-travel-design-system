@@ -8,20 +8,22 @@ const radioClasses = cva(["st-radio s-flex"], {
   variants: {
     isDisabled: {
       true: "s-opacity-50 s-pointer-events-none",
+      false: "dark:s-text-[rgba(255,255,255,0.8)]",
     },
   },
 });
 
 const radioInnerClasses = cva(
   [
-    "s-flex s-mt-1 s-mr-2 s-w-4 s-h-4 s-border-[1px] s-rounded-full s-transition-all s-outline-none",
+    "s-flex s-mt-1 s-mr-2 s-w-4 s-h-4 s-border-2 s-rounded-full s-transition-all s-outline-none",
     "after:s-m-auto after:s-w-2 after:s-h-2 after:s-rounded-full after:s-transition-all",
   ],
   {
     variants: {
       isHovered: { true: "" },
       isSelected: {
-        false: "s-border-gray-200 after:s-hidden",
+        false:
+          "s-border-gray-200 dark:s-border-white-900 dark:s-border-opacity-30 dark:hover:s-border-opacity-40 after:s-hidden",
       },
       isFocused: {
         true: "s-outline-blue-500",

@@ -1,7 +1,7 @@
 import * as React from "react";
 import type { SVGProps } from "react";
 import { Ref, forwardRef } from "react";
-const Information = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
+const Icon = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) => (
   <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" ref={ref} {...props}>
     <path
       fill="currentColor"
@@ -11,5 +11,5 @@ const Information = (props: SVGProps<SVGSVGElement>, ref: Ref<SVGSVGElement>) =>
     />
   </svg>
 );
-const ForwardRef = forwardRef(Information);
-export default ForwardRef;
+const Information = forwardRef(Icon);
+export default Information;
