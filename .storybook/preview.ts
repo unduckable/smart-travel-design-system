@@ -8,7 +8,7 @@ const preview: Preview = {
     darkMode: {
       darkClass: "s-dark",
       stylePreview: true,
-      dark: { ...themes.dark, appBg: "#121217", previewBg: "#121217", brandImage: logo },
+      dark: { ...themes.dark, appBg: "#282833", previewBg: "#282833", brandImage: logo },
       light: { ...themes.light, appBg: "#fff", brandImage: logo },
     },
     options: {

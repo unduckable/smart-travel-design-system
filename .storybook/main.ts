@@ -1,6 +1,6 @@
 import type { StorybookConfig } from "@storybook/react-vite";
 
-const propsBlackListWords = ["aria", "form"];
+const propsBlackListWords = ["aria", "form", "excludeFromTabOrder", "slot"];
 
 const config: StorybookConfig = {
   stories: ["../src/storybook/welcome.mdx", "../src/**/*.mdx", "../src/**/*.stories.@(js|jsx|mjs|ts|tsx)"],
