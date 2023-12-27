@@ -19,6 +19,7 @@
       "default": "./dist/index.umd.js"
     },
     "./dist/": "./dist/",
+    "./icons/": "./dist/icons",
     "./types": "./dist/index.d.ts"
   },
   "main": "./dist/index.js",
@@ -26,8 +27,9 @@
   "files": ["dist"],
   "scripts": {
     "----------BUILD----------": "",
-    "build": "vite build --config configs/build.js",
+    "build": "vite build --config configs/build.js && npm run build:icons",
     "build:storybook": "storybook build",
+    "build:icons": "node ./scripts/buildIcons.js",
     "----------DEV----------": "",
     "dev": "vite --config configs/dev.js",
     "dev:storybook": "storybook dev -p 6006",
@@ -94,7 +96,7 @@
     "wouter": "^2.12.1"
   },
   "peerDependencies": {
-    "react": "^17.0.0",
-    "react-dom": "^17.0.0"
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
   }
 }

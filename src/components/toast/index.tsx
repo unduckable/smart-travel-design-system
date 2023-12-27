@@ -6,7 +6,7 @@ import { Group } from "react-aria-components";
 import { Button } from "../button";
 import { Icon } from "../icon";
 
-export interface Snackbar extends VariantProps<typeof snackbarClasses>, TestProps {
+export interface IToast extends VariantProps<typeof classes>, TestProps {
   children?: string | ReactNode;
   className?: string;
   action?: string | ReactNode;
@@ -14,22 +14,22 @@ export interface Snackbar extends VariantProps<typeof snackbarClasses>, TestProp
   onAction?: () => void;
 }
 
-const snackbarClasses = cva([
+const classes = cva([
   "st-snackbar",
   "s-flex s-items-center s-h-12  s-bg-gray-900 s-rounded-lg s-text-white-900 s-text-sm",
   "dark:s-bg-gray-50 dark:s-text-gray-900",
 ]);
 
-export const Snackbar: FC<Snackbar> = forwardRef((props, ref) => {
+export const Toast: FC<IToast> = forwardRef((props, ref) => {
   const { className, action, children, onClose, onAction } = props;
   return (
-    <Group className={snackbarClasses({ className })}>
-      <p className="s-flex-1 s-m-0 s-p-3 s-pl-4">{children}</p>
+    <Group className={classes({ className })}>
+      <p className="s-m-0 s-flex-1 s-p-3 s-pl-4">{children}</p>
       {action && (
         <Button
           intent="tertiary"
           size="small"
-          className="s-text-blue-500 [&]:s-h-12 s-outline-0 dark:s-text-blue-400"
+          className="s-text-blue-500 s-outline-0 dark:s-text-blue-400 [&]:s-h-12"
           onPress={onAction}
         >
           {action}
@@ -39,7 +39,7 @@ export const Snackbar: FC<Snackbar> = forwardRef((props, ref) => {
         intent="tertiary"
         size="small"
         isSquare
-        className="[&]:s-h-12 s-outline-0 dark:s-text-gray-400"
+        className="s-outline-0 dark:s-text-gray-400 [&]:s-h-12"
         onPress={onClose}
       >
         <Icon source={Close} />
@@ -48,6 +48,6 @@ export const Snackbar: FC<Snackbar> = forwardRef((props, ref) => {
   );
 });
 
-Snackbar.defaultProps = {
+Toast.defaultProps = {
   children: "Snackbar content",
 };

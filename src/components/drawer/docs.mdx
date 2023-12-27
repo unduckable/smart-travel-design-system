@@ -1,0 +1,39 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as DrawerStories from "./_.stories";
+
+<Meta of={DrawerStories} />
+
+# Drawer
+
+- [Overview](#overview)
+- [Props](#props)
+- [Variants](#variants)
+- [Tips](#tips)
+- [Examples](#examples)
+
+## Overview
+
+A drawer is a type of modal window that appears in front of app content to provide critical information, or prompt for a decision to be made.
+
+<Canvas of={DrawerStories.Default} />
+
+## Props
+
+<Controls of={DrawerStories.Default} />
+
+## Variant
+
+### Custom icon
+
+<Canvas of={DrawerStories.Icons} />
+
+### Destructive
+
+<Canvas of={DrawerStories.Destructive} />
+
+## Tips
+
+➡️ Drawer component is used to interrupt the user with a mandatory confirmation or action.  
+➡️ By default, Modal will be closed by: dragging down or the closing buttons.
+
+## Examples

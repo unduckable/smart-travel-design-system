@@ -12,7 +12,7 @@ import { Group } from "react-aria-components";
 import { Button } from "../button";
 import { Icon } from "../icon";
 
-export interface ISearch extends VariantProps<typeof searchClasses>, TestProps {
+export interface ISearchMaster extends VariantProps<typeof searchClasses>, TestProps {
   className?: string;
   toLocationLabel: string;
   fromLocationLabel?: string;
@@ -50,7 +50,7 @@ const searchClasses = cva(
   },
 );
 
-export const SearchMaster: FC<ISearch> = forwardRef<HTMLDivElement, ISearch>((props, ref) => {
+export const SearchMaster: FC<ISearchMaster> = forwardRef<HTMLDivElement, ISearchMaster>((props, ref) => {
   const {
     className,
     type,

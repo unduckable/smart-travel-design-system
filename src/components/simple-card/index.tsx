@@ -6,7 +6,7 @@ import { Button } from "../button";
 import { Icon } from "../icon";
 import { Link } from "../link";
 
-export interface ICard extends VariantProps<typeof cardClasses>, TestProps {
+export interface ISimpleCard extends VariantProps<typeof cardClasses>, TestProps {
   className?: string;
   icon?: FC;
   title?: string;
@@ -30,7 +30,7 @@ const cardClasses = cva(
   },
 );
 
-export const SimpleCard: FC<ICard> = forwardRef<HTMLDivElement, ICard>((props, ref) => {
+export const SimpleCard: FC<ISimpleCard> = forwardRef<HTMLDivElement, ISimpleCard>((props, ref) => {
   const { type, className, button, title, description, icon, onPressButton } = props;
 
   return (

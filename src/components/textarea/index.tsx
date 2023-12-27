@@ -4,7 +4,6 @@ import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
 import { FC, forwardRef } from "react";
 import {
-  Button,
   FieldError,
   Label,
   Text,
@@ -32,50 +31,61 @@ const textareaClasses = cva(["st-textarea s-inline-flex s-flex-col"], {
   },
 });
 
-const inputClasses = cva(["s-mt-2 s-py-3 s-px-4 s-text-sm s-border-2 s-rounded-md s-outline-none s-p-1"], {
-  variants: {
-    resize: {
-      none: "s-resize-none",
-      vertical: "s-resize-y",
-      horizontal: "s-resize-x",
-      both: "s-resize",
+const inputClasses = cva(
+  ["s-mt-2 s-py-3 s-px-4 s-text-sm s-border-2 s-rounded-md s-outline-none s-p-1  s-bg-transparent"],
+  {
+    variants: {
+      resize: {
+        none: "s-resize-none",
+        vertical: "s-resize-y",
+        horizontal: "s-resize-x",
+        both: "s-resize",
+      },
+      isDisabled: {
+        true: "s-cursor-not-allowed s-text-disabled placeholder:s-text-disabled",
+        false: "s-text-gray-900 placeholder:s-text-gray-500 dark:placeholder:s-text-white-500",
+      },
+      isInvalid: {
+        true: "s-border-red-500 focus:s-shadow-invalid",
+      },
     },
-    isDisabled: {
-      true: "s-cursor-not-allowed s-text-disabled placeholder:s-text-disabled",
-      false: "s-text-gray-900 placeholder:s-text-gray-500",
-    },
-    isInvalid: {
-      true: "s-border-red-500 focus:s-shadow-invalid",
-    },
+    compoundVariants: [
+      {
+        isInvalid: false,
+        isDisabled: false,
+        className: [
+          "s-border-gray-200 hover:s-border-gray-300 focus:s-border-blue-500",
+          "dark:s-border-white-200 dark:hover:s-border-white-300 dark:focus:s-border-blue-400",
+        ],
+      },
+    ],
   },
-  compoundVariants: [
-    {
-      isInvalid: false,
-      isDisabled: false,
-      className: "s-border-gray-200 hover:s-border-gray-300 focus:s-border-blue-500",
-    },
-  ],
-});
+);
 
 export const TextArea: FC<ITextArea> = forwardRef<HTMLInputElement, ITextArea>((props, ref) => {
   const { children, className, helperText, isDisabled, isRequired, label, placeholder, resize, tooltip, ...rest } =
     props;
-  const classes = textareaClasses({ className, isDisabled });
 
   return (
-    <BaseTextField ref={ref} {...rest} isRequired={isRequired} isDisabled={isDisabled} className={classes}>
+    <BaseTextField
+      ref={ref}
+      {...rest}
+      isRequired={isRequired}
+      isDisabled={isDisabled}
+      className={textareaClasses({ className, isDisabled })}
+    >
       {({ isInvalid, isDisabled }) => (
         <>
-          <Label className="s-flex s-gap-1 s-items-center s-text-sm s-text-gray-900">
+          <Label className="s-flex s-gap-1 s-items-center s-text-sm s-text-gray-900 dark:s-text-white-900">
             {label}
             {isRequired ? (
               <span className="s-text-red-500">*</span>
             ) : (
-              <span className="s-text-gray-500"> (optional)</span>
+              <span className="s-text-gray-500 dark:s-text-white-500"> (optional)</span>
             )}
             {!!tooltip && (
               <Tooltip content={tooltip}>
-                <Icon source={Information} className="s-text-gray-200" />
+                <Icon source={Information} className="s-text-gray-200 dark:s-text-white-300" />
               </Tooltip>
             )}
           </Label>

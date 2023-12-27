@@ -1,0 +1,35 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as PopoverStories from "./_.stories";
+
+<Meta of={PopoverStories} />
+
+# Popover
+
+- [Overview](#overview)
+- [Props](#props)
+- [Variants](#variants)
+- [Tips](#tips)
+- [Examples](#examples)
+
+## Overview
+
+A popover is a dialog that focuses the user's attention exclusively on an information via a window that is overlaid on primary content.
+
+<Canvas of={PopoverStories.Default} />
+
+## Props
+
+<Controls of={PopoverStories.Default} />
+
+## Variants
+
+## Tips
+
+➡️ All popovers must have a title and a close button.  
+➡️ By default, Popover will be closed by: dragging down or the closing buttons.
+
+## Examples
+
+A popover with a title, body, and footer.
+
+<Canvas of={PopoverStories.GenericModal} />
