@@ -114,8 +114,8 @@ export type { ISegment } from "./components/segment";
 export { Skeleton } from "./components/skeleton";
 export type { ISkeleton } from "./components/skeleton";
 
-export { Snackbar } from "./components/snackbar";
-export type { ISnackbar } from "./components/snackbar";
+export { Toast as Snackbar } from "./components/toast";
+export type { IToast as ISnackbar } from "./components/toast";
 
 export { Voucher } from "./components/voucher";
 export type { IVoucher } from "./components/voucher";

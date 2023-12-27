@@ -1,16 +1,16 @@
 import Trash from "@/src/icons/Trash";
 import type { Meta, StoryObj } from "@storybook/react";
-import { Snackbar } from ".";
+import { Toast } from ".";
 import { Icon } from "../icon";
 
-const meta: Meta<typeof Snackbar> = {
-  title: "Components/Snackbar",
-  component: Snackbar,
+const meta: Meta<typeof Toast> = {
+  title: "Components/Toast",
+  component: Toast,
 };
 
 export default meta;
 
-type Story = StoryObj<typeof Snackbar>;
+type Story = StoryObj<typeof Toast>;
 export const Default: Story = {
   args: {
     className: "s-w-72",

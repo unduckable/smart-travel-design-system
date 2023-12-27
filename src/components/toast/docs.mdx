@@ -1,9 +1,9 @@
 import { Canvas, Controls, Meta } from "@storybook/blocks";
-import * as SnackbarStories from "./_.stories";
+import * as Stories from "./_.stories";
 
-<Meta of={SnackbarStories} />
+<Meta of={Stories} />
 
-# Snackbar
+# Toast
 
 - [Overview](#overview)
 - [Props](#props)
@@ -13,23 +13,23 @@ import * as SnackbarStories from "./_.stories";
 
 ## Overview
 
-A snackbar is a message object that presents timely information, including confirmation of actions, alerts, and errors.
+A toast is a message object that presents timely information, including confirmation of actions, alerts, and errors.
 
-<Canvas of={SnackbarStories.Default} />
+<Canvas of={Stories.Default} />
 
 ## Props
 
-<Controls of={SnackbarStories.Default} />
+<Controls of={Stories.Default} />
 
 ## Variants
 
 ### Default
 
-<Canvas of={SnackbarStories.Default} />
+<Canvas of={Stories.Default} />
 
 ### Actions
 
-<Canvas of={SnackbarStories.Actions} />
+<Canvas of={Stories.Actions} />
 
 ## Tips
 
@@ -41,4 +41,4 @@ A snackbar is a message object that presents timely information, including confi
 
 ## Examples
 
-<Canvas of={SnackbarStories.Destructive} />
+<Canvas of={Stories.Destructive} />
