@@ -81,25 +81,25 @@ export default function () {
           {
             id: "1",
             content: "Cat",
-            helpText: "Help text",
+            helperText: "Help text",
             image: "https://placehold.co/400",
           },
           {
             id: "2",
             content: "Dog",
-            helpText: "Help text",
+            helperText: "Help text",
             image: "https://placehold.co/400",
           },
           {
             id: "3",
             content: "Panda",
-            helpText: "Help text",
+            helperText: "Help text",
             image: "https://placehold.co/400",
           },
           {
             id: "4",
             content: "Snake",
-            helpText: "Help text",
+            helperText: "Help text",
             image: "https://placehold.co/400",
           },
         ]}
