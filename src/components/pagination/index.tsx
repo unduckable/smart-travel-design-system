@@ -1,74 +1,98 @@
-import Message from "@/src/icons/Message";
+import ChevronLeft from "@/src/icons/ChevronLeft";
+import ChevronRight from "@/src/icons/ChevronRight";
 import { TestProps } from "@/src/utils";
 import { cva } from "class-variance-authority";
 import type { VariantProps } from "class-variance-authority";
-import React, { FC, ReactNode, forwardRef } from "react";
-import { Dialog as BaseDialog, Modal, ModalOverlay, ModalOverlayProps as BaseModalProps } from "react-aria-components";
+import React, { FC, ReactNode, forwardRef, useCallback, useEffect, useState } from "react";
+import { Group } from "react-aria-components";
 import { Button } from "../button";
-import { IIcon, Icon } from "../icon";
+import { Icon } from "../icon";
 
-export interface IDialog extends VariantProps<typeof dialogClasses>, Omit<BaseModalProps, "children">, TestProps {
-  isOpen?: boolean;
-  icon?: IIcon["source"];
-  description?: string | ReactNode;
-  title?: string | ReactNode;
-  isDestructive?: boolean;
-  onOpenChange: (isOpen: boolean) => void;
-  onConfirm?: () => void;
-  onCancel?: () => void;
+export interface IDialog extends VariantProps<typeof paginationClasses>, TestProps {
+  defaultValue?: number;
+  value?: number;
+  total: number;
+  size?: number;
+  onChange: (page: number) => void;
 }
 
-const dialogClasses = cva([
-  "st-dialog",
-  "s-rounded-md s-bg-white-900 s-p-6 s-min-w-[295px] s-max-w-[520px]",
-  "dark:s-bg-dark",
-]);
+const paginationClasses = cva([]);
 
-export const Dialog: FC<IDialog> = forwardRef<HTMLDivElement, IDialog>((props, ref) => {
-  const { className, isOpen, icon, description, title, isDestructive, onConfirm, onCancel, onOpenChange, ...rest } =
-    props;
-  const classes = dialogClasses({ className });
+export const Pagination: FC<IDialog> = forwardRef<HTMLDivElement, IDialog>((props, ref) => {
+  const { total, size, defaultValue, value, onChange } = props;
+  const [currentPage, setCurrentPage] = useState(defaultValue);
+  const [pages, setPages] = useState([]);
+
+  const handlePress = (page) => {
+    if (page > 0 && page <= total) {
+      onChange(page);
+      setCurrentPage(page);
+      updatePages(page);
+    }
+  };
+
+  const updatePages = useCallback(
+    (page) => {
+      const newPages = [page];
+      for (let i = 0; i < Math.floor(size / 2); i++) {
+        const first = newPages[0];
+        const last = newPages[newPages.length - 1];
+        if (first > 1) newPages.unshift(first - 1);
+        if (last < total) newPages.push(last + 1);
+      }
+
+      while (newPages.length < size && newPages[0] > 1) newPages.unshift(newPages[0] - 1);
+      while (newPages.length < size && newPages[newPages.length - 1] < total)
+        newPages.push(newPages[newPages.length - 1] + 1);
+      setPages(newPages);
+    },
+    [size, total],
+  );
+
+  useEffect(() => {
+    if (value) setCurrentPage(value);
+  }, [value]);
+
+  useEffect(() => {
+    updatePages(currentPage);
+  }, [updatePages, currentPage]);
 
   return (
-    <ModalOverlay
-      ref={ref}
-      {...rest}
-      isOpen={isOpen}
-      className="s-fixed s-inset-0 s-z-10 s-bg-black/20 s-flex s-min-h-full s-items-center s-justify-center"
-      onOpenChange={onOpenChange}
-    >
-      <Modal className={classes} onOpenChange={onOpenChange}>
-        <BaseDialog role="alertdialog" className="s-outline-none s-relative">
-          <Icon source={icon} inheritColor className="s-text-gray-400 s-w-[48px] s-h-[48px] dark:s-text-white-500" />
-          <h2 className="s-mt-4 s-text-gray-900 s-text-lg s-font-bold dark:s-text-white-900">{title}</h2>
-          <p className="s-mt-4 s-text-gray-900 s-text-sm dark:s-text-white-800">{description}</p>
-          <div className="s-mt-6 s-flex s-justify-end s-gap-2">
-            <Button className="s-w-full s-justify-center" intent="secondary-outline" onPress={onCancel}>
-              Cancel
-            </Button>
-            <Button
-              className="s-w-full s-justify-center"
-              intent="primary"
-              onPress={onConfirm}
-              isDestructive={isDestructive}
-            >
-              Confirm
-            </Button>
-          </div>
-        </BaseDialog>
-      </Modal>
-    </ModalOverlay>
+    <Group className="s-flex">
+      <Button
+        prefixIcon={ChevronLeft}
+        isSquare
+        shape="pill"
+        intent="secondary"
+        className="s-text-gray-400 focus:s-outline-0"
+        onPress={() => handlePress(currentPage - 1)}
+      />
+      {pages.map((page) => (
+        <Button
+          isSquare
+          shape="pill"
+          intent={page === currentPage ? "primary" : "secondary"}
+          className="focus:s-outline-0"
+          onPress={() => handlePress(page)}
+        >
+          {page}
+        </Button>
+      ))}
+      <Button
+        prefixIcon={ChevronRight}
+        isSquare
+        shape="pill"
+        intent="secondary"
+        className="s-text-gray-400 focus:s-outline-0"
+        onPress={() => handlePress(currentPage + 1)}
+      />
+    </Group>
   );
 });
 
-Dialog.defaultProps = {
-  isOpen: false,
-  icon: Message,
-  title: "Title",
-  description: "Description",
-  isDestructive: false,
-  isDismissable: true,
-  onOpenChange: () => {},
-  onConfirm: () => {},
-  onCancel: () => {},
+Pagination.defaultProps = {
+  defaultValue: 3,
+  total: 10,
+  size: 5,
+  onChange: () => {},
 };

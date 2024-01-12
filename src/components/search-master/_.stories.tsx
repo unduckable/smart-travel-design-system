@@ -155,7 +155,8 @@ export const Example: Story = {
               isSquare
               intent="secondary-outline"
               size="small"
-              className="hover:s-bg-gray-50 [&]:s-rounded-full dark:s-border-white-300"
+              shape="pill"
+              className="hover:s-bg-gray-50 dark:s-border-white-300"
               prefixIcon={Minus}
               onPress={() => setAdults((x) => (x > 1 ? x - 1 : x))}
             />
@@ -164,7 +165,8 @@ export const Example: Story = {
               isSquare
               intent="secondary-outline"
               size="small"
-              className="hover:s-bg-gray-50 [&]:s-rounded-full dark:s-border-white-300"
+              shape="pill"
+              className="hover:s-bg-gray-50 dark:s-border-white-300"
               prefixIcon={Plus}
               onPress={() => setAdults((x) => x + 1)}
             />
@@ -180,7 +182,8 @@ export const Example: Story = {
               isSquare
               intent="secondary-outline"
               size="small"
-              className="hover:s-bg-gray-50 [&]:s-rounded-full dark:s-border-white-300"
+              shape="pill"
+              className="hover:s-bg-gray-50 dark:s-border-white-300"
               prefixIcon={Minus}
               onPress={() => setChildren((x) => (x > 0 ? x - 1 : x))}
             />
@@ -189,7 +192,8 @@ export const Example: Story = {
               isSquare
               intent="secondary-outline"
               size="small"
-              className="hover:s-bg-gray-50 [&]:s-rounded-full dark:s-border-white-300"
+              shape="pill"
+              className="hover:s-bg-gray-50 dark:s-border-white-300"
               prefixIcon={Plus}
               onPress={() => setChildren((x) => x + 1)}
             />
@@ -205,7 +209,8 @@ export const Example: Story = {
               isSquare
               intent="secondary-outline"
               size="small"
-              className="hover:s-bg-gray-50 [&]:s-rounded-full dark:s-border-white-300"
+              shape="pill"
+              className="hover:s-bg-gray-50 dark:s-border-white-300"
               prefixIcon={Minus}
               onPress={() => setBabies((x) => (x > 0 ? x - 1 : x))}
             />
@@ -214,7 +219,8 @@ export const Example: Story = {
               isSquare
               intent="secondary-outline"
               size="small"
-              className="hover:s-bg-gray-50 [&]:s-rounded-full dark:s-border-white-300"
+              shape="pill"
+              className="hover:s-bg-gray-50 dark:s-border-white-300"
               prefixIcon={Plus}
               onPress={() => setBabies((x) => x + 1)}
             />
