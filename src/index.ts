@@ -119,3 +119,9 @@ export type { IToast as ISnackbar } from "./components/toast";
 
 export { Voucher } from "./components/voucher";
 export type { IVoucher } from "./components/voucher";
+
+export { Pagination } from "./components/pagination";
+export type { IPagination } from "./components/pagination";
+
+export { Dropzone } from "./components/dropzone";
+export type { IDropzone, IFileUpload } from "./components/dropzone";

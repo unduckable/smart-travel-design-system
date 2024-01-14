@@ -8,7 +8,7 @@ import { Group } from "react-aria-components";
 import { Button } from "../button";
 import { Icon } from "../icon";
 
-export interface IDialog extends VariantProps<typeof paginationClasses>, TestProps {
+export interface IPagination extends VariantProps<typeof paginationClasses>, TestProps {
   defaultValue?: number;
   value?: number;
   total: number;
@@ -18,7 +18,7 @@ export interface IDialog extends VariantProps<typeof paginationClasses>, TestPro
 
 const paginationClasses = cva([]);
 
-export const Pagination: FC<IDialog> = forwardRef<HTMLDivElement, IDialog>((props, ref) => {
+export const Pagination: FC<IPagination> = forwardRef<HTMLDivElement, IPagination>((props, ref) => {
   const { total, size, defaultValue, value, onChange } = props;
   const [currentPage, setCurrentPage] = useState(defaultValue);
   const [pages, setPages] = useState([]);
