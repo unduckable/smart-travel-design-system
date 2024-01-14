@@ -1,35 +1,83 @@
 import { Canvas, Controls, Meta } from "@storybook/blocks";
-import * as PopoverStories from "./_.stories";
+import * as Stories from "./_.stories";
 
-<Meta of={PopoverStories} />
+import image120 from "../../assets/media/image120.png";
+import image121 from "../../assets/media/image121.png";
+import image122 from "../../assets/media/image122.png";
+import image123 from "../../assets/media/image123.png";
+import image124 from "../../assets/media/image124.png";
+import image125 from "../../assets/media/image125.png";
+
+<Meta of={Stories} />
 
 # Popover
 
 - [Overview](#overview)
 - [Props](#props)
+- [Usage](#usage)
 - [Variants](#variants)
-- [Tips](#tips)
+- [Do’s and don’ts](#dos--donts)
 - [Examples](#examples)
 
 ## Overview
 
-A popover is a dialog that focuses the user's attention exclusively on an information via a window that is overlaid on primary content.
+Popover cho phép user focus vào 1 action phải hoàn thành bằng cách hiện 1
+pop-up và chặn tầm nhìn của page hiện tại cho đến khi user hoàn thành
+hoặc hủy action. Popover được sử dụng cho những action ngắn và không
+thường xuyên xuất hiện.
 
-<Canvas of={PopoverStories.Default} />
+<Canvas of={Stories.Default} />
 
-## Props
+### Props
 
-<Controls of={PopoverStories.Default} />
+<Controls of={Stories.Default} />
+
+## Usage
+
+- Trên desktop Popover có thể xuất hiện ở 2 vị trí, chính giữa page (pop
+  up), hoặc từ mép bên phải của page (Drawer). Trên mobile Popover sẽ sử
+  dụng Popover của OS.
+
+- Chiều cao của Popover sẽ đi theo chiều cao của content chứa bên trong. Tối
+  đa = viewport với margin trên dưới = 40px. Bên trong có thể scroll.
+
+- Popover bắt buộc phải có Title và close button.
+
+- Popover có thể close bằng cách click ra ngoài, nhấn nút ESC, hoặc button
+  close.
 
 ## Variants
 
-## Tips
+### Popover with icon
 
-➡️ All popovers must have a title and a close button.  
-➡️ By default, Popover will be closed by: dragging down or the closing buttons.
+<img src={image120} />
+
+### Drawer
+
+<img src={image121} />
+
+### Max height
+
+<img src={image122} />
+
+### Header icon
+
+<img src={image123} />
+
+### Mobile
+
+Nhưng Popover có lượng content lớn sẽ lấy theo Popover system của OS
+
+<img src={image124} style={{ maxWidth: 375 }} />
+
+Nhưng Popover ngắn dọn dạng alert sẽ sử dụng dạng dialog
+
+<img src={image125} style={{ maxWidth: 375 }} />
+
+## Do's & Dont's
 
 ## Examples
 
-A popover with a title, body, and footer.
+A Popover with a title, body, and footer.
 
-<Canvas of={PopoverStories.GenericModal} />
+<Canvas of={Stories.GenericModal} />
