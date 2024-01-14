@@ -1,43 +1,76 @@
 import { Canvas, Controls, Meta } from "@storybook/blocks";
-import * as BadgeStories from './_.stories';
+import * as BadgeStories from "./_.stories";
 
-  <Meta of={BadgeStories} />
+<Meta of={BadgeStories} />
 
 # Badge
 
 - [Overview](#overview)
 - [Props](#props)
+- [Usage](#usage)
 - [Variants](#variants)
-- [Tips](#tips)
+- [Do’s and don’ts](#dos--donts)
 - [Examples](#examples)
 
 ## Overview
-Badges are compact elements that represent an input, attribute, or action. They may display text, icons, or both.
 
-  <Canvas of={BadgeStories.Default} />
+Badge dùng để gắn nhãn, phân loại đối tượng, hoặc có thể dùng như một shortcut để truy cập vào những nội dung có tính liên quan.
 
+<Canvas of={BadgeStories.Default} />
 
 ## Props
-  <Controls of={BadgeStories.Default} />
 
+<Controls of={BadgeStories.Default} />
+
+## Usage
+
+- Badge nên có label ngắn ngọn, súc tích tối đa 5 từ.
+
+- Giữa các badge cạnh nhau, sử dụng spacing 4 hoặc 8px tùy không gian xung quanh.
+
+- Sử dụng badge khi muôn thể hiện các tính năng chung của một nhóm đối tượng dưới dạng compact.
 
 ## Variants
 
+### Text only
+
+<img
+  src="/src/assets/media/image33.png"
+  class="s-mb-4"
+  style={{ maxWidth: 120 }}
+/>
+
+### With icon
+
+<img
+  src="/src/assets/media/image34.png"
+  class="s-mb-4"
+  style={{ maxWidth: 400 }}
+/>
+
+### With avatar
+
+<img
+  src="/src/assets/media/image35.png"
+  class="s-mb-4"
+  style={{ maxWidth: 400 }}
+/>
+
 ### Colors
-  <Canvas of={BadgeStories.Colors} />
 
-### Shapes
-  <Canvas of={BadgeStories.Shapes} />
+Color của badge có thể dùng để thể hiện trạng thái (vd: warning, success...) hoặc có thể chỉ dùng để highlight feature.
 
-### Outlines
-  <Canvas of={BadgeStories.Outlines} />
+<img
+  src="/src/assets/media/image36.png"
+  class="s-mb-4"
+  style={{ maxWidth: 400 }}
+/>
 
-### With icons
-  <Canvas of={BadgeStories.Icons} />
-
-## Tips 
-➡️ Badges represent a complex piece of information in compact form, such as an entity (person, place, or thing) or status. They enable user input and verify that input by converting text into badges.  
-➡️ Use badges when content is mapped to multiple categories, and the user needs a way to differentiate between them.  
+## Do's & Dont's
 
 ## Examples
 
+<Canvas of={BadgeStories.Colors} />
+<Canvas of={BadgeStories.Shapes} />
+<Canvas of={BadgeStories.Outlines} />
+<Canvas of={BadgeStories.Icons} />

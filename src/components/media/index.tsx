@@ -7,21 +7,34 @@ import React, { FC, ReactNode, forwardRef } from "react";
 import { Button } from "../button";
 
 export interface IMedia extends VariantProps<typeof mediaClasses>, TestProps {
-  type: "video" | "image";
+  className?: string;
   src: string;
   alt: string;
 }
 
-const mediaClasses = cva(["st-media"]);
+const mediaClasses = cva([], {
+  variants: {
+    type: {
+      video: "s-h-full s-w-full s-object-contain",
+      image: "s-w-full",
+    },
+    ratio: {
+      landscape: "s-aspect-[4/3]",
+      wide: "s-aspect-video",
+      square: "s-aspect-square",
+      portrait: "s-aspect-[3/4]",
+    },
+  },
+});
 
 export const Media: FC<IMedia> = forwardRef<HTMLDivElement, IMedia>((props, ref) => {
-  const { type, src, alt } = props;
+  const { className, type, src, alt, ratio } = props;
   return (
-    <div className="s-group s-relative s-aspect-square s-w-40 s-overflow-hidden s-rounded-md">
+    <div className={`st-media s-group s-relative s-overflow-hidden s-rounded-md ${className}`}>
       {type === "image" ? (
-        <img src={src} alt={alt} className="s-h-full s-w-full s-object-contain" />
+        <img src={src} alt={alt} className={mediaClasses({ type, ratio })} />
       ) : (
-        <video src={src} className="s-h-full s-w-full s-object-contain" muted controls />
+        <video src={src} className={mediaClasses({ type, ratio })} muted controls />
       )}
       <Button
         intent="tertiary"
@@ -45,6 +58,7 @@ export const Media: FC<IMedia> = forwardRef<HTMLDivElement, IMedia>((props, ref)
 
 Media.defaultProps = {
   type: "image",
+  ratio: "square",
   src: "",
   alt: "",
 };

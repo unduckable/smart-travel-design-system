@@ -14,13 +14,13 @@ type Story = StoryObj<typeof Tooltip>;
 export const Default: Story = {
   args: {
     content: "This is a tooltip",
-    children: <Button className="s-ml-[100px]">Hover me</Button>,
+    children: <Button className="">Hover me</Button>,
   },
 };
 export const Positions: Story = {
   render: () => (
     <div className="s-flex s-flex-col s-gap-4">
-      <div className="s-flex s-gap-4 s-justify-center">
+      <div className="s-flex s-justify-center s-gap-4">
         <Tooltip content="This is top left" placement="top left">
           <Button>Top Left</Button>
         </Tooltip>
@@ -31,7 +31,7 @@ export const Positions: Story = {
           <Button>Top Right</Button>
         </Tooltip>
       </div>
-      <div className="s-flex s-gap-4 s-justify-center">
+      <div className="s-flex s-justify-center s-gap-4">
         <Tooltip content="This is bottom left" placement="bottom left">
           <Button>Bottom Left</Button>
         </Tooltip>

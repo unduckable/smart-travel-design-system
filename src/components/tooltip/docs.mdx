@@ -1,39 +1,52 @@
 import { Canvas, Controls, Meta } from "@storybook/blocks";
-import * as TooltipStories from './_.stories';
+import * as Stories from "./_.stories";
 
-  <Meta of={TooltipStories} />
+<Meta of={Stories} />
 
-# Tooltip 
+# Tooltip
 
 - [Overview](#overview)
 - [Props](#props)
+- [Usage](#usage)
 - [Variants](#variants)
-- [Tips](#tips)
+- [Do’s and don’ts](#dos--donts)
 - [Examples](#examples)
 
 ## Overview
-Tooltips show contextual help or information about specific components when a user hovers on them.
 
-  <Canvas of={TooltipStories.Default} />
+Tooltip dùng để hiển thị thông tin bổ trợ cho một component cụ thể, xuất
+hiện khi user hover (desktop) hoặc (tap) mobile lên trigger points.
 
+<Canvas of={Stories.Default} />
 
-## Props
+### Props
 
-  <Controls of={TooltipStories.Default} />
+<Controls of={Stories.Default} />
 
+## Usage
+
+- Không được chứa những thông tin hoặc hướng dẫn bắt buộc người dùng phải
+  thực hiện, hoặc những thông tin quan trọng user không thể bỏ qua.
+- Sử dụng khi thông tin bổ trợ quá dài để thêm vào component chính, hoặc
+  những thông tin user chỉ cần đọc một lần.
 
 ## Variants
 
-### Positions
-  <Canvas of={TooltipStories.Positions} />
+**Normal**
 
-### Open/Close Delay
-  <Canvas of={TooltipStories.Delay} />
+<img src="/src/assets/media/image97.png" style={{ maxWidth: 500 }} />
 
+**With trigger icon**
 
-## Tips 
-➡️ Should never contain critical information that a user would absolutely need to proceed.  
-➡️ Use when the description content would be too much information to include inline or create too much clutter. For example, when expert users have seen it many times.  
+<img src="/src/assets/media/image98.png" style={{ maxWidth: 500 }} />
+
+**Positions**
+
+<img src="/src/assets/media/image99.png" style={{ maxWidth: 500 }} />
+
+## Do's & Dont's
 
 ## Examples
 
+<Canvas of={Stories.Positions} />
+<Canvas of={Stories.Delay} />

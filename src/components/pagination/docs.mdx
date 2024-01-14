@@ -1,0 +1,57 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as Stories from "./_.stories";
+
+<Meta of={Stories} />
+
+# Pagination
+
+- [Overview](#overview)
+- [Props](#props)
+- [Usage](#usage)
+- [Variants](#variants)
+- [Do’s and don’ts](#dos--donts)
+- [Examples](#examples)
+
+## Overview
+
+Pagination dùng để phân trang khi lượng nội dung của một section quá lớn
+gây ảnh hưởng tới những nội dung khác ở phía dưới.
+
+<Canvas of={Stories.Default} />
+
+### Props
+
+<Controls of={Stories.Default} />
+
+## Usage
+
+Pagination chỉ dùng khi có 2 page trở lên.
+
+Pagination cần thể hiện rõ ràng cho user thấy họ đang ở vị trí nào, và
+có thể navigate qua các page khác bằng cách click vào page tương ứng.
+
+Tùy từng diện tích hiển thị, sử dụng size của pagination cho phù hợp.
+
+## Variants
+
+### Item states
+
+<img src="/src/assets/media/image150.png" style={{ maxWidth: 300 }} />
+
+### Small
+
+<img src="/src/assets/media/image151.png" style={{ maxWidth: 180 }} />
+
+### Medium
+
+<img src="/src/assets/media/image152.png" style={{ maxWidth: 300 }} />
+
+### Large
+
+<img src="/src/assets/media/image149.png" style={{ maxWidth: 400 }} />
+
+## Do's & Dont's
+
+## Examples
+
+<Canvas of={Stories.Examples} />

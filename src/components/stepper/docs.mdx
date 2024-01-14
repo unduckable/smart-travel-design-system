@@ -1,28 +1,62 @@
 import { Canvas, Controls, Meta } from "@storybook/blocks";
-import * as StepperStories from "./_.stories";
+import * as Stories from "./_.stories";
 
-<Meta of={StepperStories} />
+<Meta of={Stories} />
 
-# Stepper
+# Processing Steps
 
 - [Overview](#overview)
 - [Props](#props)
+- [Usage](#usage)
 - [Variants](#variants)
+- [Do’s and don’ts](#dos--donts)
 - [Examples](#examples)
 
 ## Overview
-A stepper component is used to indicate progress through a multi-step process.
-  <Canvas of={StepperStories.Default} />
 
-## Props
-  <Controls of={StepperStories.Default} />
+Processing steps thể hiện tiến độ của một nhiệm vụ mà user đang phải
+thực hiện. Có thể dùng để navigate giữa các bước của nhiệm vụ.
+
+<Canvas of={Stories.Default} />
+
+### Props
+
+<Controls of={Stories.Default} />
+
+## Usage
+
+Processing steps chỉ dùng khi có từ 3 bước trở lên.
+
+Cần thể hiện rõ user đang ở bước thứ mấy, những bước nào đã hoàn thành
+và chưa hoàn thành. Có thể navigate về những bước đã hoàn thành bằng
+cách select vào bước đó.
+
+Nếu nhiêm vụ cần nhiều hơn 5 bước, nên cân nhắc làm đơn giản quá trình
+thực hiện hoặc có thể tách ra thành những nhiệm vụ khác nhau.
+
+Đối với layout steps dạng vertical, có thể thêm description giải thích
+từng steps và kèm theo action.
 
 ## Variants
 
-### Horizontal
-  <Canvas of={StepperStories.Horizontal} />
+### States
+
+<img src="/src/assets/media/image163.png" style={{ maxWidth: 600 }} />
 
 ### Vertical
-  <Canvas of={StepperStories.Vertical} />
+
+<img src="/src/assets/media/image165.png" style={{ maxWidth: 400 }} />
+
+### Horizontal
+
+<img src="/src/assets/media/image164.png" style={{ maxWidth: 600 }} />
+
+## Do's & Dont's
+
+### Horizontal
 
 ## Examples
+
+<Canvas of={Stories.Horizontal} />
+
+<Canvas of={Stories.Vertical} />

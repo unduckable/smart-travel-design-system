@@ -1,0 +1,53 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as Stories from "./_.stories";
+
+<Meta of={Stories} />
+
+# Media
+
+- [Overview](#overview)
+- [Props](#props)
+- [Usage](#usage)
+- [Variants](#variants)
+- [Do’s and don’ts](#dos--donts)
+
+## Overview
+
+Media thể hiện cho image hoặc video được upload và hiển thị trên hệ
+thống của Smart Travel, tùy từng môi trường media sẽ có thể có những
+action tương ứng khác nhau.
+
+<Canvas of={Stories.Default} />
+
+### Props
+
+<Controls of={Stories.Default} />
+
+## Usage
+
+Đối với media do user upload lên sẽ cung cấp cho user những quyền như
+xóa, drag and drop để thay đổi vị trí.
+
+Đối với media không phải do user upload lên có thể cung cấp những action
+như like hoặc share.
+
+Media nên tuân theo những ratio phổ biến như: Square (1:1), Landscape
+(4:3), Portrait (3:4), Wide (16:9)
+
+Click vào media sẽ mở full screen, giữ nguyên actions.
+
+## Variants
+
+### States
+
+<img src="/src/assets/media/image146.png" style={{ maxWidth: 400 }} />
+
+### Ratio
+
+<img src="/src/assets/media/image147.png" style={{ maxWidth: 460 }} />
+
+## Do's & Dont's
+
+## Examples
+
+<Canvas of={Stories.Examples} />

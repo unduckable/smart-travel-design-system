@@ -3,41 +3,76 @@ import * as Stories from "./_.stories";
 
 <Meta of={Stories} />
 
-# Search master
+# Search Master
 
 - [Overview](#overview)
 - [Props](#props)
+- [Usage](#usage)
 - [Variants](#variants)
-- [Tips](#tips)
+- [Do’s and don’ts](#dos--donts)
 - [Examples](#examples)
 
 ## Overview
 
-A search master is used to display filters & inputs used to search flights, hotels.
+Search master chứa những trường input cụ thể liên quan đến mục tiêu
+chính của sản phẩm giúp user có thể tìm thấy nội dung cần thiết một cách
+nhanh chóng. Xuất hiện ở xuyên suốt các function chính.
 
 <Canvas of={Stories.Default} />
 
-## Props
+### Props
 
 <Controls of={Stories.Default} />
 
+## Usage
+
+Search master cần bao gồm tất cả những input cần thiết để filters nhanh
+theo nhu cầu của user.
+
+User có thể tự input hoặc sử dụng bộ suggestion dạng auto complete để
+trải nghiệm tìm kiếm được dễ dàng nhất.
+
+Sử dụng bộ dropdown list riêng phù hợp với ngữ cảnh sử dụng của user.
+
 ## Variants
 
-### Hotel search master
+### States
 
-<Canvas of={Stories.Hotel} />
+<img src="/src/assets/media/image167.png" />
 
-### Flight search master
+### Droplist
 
-<Canvas of={Stories.Flight} />
+**Location search**
 
-### Compact variants
+<img src="/src/assets/media/image168.png" />
 
-<Canvas of={Stories.CompactHotel} />
+**Date picker**
 
-<Canvas of={Stories.CompactFlight} />
+<img src="/src/assets/media/image169.png" />
 
-## Tips
+**Guests select**
+
+<img src="/src/assets/media/image170.png" />
+
+### Type
+
+**Hotel**
+
+<img src="/src/assets/media/image171.png" />
+
+**Flight**
+
+<img src="/src/assets/media/image172.png" />
+
+### Inline
+
+<img src="/src/assets/media/image172.png" />
+
+### Compact
+
+<img src="/src/assets/media/image173.png" style={{ maxWidth: 370 }} />
+
+## Do's & Dont's
 
 ## Examples
 

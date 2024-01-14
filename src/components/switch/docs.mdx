@@ -1,49 +1,59 @@
 import { Canvas, Controls, Meta } from "@storybook/blocks";
-import * as SwitchStories from "./_.stories";
+import * as Stories from "./_.stories";
 
-<Meta of={SwitchStories} />
+<Meta of={Stories} />
 
 # Switch
 
 - [Overview](#overview)
 - [Props](#props)
+- [Usage](#usage)
 - [Variants](#variants)
-- [Tips](#tips)
+- [Do’s and don’ts](#dos--donts)
 - [Examples](#examples)
 
 ## Overview
 
-A switch allows a user to turn a setting on or off.
+Cho phép user bật hoặc tắt 1 tính năng cụ thể hoặc có thể dùng để quick
+filter.
 
-<Canvas of={SwitchStories.Default} />
+<Canvas of={Stories.Default} />
 
-## Props
+### Props
 
-<Controls of={SwitchStories.Default} />
+<Controls of={Stories.Default} />
+
+## Usage
+
+- Sử dụng switch khi muốn bật hoặc tắt ngay lập tức 1 tính năng nào đó.
+- Dùng tooltip để chỉ thị cho user chuyện gì sẽ xảy ra khi trigger switch.
+- Để giao tiếp tốt hơn với user, có thể sử dụng label kèm theo switch.
 
 ## Variants
 
-### States
+**State**
 
-<Canvas of={SwitchStories.States} />
+<img src="/src/assets/media/image89.png" style={{ maxWidth: 400 }} />
 
-### Disabled
+**Label right**
 
-<Canvas of={SwitchStories.Disabled} />
+<img src="/src/assets/media/image88.png" style={{ maxWidth: 300 }} />
 
-### With labels
+**Label left**
 
-<Canvas of={SwitchStories.WithLabel} />
+<img src="/src/assets/media/image90.png" style={{ maxWidth: 300 }} />
 
-### Switch group
+**Switch group**
 
-<Canvas of={SwitchStories.Group} />
+<img src="/src/assets/media/image91.png" style={{ maxWidth: 600 }} />
 
-## Tips
-
-➡ Use toggles when your intent is to turn something on or off instantly.  
-➡ Toggle can either be selected or not selected. They cannot be in an indeterminate state (unlike
-checkboxes  
-➡ Use labels such as “on” and “off” or “enable” and “disable” to communicate the state of the toggle.
+## Do's & Dont's
 
 ## Examples
+
+<Canvas of={Stories.States} />
+<Canvas of={Stories.Disabled} />
+
+<Canvas of={Stories.WithLabel} />
+
+<Canvas of={Stories.Group} />

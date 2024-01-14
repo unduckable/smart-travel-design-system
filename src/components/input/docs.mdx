@@ -1,56 +1,67 @@
 import { Canvas, Controls, Meta } from "@storybook/blocks";
-import * as InputStories from "./_.stories";
+import * as Stories from "./_.stories";
 
-<Meta of={InputStories} />
+<Meta of={Stories} />
 
 # Input
 
 - [Overview](#overview)
 - [Props](#props)
+- [Usage](#usage)
 - [Variants](#variants)
-- [Tips](#tips)
+- [Do’s and don’ts](#dos--donts)
 - [Examples](#examples)
 
 ## Overview
 
-An input field includes a label and a text field users can type text into. They typically appear in forms and dialogs.
+Input field bao gồm label và một text field để user có thể nhập thông
+tin. Thường xuất hiện trong form và dialogs.
 
-<Canvas of={InputStories.Default} />
+<Canvas of={Stories.Default} />
 
-## Props
+### Props
 
-<Controls of={InputStories.Default} />
+<Controls of={Stories.Default} />
+
+## Usage
+
+- Luôn sử dụng placeholder trong input field, placeholder cần có dạng sát
+  với content thật mà user sẽ nhập (vd: Input name thì placeholder nên là
+  "Nguyễn Văn A")
+
+- Nếu trường thông tin yêu cầu giới hạn kí tự thì phải có character
+  counts.
+
+- Input field sẽ validate ngay khi user blur khỏi input.
+
+- Content bên trong input field không xuống dòng, nếu vượt quá width của
+  input sẽ truncate.
 
 ## Variants
 
-Input fields can be customized with many addons.
+**State**
 
-### Left addons
+<img src="/src/assets/media/image73.png" style={{ maxWidth: 500 }} />
 
-<Canvas of={InputStories.LeftAddon} />
+**Validation**
 
-### Right addons
+<img src="/src/assets/media/image74.png" style={{ maxWidth: 500 }} />
 
-<Canvas of={InputStories.RightAddon} />
+**Types**
 
-### External
+<img src="/src/assets/media/image75.png" />
 
-<Canvas of={InputStories.External} />
-
-### State - Disabled
-
-<Canvas of={InputStories.Disabled} />
-
-### State - Invalid
-
-<Canvas of={InputStories.Invalid} />
-
-## Tips
-
-➡️ Always use placeholder in input field  
-➡️ Icons can be used to message alerts as well. Pair them with error messages to provide redundant alerts.  
-➡️ Character or word counters should be used if there is a character or word limit.
+## Do's & Dont's
 
 ## Examples
 
-<Canvas of={InputStories.Examples} />
+<Canvas of={Stories.LeftAddon} />
+<Canvas of={Stories.RightAddon} />
+
+<Canvas of={Stories.External} />
+
+<Canvas of={Stories.Disabled} />
+
+<Canvas of={Stories.Invalid} />
+
+<Canvas of={Stories.Examples} />

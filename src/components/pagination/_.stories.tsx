@@ -13,8 +13,16 @@ const meta: Meta<typeof Pagination> = {
 export default meta;
 
 type Story = StoryObj<typeof Pagination>;
-export const Default: Story = {
-  parameters: {
-    docs: { source: { type: "code" } },
+export const Default: Story = {};
+
+export const Examples: Story = {
+  render() {
+    return (
+      <div className="s-flex s-flex-col s-gap-4">
+        <Pagination total={10} onChange={() => {}} size="small" />
+        <Pagination total={10} onChange={() => {}} size="medium" />
+        <Pagination total={10} onChange={() => {}} size="large" />
+      </div>
+    );
   },
 };

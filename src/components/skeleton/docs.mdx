@@ -7,19 +7,26 @@ import * as SkeletonStories from "./_.stories";
 
 - [Overview](#overview)
 - [Props](#props)
+- [Usage](#usage)
 - [Variants](#variants)
-- [Tips](#tips)
-- [Examples](#examples)
+- [Do’s and don’ts](#dos--donts)
 
 ## Overview
 
-A skeleton loading component indicates content and ui loading that will appear after its loaded.
+Skeleton là một dạng feedback và communicate từ sản phẩm tới user, thể
+hiện một hành động nào đó đang trong quá trình thực hiện và khuyến khích
+user chờ đợi.
 
 <Canvas of={SkeletonStories.Default} />
 
 ## Props
 
 <Controls of={SkeletonStories.Default} />
+
+## Usage
+
+- Khi cả page hoặc một phần lớn của page (section) đang trong trạng thái
+  loading thì dùng skeleton và linear loader để chỉ thị.
 
 ## Variants
 
@@ -31,9 +38,4 @@ A skeleton loading component indicates content and ui loading that will appear a
 
 <Canvas of={SkeletonStories.Sizes} />
 
-## Tips
-
-➡️ Mimic the user interface that is going to be loaded as much as possible  
-➡️ Animation on the skeleton is a repeating color pulse should move from left to right to indicate the lading state
-
-## Examples
+## Do's & Dont's

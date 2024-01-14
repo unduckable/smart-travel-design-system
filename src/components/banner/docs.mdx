@@ -3,7 +3,7 @@ import * as Stories from "./_.stories";
 
 <Meta of={Stories} />
 
-# Carousel
+# Banner
 
 - [Overview](#overview)
 - [Props](#props)
@@ -14,9 +14,9 @@ import * as Stories from "./_.stories";
 
 ## Overview
 
-Carousel là một dạng layout trong đó chứa nhiều item như card, image,
-video, text content cho phép user có thể scroll hoặc click để move out
-hoặc in viewport.
+Banner là một dạng container, dùng để chứa media promotion như image.
+Trên mobile bản thân banner cũng được coi là một trigger point giống như
+button.
 
 <Canvas of={Stories.Default} />
 
@@ -26,24 +26,29 @@ hoặc in viewport.
 
 ## Usage
 
-Trên mobile, carousel chỉ nên có tối đa 2 item nằm hoàn toàn trong
-viewport.
+- Banner có thể chứa label và help text.
 
-Các item nằm trong carousel phải cùng 1 loại.
+- Có thể chứa những dạng content như image, video.
 
-Khi scroll có hiệu ứng snap item theo page.
+- Banner collection có thể có dạng grid, list, hoặc carousel.
 
-Cần có easing để chuyển động khi scroll được mượt mà.
+- Tối đa có 2 banner trên cùng 1 row nếu ở dạng grid.
+
+- Ở dạng list hoặc đứng một mình, width của banner sẽ bằng với view port.
 
 ## Variants
 
-### First page
+### Single banner
 
-<img src="/src/assets/media/image160.png" style={{ maxWidth: 400 }} />
+<img src="/src/assets/media/image178.png" style={{ maxWidth: 400 }} />
 
-### Last page
+### Carousel banner
 
-<img src="/src/assets/media/image161.png" style={{ maxWidth: 400 }} />
+<img src="/src/assets/media/image179.png" style={{ maxWidth: 400 }} />
+
+### Grid banner
+
+<img src="/src/assets/media/image180.png" style={{ maxWidth: 400 }} />
 
 ## Do's & Dont's
 
@@ -54,12 +59,6 @@ Cần có easing để chuyển động khi scroll được mượt mà.
 Snap mode is the default mode for the carousel. It snaps to the nearest item when the user stops scrolling.
 
 <Canvas of={Stories.Snap} />
-
-### Free mode
-
-Free mode allows the user to scroll to any position in the carousel.
-
-<Canvas of={Stories.Free} />
 
 ### Slides per view
 

@@ -3,40 +3,84 @@ import * as AlertStories from './_.stories';
 
   <Meta of={AlertStories} />
 
-# Button
+# Alert
 
 - [Overview](#overview)
 - [Props](#props)
+- [Usage](#usage)
 - [Variants](#variants)
-- [Tips](#tips)
+- [Do’s and don’ts](#dos--donts)
 - [Examples](#examples)
 
 ## Overview
 
-Buttons allow users to trigger an action or event with a single click.
-For example, you can use a button for allowing the functionality of submitting a form, opening a dialog, canceling an action,
-or performing a delete operation.
+Alert được dùng để thông báo tới người dùng về những thay đổi quan trọng liên quan tới sản phẩm.
 
+Đây là một trong những phương pháp để sản phẩm truyền đạt nội dung tới người dùng nổi bật nhất.
 
-  <Canvas of={AlertStories.Default} />
+<Canvas of={AlertStories.Default} />
 
 ## Props
 
-  <Controls of={AlertStories.Default} />
+<Controls of={AlertStories.Default} />
 
-### Type
- 
+## Usage
+
+Alert là nên thông báo rõ ràng và ngắn gọn về nội dung và có action giúp cho user phản hồi lại thông tin.
+
+Alert chỉ nên có tối đa 2 actions và có thể có hoặc không close button.
+
+Alert nằm trên cùng của screen và sẽ push các content khác phía dưới nó xuống.
+
+## Variants
+
+### Expanded
+
+Dạng alert này để thể hiện những thông báo chứa nhiều thông tin và bắt buộc user phải có action, và trong trường hợp cần 2 action button. Trong trường hợp có 2 button thì 2 button phải có type khác nhau tùy theo độ quan trọng của action.
+
+<img src="/src/assets/media/image17.png" class="s-mb-4" style={{maxWidth: 500}} />
+
+### Inline
+
+Dạng alert này để thể hiện những thông báo ngắn gọn, có thể có hoặc có 1 action.
+
+<img src="/src/assets/media/image18.png" class="s-mb-4" style={{maxWidth: 500}} />
+
+### Alert colors
+
+Có 4 màu của alert được sử dụng trong những tình huống thông tin khác nhau: Neutral (gray), Primary (blue), Positive (green), Warning (yello), Negative (red).
+
+
+<img src="/src/assets/media/image18.png" class="s-mb-4" style={{maxWidth: 500}} />
+<img src="/src/assets/media/image19.png" class="s-mb-4" style={{maxWidth: 500}} />
+<img src="/src/assets/media/image20.png" class="s-mb-4" style={{maxWidth: 500}} />
+<img src="/src/assets/media/image21.png" class="s-mb-4" style={{maxWidth: 500}} />
+<img src="/src/assets/media/image22.png" class="s-mb-4" style={{maxWidth: 500}} />
+<img src="/src/assets/media/image23.png" class="s-mb-4" style={{maxWidth: 500}} />
+
+## Do's & Don'ts
+
+<table style={{ width: '100%' }}>
+  <tr>
+    <th style={{ backgroundColor: '#B2EECC' }}>Do</th>
+    <th style={{ backgroundColor: '#FBB1C4' }}>Don't</th>
+  </tr>
+  <tr>
+    <td><img src="/src/assets/media/image24.png" width="100%" height="0.21875in" /> Sử dụng Alert cho thông báo hệ thống, tiến trình chạy ngầm, cập nhật mới.</td>
+    <td><img src="/src/assets/media/image25.png" width="100%" height="0.21875in" /> Không sử dụng Alert để thông báo cho người dùng về một hành động mà họ vừa thực hiện. Sử dụng Toast để làm việc đó.</td>
+  </tr>
+  <tr>
+    <td><img src="/src/assets/media/image26.png" width="100%" height="0.21875in" /> Sử dụng các màu đã được quy định sẵn từ trước theo mục đích sử dụng.</td>
+    <td><img src="/src/assets/media/image27.png" width="100%" height="0.21875in" /> Không sử dụng màu khác theo ý muốn.</td>
+  </tr>
+</table>
+
+## Examples 
+
   <Canvas of={AlertStories.Type} />
-
-### Color
 
   <Canvas of={AlertStories.Color} />
 
-### Actions
-
   <Canvas of={AlertStories.Actions} />
 
-### Dismission
-
   <Canvas of={AlertStories.Dismission} />
-

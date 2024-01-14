@@ -1,0 +1,50 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as Stories from "./_.stories";
+
+<Meta of={Stories} />
+
+# Chips Selection
+
+## Overview
+
+- [Overview](#overview)
+- [Props](#props)
+- [Usage](#usage)
+- [Variants](#variants)
+- [Do’s and don’ts](#dos--donts)
+- [Examples](#examples)
+
+Chips giúp user có thể nhập thông tin, ra quyết định hoặc filter
+content.
+
+<Canvas of={Stories.Default} />
+
+### Props
+
+<Controls of={Stories.Default} />
+
+## Usage
+
+- Sử dụng chip để thể hiện các options của một ngữ cảnh cụ thể.
+- Chip có thể dưới dạng single selection hoặc multiple selection.
+- Chỉ sử dụng chip trong 1 group có từ 2 options trở lên.
+
+## Variants
+
+**State**
+
+<img src="/src/assets/media/image101.png" style={{ maxWidth: 500 }} />
+
+**Label only**
+
+<img src="/src/assets/media/image102.png" style={{ maxWidth: 500 }} />
+
+**Label with icon**
+
+<img src="/src/assets/media/image103.png" style={{ maxWidth: 500 }} />
+
+**With help text**
+
+<img src="/src/assets/media/image104.png" style={{ maxWidth: 500 }} />
+
+## Do's & Dont's

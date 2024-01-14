@@ -1,0 +1,69 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as Stories from "./_.stories";
+
+<Meta of={Stories} />
+
+# Floating Button
+
+- [Overview](#overview)
+- [Props](#props)
+- [Usage](#usage)
+- [Variants](#variants)
+- [Do’s and don’ts](#dos--donts)
+- [Examples](#examples)
+
+## Overview
+
+Floating button là loại button được dùng cho những action quan trọng, người dùng có thể trigger ở bất cứ vị trí nào trên trang.
+
+<Canvas of={Stories.Default} />
+
+## Usage
+
+- Floating button có thể chỉ có icon hoặc label
+- Floating button có thể là 1 action trực tiếp hoặc trigger để mở ra popover chứa những sub action khác
+- Nội dung của floating button cần ngắn ngọn đơn giản
+- Nếu floating button dạng icon thì bắt buộc phải kèm theo tooltip khi hover
+- Floating button có vị trí cố định ở trên trang, góc trái, phải hoặc giữa ở cuối viewport đối với mobile, góc phải bên dưới đối với desktop. Spacing tối thiểu của floating button và mép của viewport = 24px
+- Có 2 color của floating button là primary và gray, tùy theo mức độ quan trọng của action sẽ lựa chọn loại button cho phù hợp.
+
+## Variants
+
+### Size
+
+<img
+  src="/src/assets/media/image52.png"
+  class="s-mb-4"
+  style={{ maxWidth: 400 }}
+/>
+
+### Button with label
+
+<img
+  src="/src/assets/media/image53.png"
+  class="s-mb-4"
+  style={{ maxWidth: 250 }}
+/>
+
+### Icon only
+
+<img
+  src="/src/assets/media/image54.png"
+  class="s-mb-4"
+  style={{ maxWidth: 200 }}
+/>
+
+### Disabled
+
+<img
+  src="/src/assets/media/image55.png"
+  class="s-mb-4"
+  style={{ maxWidth: 200 }}
+/>
+
+## Do's and Dont's
+
+## Examples
+
+<Canvas of={Stories.Icon} />
+<Canvas of={Stories.Group} />

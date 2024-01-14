@@ -35,7 +35,7 @@ const dropzoneClasses = cva(
   [
     "st-dropzone",
     "s-relative s-overflow-hidden s-flex s-flex-col s-gap-4 s-items-center s-justify-center s-text-gray-500",
-    "s-rounded-lg s-bg-gray-50",
+    "s-rounded-lg s-bg-gray-50 dark:s-bg-white-100",
     "drop-target:s-border-blue-500",
   ],
   {
@@ -47,7 +47,8 @@ const dropzoneClasses = cva(
       },
       hasThumbnail: {
         true: "",
-        false: "s-border-[1px] s-border-gray-200 s-border-dashed s-h-[155px] hover:s-bg-gray-100 s-px-10",
+        false:
+          "s-border-[1px] s-border-gray-200 dark:s-border-white-200 s-border-dashed s-h-[155px] hover:s-bg-gray-100 dark:hover:s-bg-white-200 dark:hover:s-border-white-300 s-px-10",
       },
     },
     compoundVariants: [
@@ -144,7 +145,9 @@ export const Dropzone: FC<IDropzone> = forwardRef<HTMLDivElement, IDropzone>((pr
               <div
                 id="file-trigger"
                 className={`s-aspect-square s-w-40 s-items-center s-justify-center s-overflow-hidden s-rounded-md 
-                s-border-[1px] s-border-dashed s-border-gray-200 ${isDragging ? "s-hidden" : "s-flex"}`}
+                s-border-[1px] s-border-dashed s-border-gray-200 dark:s-border-white-200 ${
+                  isDragging ? "s-hidden" : "s-flex"
+                }`}
               >
                 <FileTrigger allowsMultiple={false} onSelect={onSelect}>
                   <Button
@@ -152,7 +155,7 @@ export const Dropzone: FC<IDropzone> = forwardRef<HTMLDivElement, IDropzone>((pr
                     shape="pill"
                     isSquare
                     prefixIcon={Upload}
-                    className="s-bg-white-900"
+                    className="s-bg-white-900 dark:s-border-white-300 dark:s-bg-transparent"
                   />
                 </FileTrigger>
               </div>
@@ -161,8 +164,14 @@ export const Dropzone: FC<IDropzone> = forwardRef<HTMLDivElement, IDropzone>((pr
         ) : (
           <>
             <FileTrigger allowsMultiple={type === "files" || type === "multiple-media"} onSelect={onSelect}>
-              <Button intent="secondary-outline" shape="pill" isSquare prefixIcon={Upload} className="s-bg-white-900" />
-              <Text className="s-text-sm s-font-normal">{placeholder}</Text>
+              <Button
+                intent="secondary-outline"
+                shape="pill"
+                isSquare
+                prefixIcon={Upload}
+                className="s-bg-white-900 dark:s-border-white-300 dark:s-bg-transparent"
+              />
+              <Text className="s-text-sm s-font-normal dark:s-text-white-500">{placeholder}</Text>
             </FileTrigger>
           </>
         )}

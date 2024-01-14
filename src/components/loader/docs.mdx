@@ -1,40 +1,56 @@
 import { Canvas, Controls, Meta } from "@storybook/blocks";
-import * as LoaderStories from "./_.stories";
+import * as Stories from "./_.stories";
 
-<Meta of={LoaderStories} />
+<Meta of={Stories} />
 
 # Loader
 
 - [Overview](#overview)
 - [Props](#props)
+- [Usage](#usage)
 - [Variants](#variants)
-- [Tips](#tips)
+- [Do’s and don’ts](#dos--donts)
 - [Examples](#examples)
+
+# Loader
 
 ## Overview
 
-A loader indicates to user waiting state.
+Loader là một dạng feedback và communicate từ sản phẩm tới user, thể
+hiện một hành động nào đó đang trong quá trình thực hiện và khuyến khích
+user chờ đợi.
 
-<Canvas of={LoaderStories.Default} />
+<Canvas of={Stories.Default} />
 
-## Props
+### Props
 
-<Controls of={LoaderStories.Default} />
+<Controls of={Stories.Default} />
+
+## Usage
+
+- Những phần nhỏ hơn thì dùng spinner (vd: button đang process, video đang
+  loading..).
+
+- Sử dụng spinner loader có size hợp lý với content đang được process.
 
 ## Variants
 
-### Spinning loader
+### Spinner
 
-<Canvas of={LoaderStories.Spinning} />
+<img src="/src/assets/media/image174.png" style={{ maxWidth: 200 }} />
 
 ### Linear loader
 
-<Canvas of={LoaderStories.Linear} />
+<img src="/src/assets/media/image175.png" style={{ maxWidth: 400 }} />
 
-## Tips
-
-➡️ Use this loader to load small parts of the system, not the whole pages.  
-➡️ Use sizes of loader in context to its position. The bigger the loading area gets, the bigger loader should be used.  
-➡️ Always place loader in context to the loading content.
+## Do's & Dont's
 
 ## Examples
+
+### Spinning loader
+
+<Canvas of={Stories.Spinning} />
+
+### Linear loader
+
+<Canvas of={Stories.Linear} />

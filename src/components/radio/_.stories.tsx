@@ -13,7 +13,7 @@ type Story = StoryObj<typeof Radio>;
 export const Default: Story = {
   decorators: [
     (Story) => (
-      <RadioGroup label="">
+      <RadioGroup label="Radio">
         <Story />
       </RadioGroup>
     ),

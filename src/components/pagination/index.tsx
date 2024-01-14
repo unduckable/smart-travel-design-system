@@ -12,16 +12,24 @@ export interface IPagination extends VariantProps<typeof paginationClasses>, Tes
   defaultValue?: number;
   value?: number;
   total: number;
-  size?: number;
+  size?: "small" | "medium" | "large";
   onChange: (page: number) => void;
 }
 
 const paginationClasses = cva([]);
 
+const pagesVisibleForSize = {
+  small: 0,
+  medium: 3,
+  large: 5,
+};
+
 export const Pagination: FC<IPagination> = forwardRef<HTMLDivElement, IPagination>((props, ref) => {
   const { total, size, defaultValue, value, onChange } = props;
   const [currentPage, setCurrentPage] = useState(defaultValue);
   const [pages, setPages] = useState([]);
+
+  const pagesVisible = pagesVisibleForSize[size];
 
   const handlePress = (page) => {
     if (page > 0 && page <= total) {
@@ -34,19 +42,19 @@ export const Pagination: FC<IPagination> = forwardRef<HTMLDivElement, IPaginatio
   const updatePages = useCallback(
     (page) => {
       const newPages = [page];
-      for (let i = 0; i < Math.floor(size / 2); i++) {
+      for (let i = 0; i < Math.floor(pagesVisible / 2); i++) {
         const first = newPages[0];
         const last = newPages[newPages.length - 1];
         if (first > 1) newPages.unshift(first - 1);
         if (last < total) newPages.push(last + 1);
       }
 
-      while (newPages.length < size && newPages[0] > 1) newPages.unshift(newPages[0] - 1);
-      while (newPages.length < size && newPages[newPages.length - 1] < total)
+      while (newPages.length < pagesVisible && newPages[0] > 1) newPages.unshift(newPages[0] - 1);
+      while (newPages.length < pagesVisible && newPages[newPages.length - 1] < total)
         newPages.push(newPages[newPages.length - 1] + 1);
       setPages(newPages);
     },
-    [size, total],
+    [pagesVisible, total],
   );
 
   useEffect(() => {
@@ -93,6 +101,6 @@ export const Pagination: FC<IPagination> = forwardRef<HTMLDivElement, IPaginatio
 Pagination.defaultProps = {
   defaultValue: 3,
   total: 10,
-  size: 5,
+  size: "medium",
   onChange: () => {},
 };

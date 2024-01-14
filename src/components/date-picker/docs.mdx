@@ -1,32 +1,59 @@
 import { Canvas, Controls, Meta } from "@storybook/blocks";
-import * as DatePickerStories from './_.stories';
+import * as Stories from "./_.stories";
 
-  <Meta of={DatePickerStories} />
+<Meta of={Stories} />
 
 # Date Picker
 
 - [Overview](#overview)
 - [Props](#props)
+- [Usage](#usage)
 - [Variants](#variants)
+- [Do’s and don’ts](#dos--donts)
+- [Examples](#examples)
 
 ## Overview
-A date picker allows users to select a date value or a date range.
-  <Canvas of={DatePickerStories.Default} />
 
+Date picker cho phép user chọn 1 hoặc một khoảng ngày tháng cụ thể.
 
-## Props
-  <Controls of={DatePickerStories.Default} />
+<Canvas of={Stories.Default} />
 
+### Props
+
+<Controls of={Stories.Default} />
+
+## Usage
+
+Date picker sẽ hiển thị cả ngày đã qua, hiện tại, và ngày trong tương
+lai.
+
+Chỉ thị rõ ràng những ngày quan trọng, ví dụ ngày hiện tại, ngày được
+lựa chọn, và ngày không thể chọn.
+
+Bám theo pattern chung của lịch vật lý.
 
 ## Variants
-### Single date
-  <Canvas of={DatePickerStories.Single} />
 
-### Date range
-  <Canvas of={DatePickerStories.Ranged} />
+### Range select
 
-### Highlighted dates & Unavailable dates
-  <Canvas of={DatePickerStories.Highlighted} />
+<img src="/src/assets/media/image116.png" style={{ maxWidth: 700 }} />
 
-### With Footer
-  <Canvas of={DatePickerStories.Footer} />
+### Single select
+
+<img src="/src/assets/media/image117.png" style={{ maxWidth: 350 }} />
+
+Range slider nằm trong popover ở desktop còn trên mobile sẽ nằm trong
+modal sheet khi user trigger vào date picker input.
+
+### Mobile
+
+<img src="/src/assets/media/image118.png" style={{ maxWidth: 250 }} />
+
+## Do's & Dont's
+
+## Examples
+
+<Canvas of={Stories.Single} />
+<Canvas of={Stories.Ranged} />
+<Canvas of={Stories.Highlighted} />
+<Canvas of={Stories.Footer} />

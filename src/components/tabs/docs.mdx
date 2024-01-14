@@ -1,34 +1,66 @@
-import { ArgTypes, Canvas, Controls, Meta } from "@storybook/blocks";
-import * as TabsStories from "./_.stories.tsx";
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as Stories from "./_.stories.tsx";
 
-<Meta of={TabsStories} />
+<Meta of={Stories} />
 
 # Tabs
 
 - [Overview](#overview)
 - [Props](#props)
+- [Usage](#usage)
 - [Variants](#variants)
-- [Tips](#tips)
+- [Do’s and don’ts](#dos--donts)
 - [Examples](#examples)
 
 ## Overview
 
-Tabs organize content into multiple sections and allow users to navigate between them.
+Tabs cho phép user navigate giữa các nội dung khác nhau nhưng có quan hệ
+tương đồng và giữ nguyên ngữ cảnh của page.
 
-<Canvas of={TabsStories.Default} />
+<Canvas of={Stories.Default} />
 
-## Props
+### Props
 
-<Controls of={TabsStories.Default} />
+<Controls of={Stories.Default} />
+
+## Usage
+
+Tabs dùng để sắp xếp và navigate giữa các nhóm thông tin tương đồng và
+có cùng mức độ phân cấp tương đương nhau.
+
+Tabs có thể align left hoặc distribute nhưng không được align right hoặc
+center trong page.
+
+Tabs nên chỉ có một hàng, nếu số lượng tab quá lớn có thể scroll.
 
 ## Variants
 
-## Tips
+### States
 
-➡️ Keep the number of tags manageable to prevent overwhelming users.
+<img src="/src/assets/media/image154.png" style={{ maxWidth: 460 }} />
+
+### Label only
+
+<img src="/src/assets/media/image155.png" style={{ maxWidth: 460 }} />
+
+### Label & Icon
+
+<img src="/src/assets/media/image156.png" style={{ maxWidth: 460 }} />
+
+### Icon only
+
+<img src="/src/assets/media/image157.png" style={{ maxWidth: 460 }} />
+
+### Fixed
+
+<img src="/src/assets/media/image158.png" style={{ maxWidth: 460 }} />
+
+### Scrollable
+
+<img src="/src/assets/media/image159.png" style={{ maxWidth: 460 }} />
+
+## Do's & Dont's
 
 ## Examples
 
-### Tabs with icons
-
-<Canvas of={TabsStories.Example} />
+<Canvas of={Stories.Example} />

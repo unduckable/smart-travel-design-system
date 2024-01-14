@@ -1,0 +1,61 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as Stories from "./_.stories";
+
+<Meta of={Stories} />
+
+# Tag
+
+- [Overview](#overview)
+- [Props](#props)
+- [Usage](#usage)
+- [Variants](#variants)
+- [Do’s and don’ts](#dos--donts)
+- [Examples](#examples)
+
+## Overview
+
+Giống như badge nhưng có tính năng close
+
+<Canvas of={Stories.Default} />
+
+### Props
+
+<Controls of={Stories.Default} />
+
+## Usage
+
+- Tag được sử dụng khi muốn gắn nhãn cho các items có cùng một tính năng,
+  chỉ sử dụng trong dashboard
+- Tag có thể remove bằng cách click icon close
+- Label của tag nên ngắn gọn, dễ hiểu
+- Giữa các tag, sử dụng spacing 8px
+
+## Variants
+
+**Text only**
+
+<img src="/src/assets/media/image93.png" style={{ maxWidth: 150 }} />
+
+**With icon**
+
+<img src="/src/assets/media/image94.png" style={{ maxWidth: 400 }} />
+
+**With avatar**
+
+<img src="/src/assets/media/image95.png" style={{ maxWidth: 200 }} />
+
+**Colors**
+
+Color của tag có thể dùng để thể hiện trạng thái (vd: warning,
+success\...) hoặc có thể chỉ dùng để highlight feature.
+
+<img src="/src/assets/media/image96.png" style={{ maxWidth: 700 }} />
+
+## Do's & Dont's
+
+## Examples
+
+<Canvas of={Stories.Colors} />
+<Canvas of={Stories.Shapes} />
+<Canvas of={Stories.Outlines} />
+<Canvas of={Stories.Icons} />

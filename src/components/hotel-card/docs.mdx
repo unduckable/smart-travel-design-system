@@ -7,21 +7,61 @@ import * as Stories from "./_.stories";
 
 - [Overview](#overview)
 - [Props](#props)
+- [Usage](#usage)
 - [Variants](#variants)
-- [Tips](#tips)
+- [Do’s and don’ts](#dos--donts)
 - [Examples](#examples)
 
 ## Overview
 
-A hotel card is a card that displays information about a hotel.
+Card là một dạng container trong đó chứa nhưng thông tin về một nội dung
+cụ thể có quan hệ chặt chẽ với nhau, đối với sản phẩm của Smart Travel
+card có thể là thông tin về khách sạn, thông tin về chuyến bay, thông
+tin khuyến mại etc..
 
 <Canvas of={Stories.Default} />
 
-## Props
+### Props
 
 <Controls of={Stories.Default} />
 
+## Usage
+
+Card thường có kèm theo action button hoặc có thể trigger vào bất kì
+thành phần nào của card để tới một trang nhất định.
+
+Card thường không đứng một mình mà sẽ đi theo một nhóm nội dung giống
+nhau.
+
 ## Variants
+
+### Hotel card
+
+**Horizontal - compact**
+
+<img src="/src/assets/media/image187.png" />
+
+**Vertical - compact**
+
+<img src="/src/assets/media/image188.png" />
+
+**Full**
+
+<img src="/src/assets/media/image189.png" />
+
+### Flight card
+
+**Collapsed**
+
+<img src="/src/assets/media/image190.png" />
+
+**Expanded**
+
+<img src="/src/assets/media/image191.png" />
+
+## Do's & Dont's
+
+## Examples
 
 ### Compact hotel card
 
@@ -30,9 +70,3 @@ A hotel card is a card that displays information about a hotel.
 ### Full hotel card
 
 <Canvas of={Stories.Full} />
-
-## Tips
-
-- Use the `full` variant when you have enough screen space to display a lot of information.
-
-## Examples

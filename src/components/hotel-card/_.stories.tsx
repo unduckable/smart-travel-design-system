@@ -7,7 +7,7 @@ import { Badge } from "../badge";
 import { Icon } from "../icon";
 
 const meta: Meta<typeof HotelCard> = {
-  title: "Components/Card/Hotel Card",
+  title: "Components/Card/Card",
   component: HotelCard,
 };
 
