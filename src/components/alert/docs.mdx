@@ -1,7 +1,18 @@
 import { Canvas, Controls, Meta } from "@storybook/blocks";
-import * as AlertStories from './_.stories';
+import * as AlertStories from "./_.stories";
+import image17 from "../../assets/media/image17.png";
+import image18 from "../../assets/media/image18.png";
+import image19 from "../../assets/media/image19.png";
+import image20 from "../../assets/media/image20.png";
+import image21 from "../../assets/media/image21.png";
+import image22 from "../../assets/media/image22.png";
+import image23 from "../../assets/media/image23.png";
+import image24 from "../../assets/media/image24.png";
+import image25 from "../../assets/media/image25.png";
+import image26 from "../../assets/media/image26.png";
+import image27 from "../../assets/media/image27.png";
 
-  <Meta of={AlertStories} />
+<Meta of={AlertStories} />
 
 # Alert
 
@@ -38,49 +49,61 @@ Alert nằm trên cùng của screen và sẽ push các content khác phía dư�
 
 Dạng alert này để thể hiện những thông báo chứa nhiều thông tin và bắt buộc user phải có action, và trong trường hợp cần 2 action button. Trong trường hợp có 2 button thì 2 button phải có type khác nhau tùy theo độ quan trọng của action.
 
-<img src="/src/assets/media/image17.png" class="s-mb-4" style={{maxWidth: 500}} />
+<img src={image17} class="s-mb-4" style={{ maxWidth: 500 }} />
 
 ### Inline
 
 Dạng alert này để thể hiện những thông báo ngắn gọn, có thể có hoặc có 1 action.
 
-<img src="/src/assets/media/image18.png" class="s-mb-4" style={{maxWidth: 500}} />
+<img src={image18} class="s-mb-4" style={{ maxWidth: 500 }} />
 
 ### Alert colors
 
 Có 4 màu của alert được sử dụng trong những tình huống thông tin khác nhau: Neutral (gray), Primary (blue), Positive (green), Warning (yello), Negative (red).
 
-
-<img src="/src/assets/media/image18.png" class="s-mb-4" style={{maxWidth: 500}} />
-<img src="/src/assets/media/image19.png" class="s-mb-4" style={{maxWidth: 500}} />
-<img src="/src/assets/media/image20.png" class="s-mb-4" style={{maxWidth: 500}} />
-<img src="/src/assets/media/image21.png" class="s-mb-4" style={{maxWidth: 500}} />
-<img src="/src/assets/media/image22.png" class="s-mb-4" style={{maxWidth: 500}} />
-<img src="/src/assets/media/image23.png" class="s-mb-4" style={{maxWidth: 500}} />
+<img src={image18} class="s-mb-4" style={{ maxWidth: 500 }} />
+<img src={image19} class="s-mb-4" style={{ maxWidth: 500 }} />
+<img src={image20} class="s-mb-4" style={{ maxWidth: 500 }} />
+<img src={image21} class="s-mb-4" style={{ maxWidth: 500 }} />
+<img src={image22} class="s-mb-4" style={{ maxWidth: 500 }} />
+<img src={image23} class="s-mb-4" style={{ maxWidth: 500 }} />
 
 ## Do's & Don'ts
 
-<table style={{ width: '100%' }}>
+<table style={{ width: "100%" }}>
   <tr>
-    <th style={{ backgroundColor: '#B2EECC' }}>Do</th>
-    <th style={{ backgroundColor: '#FBB1C4' }}>Don't</th>
+    <th style={{ backgroundColor: "#B2EECC" }}>Do</th>
+    <th style={{ backgroundColor: "#FBB1C4" }}>Don't</th>
   </tr>
   <tr>
-    <td><img src="/src/assets/media/image24.png" width="100%" height="0.21875in" /> Sử dụng Alert cho thông báo hệ thống, tiến trình chạy ngầm, cập nhật mới.</td>
-    <td><img src="/src/assets/media/image25.png" width="100%" height="0.21875in" /> Không sử dụng Alert để thông báo cho người dùng về một hành động mà họ vừa thực hiện. Sử dụng Toast để làm việc đó.</td>
+    <td>
+      <img src={image24} width="100%" height="0.21875in" /> Sử dụng Alert cho
+      thông báo hệ thống, tiến trình chạy ngầm, cập nhật mới.
+    </td>
+    <td>
+      <img src={image25} width="100%" height="0.21875in" /> Không sử dụng Alert
+      để thông báo cho người dùng về một hành động mà họ vừa thực hiện. Sử dụng
+      Toast để làm việc đó.
+    </td>
   </tr>
   <tr>
-    <td><img src="/src/assets/media/image26.png" width="100%" height="0.21875in" /> Sử dụng các màu đã được quy định sẵn từ trước theo mục đích sử dụng.</td>
-    <td><img src="/src/assets/media/image27.png" width="100%" height="0.21875in" /> Không sử dụng màu khác theo ý muốn.</td>
+    <td>
+      <img src={image26} width="100%" height="0.21875in" /> Sử dụng các màu đã
+      được quy định sẵn từ trước theo mục đích sử dụng.
+    </td>
+    <td>
+      <img src={image27} width="100%" height="0.21875in" /> Không sử dụng màu
+      khác theo ý muốn.
+    </td>
   </tr>
 </table>
 
-## Examples 
+## Examples
 
-  <Canvas of={AlertStories.Type} />
+<Canvas of={AlertStories.Type} />
 
-  <Canvas of={AlertStories.Color} />
+<Canvas of={AlertStories.Color} />
 
-  <Canvas of={AlertStories.Actions} />
+<Canvas of={AlertStories.Actions} />
 
-  <Canvas of={AlertStories.Dismission} />
+<Canvas of={AlertStories.Dismission} />

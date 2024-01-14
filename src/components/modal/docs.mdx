@@ -1,6 +1,13 @@
 import { Canvas, Controls, Meta } from "@storybook/blocks";
 import * as Stories from "./_.stories";
 
+import image120 from "../../assets/media/image120.png";
+import image121 from "../../assets/media/image121.png";
+import image122 from "../../assets/media/image122.png";
+import image123 from "../../assets/media/image123.png";
+import image124 from "../../assets/media/image124.png";
+import image125 from "../../assets/media/image125.png";
+
 <Meta of={Stories} />
 
 # Modal (Pop-up / Drawer)
@@ -43,29 +50,29 @@ thường xuyên xuất hiện.
 
 ### Modal with icon
 
-<img src="/src/assets/media/image120.png" />
+<img src={image120} />
 
 ### Drawer
 
-<img src="/src/assets/media/image121.png" />
+<img src={image121} />
 
 ### Max height
 
-<img src="/src/assets/media/image122.png" />
+<img src={image122} />
 
 ### Header icon
 
-<img src="/src/assets/media/image123.png" />
+<img src={image123} />
 
 ### Mobile
 
 Nhưng modal có lượng content lớn sẽ lấy theo modal system của OS
 
-<img src="/src/assets/media/image124.png" style={{ maxWidth: 375 }} />
+<img src={image124} style={{ maxWidth: 375 }} />
 
 Nhưng modal ngắn dọn dạng alert sẽ sử dụng dạng dialog
 
-<img src="/src/assets/media/image125.png" style={{ maxWidth: 375 }} />
+<img src={image125} style={{ maxWidth: 375 }} />
 
 ## Do's & Dont's
 
