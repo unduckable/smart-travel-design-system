@@ -102,7 +102,8 @@ export const SearchMaster: FC<ISearchMaster> = forwardRef<HTMLDivElement, ISearc
               <Button
                 intent="secondary-outline"
                 isSquare
-                className="s-w s-pointer-events-none s-absolute s-right-0 s-top-[50%] -s-translate-y-1/2 s-translate-x-1/2 s-gap-[0] s-border-gray-200 s-text-xs [&]:s-rounded-full [&_svg]:s-h-5 [&_svg]:s-w-5 [&_svg]:s-text-gray-400 dark:s-bg-dark"
+                shape="pill"
+                className="s-w s-pointer-events-none s-absolute s-right-0 s-top-[50%] -s-translate-y-1/2 s-translate-x-1/2 s-gap-[0] s-border-gray-200 s-text-xs [&_svg]:s-h-5 [&_svg]:s-w-5 [&_svg]:s-text-gray-400 s-bg-white-900 dark:s-bg-dark"
                 suffixIcon={TwoWayArrow}
                 size="small"
               />
@@ -138,7 +139,8 @@ export const SearchMaster: FC<ISearchMaster> = forwardRef<HTMLDivElement, ISearc
             <Button
               intent="secondary-outline"
               isSquare
-              className="s-w s-pointer-events-none s-absolute s-right-0 s-top-[50%] -s-translate-y-1/2 s-translate-x-1/2 s-gap-[0] s-border-gray-200 s-text-xs [&]:s-rounded-full [&_svg]:s-h-5 [&_svg]:s-w-5 [&_svg]:s-text-gray-400 dark:s-bg-dark"
+              shape="pill"
+              className="s-w s-pointer-events-none s-absolute s-right-0 s-top-[50%] -s-translate-y-1/2 s-translate-x-1/2 s-gap-[0] s-border-gray-200 s-text-xs  [&_svg]:s-h-5 [&_svg]:s-w-5 [&_svg]:s-text-gray-400 s-bg-white-900 dark:s-bg-dark"
               suffixIcon={ArrowRight}
               size="small"
             />
@@ -146,7 +148,8 @@ export const SearchMaster: FC<ISearchMaster> = forwardRef<HTMLDivElement, ISearc
             <Button
               intent="secondary-outline"
               isSquare
-              className="s-w s-pointer-events-none s-absolute s-right-0 s-top-[50%] -s-translate-y-1/2 s-translate-x-1/2 s-gap-[0] s-border-gray-200 s-text-xs [&]:s-rounded-full [&_svg]:s-w-3 [&_svg]:s-text-gray-400 dark:s-bg-dark"
+              shape="pill"
+              className="s-w s-pointer-events-none s-absolute s-right-0 s-top-[50%] -s-translate-y-1/2 s-translate-x-1/2 s-gap-[0] s-border-gray-200 s-text-xs  [&_svg]:s-w-3 [&_svg]:s-text-gray-400 s-bg-white-900 dark:s-bg-dark"
               suffixIcon={Moon}
               size="small"
             >

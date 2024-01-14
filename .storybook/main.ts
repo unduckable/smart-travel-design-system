@@ -9,6 +9,7 @@ const blackListPatterns = [
   /^onCompositionEnd$/,
   /^onCompositionStart$/,
   /^onCompositionUpdate$/,
+  /UNSTABLE/,
 ];
 
 const config: StorybookConfig = {

@@ -1,0 +1,326 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Foundations/Typography" />
+
+# Typography
+
+Cũng như các thành phần UI khác của Smart Travel, typography cần đảm bảo đề cao khả năng tiếp cận đối với tất cả mọi người. Text phải dễ đọc, contrast tốt, màu sắc hài hòa và đảm bảo tính thứ bậc trong design để user có thể dễ dàng nắm bắt những thông tin quan trọng.
+
+## Fonts
+
+Smart Travel sử dụng system font tương ứng với từng hệ điều hành để đảm bảo sản phẩm thân thiện, quen thuộc và mang tính ổn định đối với người dùng cuối.
+
+1. Đối với iOS và Mac Os: SF Pro
+
+1. Đối với Android: Roboto
+
+1. Đối với windows: Segoe UI
+
+1. Fallback: Arial
+
+Trong các thiết kế UI, designer sử dụng font SF Pro
+
+## Type styles
+
+Những font size từ 20 trở xuống sẽ sử dụng để hiển thị content của page, có mật độ chữ lớn.
+
+### text-xs
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Specs</th>
+      <th>Application</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>font-normal</td>
+      <td>
+        Font weight: Regular<br />Font size: 12px<br />Lineheight: 16px
+      </td>
+      <td>Sử dụng cho helptext (vd: validate input)</td>
+    </tr>
+    <tr>
+      <td>font-medium</td>
+      <td>
+        Font weight: Medium<br />Font size: 12px<br />Lineheight: 16px
+      </td>
+      <td>
+        Sử dụng trong trường hợp cần giới hạn không gian nhưng vẫn nhấn mạnh
+        được thông tin (label của tag trong card)
+      </td>
+    </tr>
+    <tr>
+      <td>font-bold</td>
+      <td>
+        Font weight: Bold<br />Font size: 12px<br />Lineheight: 16px
+      </td>
+      <td>
+        Sử dụng làm label cho những thông tin bổ sung, sẽ đi kèm theo chú thích
+        sử dụng font-normal
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### text sm
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Specs</th>
+      <th>Application</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>font-normal</td>
+      <td>
+        Font weight: Regular<br />Font size: 14px<br />Lineheight: 20px
+      </td>
+      <td>Font base body cho mobile app</td>
+    </tr>
+    <tr>
+      <td>font-medium</td>
+      <td>
+        Font weight: Medium<br />Font size: 14px<br />Lineheight: 20px
+      </td>
+      <td>
+        Dùng với các đối tượng cần nhấn mạnh label (vd: Button label, input
+        label)
+      </td>
+    </tr>
+    <tr>
+      <td>font-bold</td>
+      <td>
+        Font weight: Bold<br />Font size: 14px<br />Lineheight: 20px
+      </td>
+      <td>
+        Dùng làm title của paragraph hoặc label của supporting text. Dùng làm
+        small page title trên mobile app
+      </td>
+    </tr>
+  </tbody>
+</table>
+
+### text md
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Specs</th>
+      <th>Application</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>font-normal</td>
+      <td>
+        Font weight: Regular<br />Font size: 16px<br />Lineheight: 24px
+      </td>
+      <td>
+        Dùng để phân cấp thông tin với body text trong trường hợp nội dung cần
+        nhấn mạnh
+      </td>
+    </tr>
+    <tr>
+      <td>font-medium</td>
+      <td>
+        Font weight: Medium<br />Font size: 16px<br />Lineheight: 24px
+      </td>
+      <td>
+        Dùng để phân cấp thông tin với body text trong trường hợp nội dung cần
+        nhấn mạnh
+      </td>
+    </tr>
+    <tr>
+      <td>font-bold</td>
+      <td>
+        Font weight: Bold<br />Font size: 16px<br />Lineheight: 24px
+      </td>
+      <td>Dùng làm heading của block content</td>
+    </tr>
+  </tbody>
+</table>
+
+### text-lg
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Specs</th>
+      <th>Application</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>font-normal</td>
+      <td>
+        Font weight: Regular<br />Font size: 20px <br />Lineheight: 28px
+      </td>
+      <td>
+        Dùng trong các trường hợp muốn nhấn mạnh, có ý đồ cụ thể tùy designer
+        quyết định (vd: value của voucher, etc.)
+      </td>
+    </tr>
+    <tr>
+      <td>font-bold</td>
+      <td>
+        Font weight: Bold<br />Font size: 20px<br />Lineheight: 28px
+      </td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+### text-xl
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Specs</th>
+      <th>Application</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>font-normal</td>
+      <td>Font weight: Regular<br/>Font size: 24px<br/>Lineheight: 32px</td>
+      <td>Có thể dùng làm highlight text trong banner trên mobile app</td>
+    </tr>
+    <tr>
+      <td>font-bold</td>
+      <td>Font weight: Bold<br/>Font size: 24px<br/>Lineheight: 32px</td>
+
+<td>Dùng làm large page title trên mobile app</td>
+</tr>
+
+  </tbody>
+</table>
+
+### text-2xl
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Specs</th>
+      <th>Application</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>font-normal</td>
+      <td>Font weight: Regular<br/>Font size: 32px<br/>Lineheight: 40px</td>
+      <td>Chỉ sử dụng làm headliner của hero banner trên desktop website \<H1\></td>
+    </tr>
+    <tr>
+      <td>font-bold</td>
+      <td>Font weight: Bold<br/>Font size: 32px<br/>Lineheight: 40px</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+### text-3xl
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Specs</th>
+      <th>Application</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>font-normal</td>
+      <td>Font weight: Regular<br/>Font size: 40px<br/>Lineheight: 48px</td>
+      <td>Sử dụng làm title của section trên desktop website \<H4\></td>
+    </tr>
+    <tr>
+      <td>font-bold</td>
+      <td>Font weight: Bold<br/>Font size: 40px<br/>Lineheight: 48px</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+### text-4xl
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Specs</th>
+      <th>Application</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>font-normal</td>
+      <td>Font weight: Regular<br/>Font size: 48px<br/>Lineheight: 56px</td>
+      <td>Sử dụng làm title của section trên desktop website \<H3\></td>
+    </tr>
+    <tr>
+      <td>font-bold</td>
+      <td>Font weight: Bold<br/>Font size: 48px<br/>Lineheight: 56px</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+### text-5xl
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Specs</th>
+      <th>Application</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>font-normal</td>
+      <td>Font weight: Regular<br/>Font size: 56px<br/>Lineheight: 64px</td>
+      <td>Sử dụng làm title của section trên desktop website \<H2\></td>
+    </tr>
+    <tr>
+      <td>font-bold</td>
+      <td>Font weight: Bold<br/>Font size: 56px<br/>Lineheight: 64px</td>
+      <td></td>
+    </tr>
+  </tbody>
+</table>
+
+### text-6xl
+
+<table>
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th>Specs</th>
+      <th>Application</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>font-normal</td>
+      <td>Font weight: Regular<br/>Font size: 72px<br/>Lineheight: 80px</td>
+      <td>Chỉ sử dụng làm headliner của hero banner trên desktop website</td>
+    </tr>
+    <tr>
+      <td>font-bold</td>
+      <td>Font weight: Bold<br/>Font size: 72px<br/>Lineheight: 80px</td>
+      <td>Chỉ sử dụng làm headliner của hero banner trên desktop website </td>
+    </tr>
+  </tbody>
+</table>
+```
