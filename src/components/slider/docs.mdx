@@ -1,48 +1,61 @@
 import { Canvas, Controls, Meta } from "@storybook/blocks";
-import * as SliderStories from './_.stories';
+import * as Stories from "./_.stories";
 
-<Meta of={SliderStories} />
+<Meta of={Stories} />
 
 # Slider
 
 - [Overview](#overview)
 - [Props](#props)
+- [Usage](#usage)
 - [Variants](#variants)
-- [Tips](#tips)
+- [Do’s and don’ts](#dos--donts)
 - [Examples](#examples)
+
+# Range slider
 
 ## Overview
 
-A slider allows a user to select one or more values within a range.
-<Canvas of={SliderStories.Default} />
+Range sliders cho phép user lựa chọn input giá trị theo một khoảng được
+quy định sẵn.
 
+<Canvas of={Stories.Default} />
 
-## Props
+### Props
 
-<Controls of={SliderStories.Default} />
+<Controls of={Stories.Default} />
 
+## Usage
+
+- Range sliders cần hiển thị toàn bộ các giá trị mà user được phép nhập.
+- Có 2 dạng range sliders là: Continious (user chọn 1 giá trí trong khoảng
+  cho phép) và Discrete (User lựa chọn 1 khoảng giá trị trong giới hạn cho
+  phép)
+- Range slider cần phản hồi giá trị cụ thể ngay lập tức bằng tooltip khi
+  user có thao tác kéo handle.
 
 ## Variants
 
-### States
+**States**
 
-<Canvas of={SliderStories.Variants} />
+<img src="/src/assets/media/image106.png" style={{ maxWidth: 400 }} />
 
-### Ranged Slider
+**Continuous**
 
-Slider can define range instead of single value 
-<Canvas of={SliderStories.Ranged} />
+<img src="/src/assets/media/image107.png" style={{ maxWidth: 400 }} />
 
-### Limit and Step
+**Discrete**
 
-Limit and Step can be customized.
-<Canvas of={SliderStories.LimitStep} />
+<img src="/src/assets/media/image108.png" style={{ maxWidth: 400 }} />
 
+**With input**
 
-## Tips 
-➡ Slider adjustment makes immediate changes to its content without need of saving  
-➡ Slider works best when the exact value does not matter for the user  
-➡ Slider works best for adjusting volume, setting playback time within a music player, adjusting brightness.  
+<img src="/src/assets/media/image109.png" style={{ maxWidth: 400 }} />
+
+## Do's & Dont's
 
 ## Examples
 
+<Canvas of={Stories.Variants} />
+<Canvas of={Stories.Ranged} />
+<Canvas of={Stories.LimitStep} />

@@ -7,38 +7,61 @@ import * as Stories from "./_.stories";
 
 - [Overview](#overview)
 - [Props](#props)
+- [Usage](#usage)
 - [Variants](#variants)
-- [Tips](#tips)
+- [Do’s and don’ts](#dos--donts)
 - [Examples](#examples)
 
 ## Overview
 
-A toast is a message object that presents timely information, including confirmation of actions, alerts, and errors.
+Snackbar là một dạng feedback từ sản phẩm đến với người dùng để thông
+báo theo thời gian thực về trạng thái của một hành động. Có thể bảo gồm
+trạng thái và hành động đi kèm.
 
 <Canvas of={Stories.Default} />
 
-## Props
+### Props
 
 <Controls of={Stories.Default} />
 
+## Usage
+
+Toast phải xuất hiện ngay sau khi một hành động được thực hiện nhưng
+không có ảnh hưởng trực tiếp trên UI.
+
+Toast xuất hiện phía dưới của page, có margin bottom = 40px
+
+Thông tin trong toast cần ngắn gọn, đủ ý và cung cấp follow up action để
+user có thêm thông tin và hướng để giải quyết vấn đề.
+
+Những toast dạng inform thông tin và không đi kèm action và close button
+có thể tự ẩn sau 3 \~ 5s.
+
+Những toast có dạng báo lỗi, có close button và kèm theo action cần user
+giải quyết sẽ tự biến mất sau 7\~10s hoặc khi user ấn close.
+
 ## Variants
 
-### Default
+### Normal
 
-<Canvas of={Stories.Default} />
+<img src="/src/assets/media/image182.png" style={{ maxWidth: 400 }} />
 
-### Actions
+### With icon
 
-<Canvas of={Stories.Actions} />
+<img src="/src/assets/media/image183.png" style={{ maxWidth: 400 }} />
 
-## Tips
+### With action & Close button
 
-➡️ Use toast notifications immediately after a specific event such as a user action that does not relate to an object on the page. Toast used as a feedback loop to a user’s action.  
-➡️ Toasts should appear one at a time, and only disappear when no longer required.  
-➡️ Always be clear, concise and, where possible, give follow up actions to allow the user to become more informed or resolve the issue.  
-➡️ Always provide an action button or option to undo.  
-➡️ Toast should overlay permanent UI elements without blocking important actions.
+<img src="/src/assets/media/image181.png" style={{ maxWidth: 400 }} />
+
+### Negative
+
+<img src="/src/assets/media/image185.png" style={{ maxWidth: 400 }} />
+
+## Do's & Dont's
 
 ## Examples
+
+<Canvas of={Stories.Actions} />
 
 <Canvas of={Stories.Destructive} />

@@ -7,30 +7,45 @@ import * as Stories from "./_.stories";
 
 - [Overview](#overview)
 - [Props](#props)
+- [Usage](#usage)
 - [Variants](#variants)
-- [Tips](#tips)
+- [Do’s and don’ts](#dos--donts)
 - [Examples](#examples)
 
-## Overview
+# Overview
 
-A voucher is used to display information about a promotion.
+Voucher cũng là một dạng card, nhưng có UI lấy cảm hứng từ ticket và
+voucher từ thực tế. Nội dung của voucher cũng chỉ dành để nói về khuyến
+mại và promotion của sản phẩm.
 
 <Canvas of={Stories.Default} />
 
-## Props
+### Props
 
 <Controls of={Stories.Default} />
 
-## Variants
+## Usage
 
-### With image variant
+<Controls of={Stories.Default} />
+
+- Chỉ dùng để hiển thị thông tin khuyến mại
+- Có thể click vào voucher để đến trang chi tiết hoặc copy code để sử dụng
+  khuyến mại.
+
+### Variants
+
+**With image**
+
+<img src="/src/assets/media/image192.png" style={{ maxWidth: 400 }} />
+
+**Without image**
+
+<img src="/src/assets/media/image193.png" style={{ maxWidth: 400 }} />
+
+## Do's & Dont's
+
+## Examples
 
 <Canvas of={Stories.WithImage} />
 
-### No image variant
-
 <Canvas of={Stories.NoImage} />
-
-## Tips
-
-## Examples

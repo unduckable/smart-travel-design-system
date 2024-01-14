@@ -1,43 +1,41 @@
 import { Canvas, Controls, Meta } from "@storybook/blocks";
-import * as TextAreaStories from './_.stories';
+import * as TextAreaStories from "./_.stories";
 
-  <Meta of={TextAreaStories} />
+<Meta of={TextAreaStories} />
 
 # Text Area
 
 - [Overview](#overview)
 - [Props](#props)
 - [Variants](#variants)
-- [Tips](#tips)
 - [Examples](#examples)
 
-
 ## Overview
-A text area lets users enter long form text which spans over multiple lines.
-  <Canvas of={TextAreaStories.Default} />
 
+Text area dùng khi user cần phải nhập một lượng lớn thông tin, min
+height của field = 116px, max height = 240px. Nếu content dài hơn sẽ
+scroll trong field.
+
+<Canvas of={TextAreaStories.Default} />
 
 ## Props
 
-  <Controls of={TextAreaStories.Default} />
-
+<Controls of={TextAreaStories.Default} />
 
 ## Variants
+
 ### Resize
 
-  <Canvas of={TextAreaStories.Resize} />
+<Canvas of={TextAreaStories.Resize} />
 
 ### Validation
-  
+
     <Canvas of={TextAreaStories.Validation} />
 
 ### Disabled
 
-  <Canvas of={TextAreaStories.Variants} />
+<Canvas of={TextAreaStories.Variants} />
 
-
-## Tips 
-
+## Tips
 
 ## Examples
-

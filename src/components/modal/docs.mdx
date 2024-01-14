@@ -1,35 +1,76 @@
 import { Canvas, Controls, Meta } from "@storybook/blocks";
-import * as ModalStories from './_.stories';
+import * as Stories from "./_.stories";
 
-  <Meta of={ModalStories} />
+<Meta of={Stories} />
 
-# Modal
+# Modal (Pop-up / Drawer)
 
 - [Overview](#overview)
 - [Props](#props)
+- [Usage](#usage)
 - [Variants](#variants)
-- [Tips](#tips)
+- [Do’s and don’ts](#dos--donts)
 - [Examples](#examples)
 
 ## Overview
-A modal is a dialog that focuses the user's attention exclusively on an information via a window that is overlaid on primary content.
-  <Canvas of={ModalStories.Default} />
 
+Modal cho phép user focus vào 1 action phải hoàn thành bằng cách hiện 1
+pop-up và chặn tầm nhìn của page hiện tại cho đến khi user hoàn thành
+hoặc hủy action. Modal được sử dụng cho những action ngắn và không
+thường xuyên xuất hiện.
 
-## Props
+<Canvas of={Stories.Default} />
 
-  <Controls of={ModalStories.Default} />
+### Props
 
+<Controls of={Stories.Default} />
+
+## Usage
+
+- Trên desktop modal có thể xuất hiện ở 2 vị trí, chính giữa page (pop
+  up), hoặc từ mép bên phải của page (Drawer). Trên mobile modal sẽ sử
+  dụng modal của OS.
+
+- Chiều cao của modal sẽ đi theo chiều cao của content chứa bên trong. Tối
+  đa = viewport với margin trên dưới = 40px. Bên trong có thể scroll.
+
+- Modal bắt buộc phải có Title và close button.
+
+- Modal có thể close bằng cách click ra ngoài, nhấn nút ESC, hoặc button
+  close.
 
 ## Variants
 
+### Modal with icon
 
+<img src="/src/assets/media/image120.png" />
 
-## Tips 
-➡️ All modals must have a title and a close button.  
-➡️ By default, Modal will be closed by: dragging down or the closing buttons.
+### Drawer
 
+<img src="/src/assets/media/image121.png" />
+
+### Max height
+
+<img src="/src/assets/media/image122.png" />
+
+### Header icon
+
+<img src="/src/assets/media/image123.png" />
+
+### Mobile
+
+Nhưng modal có lượng content lớn sẽ lấy theo modal system của OS
+
+<img src="/src/assets/media/image124.png" style={{ maxWidth: 375 }} />
+
+Nhưng modal ngắn dọn dạng alert sẽ sử dụng dạng dialog
+
+<img src="/src/assets/media/image125.png" style={{ maxWidth: 375 }} />
+
+## Do's & Dont's
 
 ## Examples
+
 A modal with a title, body, and footer.
-  <Canvas of={ModalStories.GenericModal} />
+
+<Canvas of={Stories.GenericModal} />

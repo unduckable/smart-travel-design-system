@@ -125,3 +125,12 @@ export type { IPagination } from "./components/pagination";
 
 export { Dropzone } from "./components/dropzone";
 export type { IDropzone, IFileUpload } from "./components/dropzone";
+
+export { Media } from "./components/media";
+export type { IMedia } from "./components/media";
+
+export { Tag } from "./components/tag";
+export type { ITag } from "./components/tag";
+
+export { Banner } from "./components/banner";
+export type { IBanner } from "./components/banner";

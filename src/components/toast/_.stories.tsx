@@ -35,7 +35,7 @@ export const Destructive: Story = {
         Element deleted!
       </span>
     ),
-    className: "s-w-80 s-bg-red-600 dark:s-bg-red-500 dark:[&_svg]:s-text-gray-900",
+    className: "s-w-80 s-bg-red-500 dark:s-bg-red-400 dark:[&_svg]:s-text-gray-900",
     onClose: () => alert("Close"),
     onAction: () => alert("Action"),
   },

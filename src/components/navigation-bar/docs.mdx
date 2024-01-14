@@ -1,27 +1,55 @@
 import { Canvas, Controls, Meta } from "@storybook/blocks";
-import * as NavigationBarStories from './_.stories';
+import * as Stories from "./_.stories";
 
-  <Meta of={NavigationBarStories} />
+<Meta of={Stories} />
 
 # Navigation Bar
 
 - [Overview](#overview)
 - [Props](#props)
-- [Tips](#tips)
+- [Usage](#usage)
+- [Variants](#variants)
+- [Do’s and don’ts](#dos--donts)
 - [Examples](#examples)
 
 ## Overview
-A Navigation bar allows users switch between views on smaller devices 
-  <Canvas of={NavigationBarStories.Default} />
 
+Navigation bảo gồm page header và bottom navigation là những components
+dẫn dắt user navigate qua lại giữa các page chính trong app Smart
+Travel. Bottom navigation bar chỉ nên có từ 3 đến 5 destination page.
 
-## Props
+<Canvas of={Stories.Default} />
 
-  <Controls of={NavigationBarStories.Default} />
+### Props
 
-## Tips
-➡️ Can contain 3-5 navigation items of equal importance  
-➡️ Navigation items don't change. They should be the same across all views.  
+<Controls of={Stories.Default} />
+
+## Usage
+
+Các đích đến của bottom navigation sẽ không thay đổi khi user chuyển qua
+lại giữa các page.
+
+User có thể access bottom navigation bar từ bất cứ vị trí nào khi sử
+dụng app.
+
+Chỉ nên có tối đa 5 destination page.
+
+Không sử dụng đối với các page có độ quan trọng thấp ví dụ như sign in
+sign up.
+
+Trên page header có thể bao gồm các action của page, chỉ dùng icon
+button và có tối đa 3 actions. Không đưa primary action lên vùng này.
+
+## Variants
+
+### Default
+
+<img src="/src/assets/media/image111.png" style={{ maxWidth: 500 }} />
+
+## Do's & Dont's
 
 ## Examples
-  <Canvas of={NavigationBarStories.Example} />
+
+{" "}
+
+<Canvas of={Stories.Example} />

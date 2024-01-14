@@ -1,0 +1,46 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as Stories from "./_.stories";
+
+<Meta of={Stories} />
+
+# Dropzone
+
+- [Overview](#overview)
+- [Props](#props)
+- [Usage](#usage)
+- [Variants](#variants)
+- [Do’s and don’ts](#dos--donts)
+
+## Overview
+
+Dropzone là component giúp user có thể upload tài liệu lên hệ thống một
+cách dễ dàng bằng 2 cách, click hoặc drag and drop
+
+<Canvas of={Stories.Default} />
+
+### Props
+
+<Controls of={Stories.Default} />
+
+## Usage
+
+Dropzone có thể dùng để up file hoặc image lên hệ thống.
+
+Nên giới hạn số lượng file có thể upload trong một lần để tránh quá tải
+và gây lỗi khi upload.
+
+## Variants
+
+### States
+
+<img src="/src/assets/media/image142.png" />
+
+### Upload single media
+
+<img src="/src/assets/media/image143.png" style={{ maxWidth: 400 }} />
+
+### Upload multiple media
+
+<img src="/src/assets/media/image144.png" style={{ maxWidth: 400 }} />
+
+## Do's & Dont's

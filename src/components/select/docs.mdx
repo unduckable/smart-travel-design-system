@@ -1,0 +1,74 @@
+import { Canvas, Controls, Meta } from "@storybook/blocks";
+import * as Stories from "./_.stories";
+
+<Meta of={Stories} />
+
+# Select
+
+- [Overview](#overview)
+- [Props](#props)
+- [Usage](#usage)
+- [Variants](#variants)
+- [Do’s and don’ts](#dos--donts)
+- [Examples](#examples)
+
+## Overview
+
+Select là một dạng input mà user có thể lựa chọn một hoặc nhiều option
+trong một list item có sẵn. Bao gồm 1 input field và 1 dropdown list.
+
+<Canvas of={Stories.Default} />
+
+### Props
+
+<Controls of={Stories.Default} />
+
+## Usage
+
+- Select được sử dụng khi có một số lượng lớn option được đưa ra để user
+  có thể lựa chọn.
+- User có thể chọn 1 hoặc nhiều option.
+- Trong dropdown list các option tốt nhất nên chỉ có 1 dòng, nếu content
+  quá dài có thể truncate (\...)
+- Độ cao của các option trong dropdown list phải bằng nhau
+- Khi sắp xếp vị trí của các option trong dropdown list, ưu tiên những
+  option hay được lựa chọn lên trên cùng.
+- Một số trường hợp user có thể search tại input field để filter options.
+
+## Variants
+
+**Single selected**
+
+<img src="/src/assets/media/image82.png" style={{ maxWidth: 500 }} />
+
+**Multiple selected**
+
+<img src="/src/assets/media/image83.png" style={{ maxWidth: 500 }} />
+
+**Option counts indicator**
+
+Có thể sử dụng indicator để chỉ thị cho user biết số lượng option đã
+được chọn
+
+<img src="/src/assets/media/image84.png" style={{ maxWidth: 500 }} />
+
+**Searchable**
+
+Có thể enable khả năng type to search để user có thể filter nhanh
+options nếu lượng option quá lớn.
+
+<img src="/src/assets/media/image85.png" style={{ maxWidth: 500 }} />
+
+**Item with thumbnail**
+
+<img src="/src/assets/media/image86.png" style={{ maxWidth: 500 }} />
+
+**Item with icon**
+
+<img src="/src/assets/media/image87.png" style={{ maxWidth: 500 }} />
+
+## Do's & Dont's
+
+## Examples
+
+<Canvas of={Stories.Default} />

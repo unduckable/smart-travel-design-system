@@ -1,38 +1,65 @@
 import { Canvas, Controls, Meta } from "@storybook/blocks";
-import * as SegmentStories from "./_.stories";
+import * as Stories from "./_.stories";
 
-<Meta of={SegmentStories} />
+<Meta of={Stories} />
 
 # Segment
 
 - [Overview](#overview)
 - [Props](#props)
+- [Usage](#usage)
 - [Variants](#variants)
-- [Tips](#tips)
+- [Do’s and don’ts](#dos--donts)
 - [Examples](#examples)
 
 ## Overview
 
-A segment component is a linear set of two or more inputs, each of which functions as a button.
+Segment button giúp user có thể switch giữa các option, giống như 1 dạng
+tabs nhưng switch button sẽ control những thành phần nhỏ hơn (vd: Tabs
+dùng để switch giữa các page, còn segment dùng để switch giữa các option
+trong 1 page hoặc giữa các content có dùng nhóm nội dung)
 
-<Canvas of={SegmentStories.Default} />
+<Canvas of={Stories.Default} />
 
-## Props
+## Usage
 
-<Controls of={SegmentStories.Default} />
+- Chỉ sử dụng segment khi có từ 5 option trở xuống
+
+- Luôn chỉ có 1 button trong segment ở trạng thái selected.
+
+- Các button trong segment cần phải đồng bộ về hiển thị (vd: tất cả các
+  button đều chỉ có label hoặc chỉ có text hoặc cùng có cả 2)
+
+### Props
+
+<Controls of={Stories.Default} />
 
 ## Variants
 
-### Sizes
+**Size**
 
-<Canvas of={SegmentStories.Sizes} />
+<img src="/src/assets/media/image62.png" style={{ maxWidth: 400 }} />
 
-### Disabled
+**Label only**
 
-<Canvas of={SegmentStories.Disabled} />
+<img src="/src/assets/media/image63.png" style={{ maxWidth: 400 }} />
 
-## Tips
+**Icon only**
+
+<img src="/src/assets/media/image64.png" style={{ maxWidth: 400 }} />
+
+**Label & Icon**
+
+<img src="/src/assets/media/image65.png" style={{ maxWidth: 400 }} />
+
+**State**
+
+<img src="/src/assets/media/image66.png" style={{ maxWidth: 400 }} />
+
+## Do's & Dont's
 
 ## Examples
 
-<Canvas of={SegmentStories.Examples} />
+<Canvas of={Stories.Sizes} />
+<Canvas of={Stories.Disabled} />
+<Canvas of={Stories.Examples} />

@@ -1,8 +1,5 @@
-import AnnotationWarning from "@/src/icons/AnnotationWarning";
-import Trash from "@/src/icons/Trash";
 import type { Meta, StoryObj } from "@storybook/react";
 import React, { useEffect, useState } from "react";
-import { Button } from "../button";
 import { Media } from "../media";
 import { Dropzone, IFileUpload } from "./";
 
@@ -53,8 +50,6 @@ export const Default: Story = {
         >
           {(file) => <Media type="image" src={URL.createObjectURL(file.content)} alt={file.content.name} />}
         </Dropzone>
-
-        {files.map((item) => item.content.name).join(",")}
       </>
     );
   },

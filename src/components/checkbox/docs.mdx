@@ -1,44 +1,69 @@
 import { Canvas, Controls, Meta } from "@storybook/blocks";
-import * as CheckboxStories from './_.stories';
+import * as Stories from "./_.stories";
 
-<Meta of={CheckboxStories} />
+<Meta of={Stories} />
 
 # Checkbox
 
 - [Overview](#overview)
 - [Props](#props)
+- [Usage](#usage)
 - [Variants](#variants)
-- [Tips](#tips)
+- [Do’s and don’ts](#dos--donts)
 - [Examples](#examples)
 
 ## Overview
 
-Checkboxes allow users to select one or more items from a set of options.
+Checkbox cũng được coi như một dạng input, cho phép user lựa chọn 1 hoặc
+nhiều option trong một list được liệt kê sẵn.
 
-<Canvas of={CheckboxStories.Default} />
+<Canvas of={Stories.Default} />
 
+## Usage
 
-## Props
+Checkbox được dùng trong trường hợp chọn 1 hoặc nhiều option trong 1
+list hoặc tắt, bật một option trong 1 tính năng cụ thể. Trừ những
+checkbox có tính năng select all.
 
-<Controls of={CheckboxStories.Default} />
+Các option hoạt động độc lập, 1 check box được select sẽ không ảnh hưởng
+tới trạng thái của các checkbox khác.
 
+Cả checkbox là và label của checkbox đều có thể click để select.
+
+Khi bật tắt 1 option của tính năng, dùng từ ngữ mang tính tích cực (vd:
+Check để bật thông báo, thay vì check để tắt thông báo\"
+
+Checkbox luôn đi kèm với label
+
+Checkbox group chỉ nên có tối đa 5 option tránh việc làm user confuse
+với quá nhiều lựa chọn. Nếu nhiều hơn 5 option recommend sử dụng
+selection input.
+
+### Props
+
+<Controls of={Stories.Default} />
 
 ## Variants
 
-### Button kinds
+**Checkbox**
 
-There can be more than one button in a screen, but to create the hierarchy of actions we need to use button intents.
-<Canvas of={CheckboxStories.Variants} />
+Checkbox đứng một mình, thường dùng để bật hoặc tắt option. Có thể có
+optional text, required icon, tooltip hoặc help text.
 
+<img src="/src/assets/media/image68.png" style={{ maxWidth: 300 }} />
 
-## Tips 
-➡️ Use checkboxes to select one or more options from a list   
-➡️ Use checkboxes to turn an item on or off in a desktop environment    
-➡️ Use checkboxes independently from each other: selecting one checkbox shouldn’t change the selection status of another checkbox in the list. The exception is when a checkbox is used to make a bulk selection.   
-➡️ Ensure both label and input are clickable to select the checkbox field.   
-➡️ Checkboxes should be listed according to a logical order.   
-➡️ Place checkboxes vertically, using 16px spacing.   
-➡️ Checkbox will always apear with a label.   
+**Checkbox group**
+
+Dùng để lựa chọn một hoặc nhiều option trong list. Tối đa 5 options.
+
+<img src="/src/assets/media/image69.png" style={{ maxWidth: 750 }} />
+
+**State**
+
+<img src="/src/assets/media/image70.png" style={{ maxWidth: 750 }} />
+
+## Do's & Dont's
 
 ## Examples
 
+<Canvas of={Stories.Variants} />

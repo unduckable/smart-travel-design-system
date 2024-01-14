@@ -1,34 +1,69 @@
 import { Canvas, Controls, Meta } from "@storybook/blocks";
-import * as PageHeaderStories from './_.stories';
+import * as Stories from "./_.stories";
 
-  <Meta of={PageHeaderStories} />
+<Meta of={Stories} />
 
 # Page Header
 
 - [Overview](#overview)
 - [Props](#props)
-- [Tips](#tips)
-- []
+- [Usage](#usage)
+- [Variants](#variants)
+- [Do’s and don’ts](#dos--donts)
 - [Examples](#examples)
 
 ## Overview
-A Page header displays navigation, actions, and text at the top of a screen
 
-  <Canvas of={PageHeaderStories.Default} />
+Navigation bảo gồm page header và bottom navigation là những components
+dẫn dắt user navigate qua lại giữa các page chính trong app Smart
+Travel. Bottom navigation bar chỉ nên có từ 3 đến 5 destination page.
 
+<Canvas of={Stories.Default} />
 
-## Props
+### Props
 
-  <Controls of={PageHeaderStories.Default} />
+<Controls of={Stories.Default} />
+
+## Usage
+
+Các đích đến của bottom navigation sẽ không thay đổi khi user chuyển qua
+lại giữa các page.
+
+User có thể access bottom navigation bar từ bất cứ vị trí nào khi sử
+dụng app.
+
+Chỉ nên có tối đa 5 destination page.
+
+Không sử dụng đối với các page có độ quan trọng thấp ví dụ như sign in
+sign up.
+
+Trên page header có thể bao gồm các action của page, chỉ dùng icon
+button và có tối đa 3 actions. Không đưa primary action lên vùng này.
+
+<Canvas of={Stories.Default} />
 
 ## Variants
-### Compact
-<Canvas of={PageHeaderStories.Compact} />
-### Search
-<Canvas of={PageHeaderStories.Search} />
-### Comfort
-<Canvas of={PageHeaderStories.Comfort} />
 
-## Tips
+### Page header with hero image
+
+<img src="/src/assets/media/image112.png" style={{ maxWidth: 380 }} />
+
+### First level page header
+
+<img src="/src/assets/media/image113.png" style={{ maxWidth: 380 }} />
+
+### Second level page header
+
+<img src="/src/assets/media/image114.png" style={{ maxWidth: 380 }} />
+
+### Page header with search
+
+<img src="/src/assets/media/image115.png" style={{ maxWidth: 380 }} />
+
+## Do's & Dont's
 
 ## Examples
+
+<Canvas of={Stories.Compact} />
+<Canvas of={Stories.Search} />
+<Canvas of={Stories.Comfort} />

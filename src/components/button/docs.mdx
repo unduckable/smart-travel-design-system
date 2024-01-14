@@ -1,76 +1,174 @@
 import { Canvas, Controls, Meta } from "@storybook/blocks";
-import * as ButtonStories from './_.stories';
+import * as ButtonStories from "./_.stories";
 
-  <Meta of={ButtonStories} />
+<Meta of={ButtonStories} />
 
 # Button
 
 - [Overview](#overview)
 - [Props](#props)
+- [Usage](#usage)
 - [Variants](#variants)
-- [Tips](#tips)
+- [Do’s and don’ts](#dos--donts)
 - [Examples](#examples)
 
 ## Overview
 
-Buttons allow users to trigger an action or event with a single click.
-For example, you can use a button for allowing the functionality of submitting a form, opening a dialog, canceling an action,
-or performing a delete operation.
+Button cho phép người dùng tương tác với UI, thực hiện một action với 1 click hoặc tab. Ví dụ có thể dùng button để submit form, mở dialog, hủy bỏ một hành động etc..
 
-
-  <Canvas of={ButtonStories.Default} />
+<Canvas of={ButtonStories.Default} />
 
 ## Props
 
+<Controls of={ButtonStories.Default} />
 
-  <Controls of={ButtonStories.Default} />
+## Usage
 
+- Button có thể chứa icon ở bên trái hoặc phải.
+- Sử dụng spacing 8px giữa các button.
+- Thay label của button bằng loading icon trong trường hợp hành động được thực hiện nhưng vẫn đang process.
+- Button width thay đổi theo độ dài của label, hạn chế tự ý thay đổi width của button, trừ trường hợp trên mobile muốn button full width của device.
+- Trong một page chỉ sử dụng duy nhất 1 primary button làm Call to action, các button khác có thể thể hiện dưới các variant khác của button với độ ưu tiên thấp hơn (vd: secondary button, outline button..)
 
 ## Variants
 
-### Shapes
- 
-  <Canvas of={ButtonStories.Shapes} />
+### Button types
 
-### Sizes
+<img
+  src="/src/assets/media/image38.png"
+  class="s-mb-4"
+  style={{ maxWidth: 340 }}
+/>
 
-  <Canvas of={ButtonStories.Sizes} />
+### Size
 
-### Intents
-
-#### Medium size
-  <Canvas of={ButtonStories.Intents} />
-
-#### Small size
-  <Canvas of={ButtonStories.IntentsSmall} />
-
-### Destructive intents
-#### Medium size intents
-  <Canvas of={ButtonStories.DestructiveIntents} />
-
-#### Small size intents
-  <Canvas of={ButtonStories.DestructiveIntentsSmall} />
-
-### Icons
-  <Canvas of={ButtonStories.Icons} />
+<img
+  src="/src/assets/media/image39.png"
+  class="s-mb-4"
+  style={{ maxWidth: 180 }}
+/>
 
 ### Disabled
 
-Set disable button for something that isn’t usable. Use a tooltip on hover in order to indicate the reason of the disabled action.
+Button disable được sử dụng với những action không thể hoạt động, button disable nên xuất hiện kèm tooltip khi hover để thông báo lý do vì sao action đó bị disable.
 
-  <Canvas of={ButtonStories.Disabled} />
+<img
+  src="/src/assets/media/image40.png"
+  class="s-mb-4"
+  style={{ maxWidth: 440 }}
+/>
 
+### State
 
-## Tips
+<img
+  src="/src/assets/media/image41.png"
+  class="s-mb-4"
+  style={{ maxWidth: 440 }}
+/>
 
-➡️ Buttons may contain icon on the left/right side or only contain one icon and no label.  
-➡️ Replace text with a loader if action is submitted, but still processing.  
-➡️ Button width is set by its content, avoid changing its width.  
-➡️ Use only one primary button, and any remaining calls to action should be represented as lower emphasis buttons.  
+### Negative
 
+Dùng để chỉ thị những action có thể mang lại ý nghĩa tiêu cực (vd: delete, remove, discard...)
+
+<img
+  src="/src/assets/media/image42.png"
+  class="s-mb-4"
+  style={{ maxWidth: 440 }}
+/>
+
+### With Icon
+
+<img
+  src="/src/assets/media/image43.png"
+  class="s-mb-4"
+  style={{ maxWidth: 440 }}
+/>
+
+## Do's & Dont's
 
 ## Examples
 
-### Call-to-action
+<Canvas of={ButtonStories.Shapes} />
+<Canvas of={ButtonStories.Sizes} />
+<Canvas of={ButtonStories.Intents} />
+<Canvas of={ButtonStories.IntentsSmall} />
+<Canvas of={ButtonStories.DestructiveIntents} />
+<Canvas of={ButtonStories.DestructiveIntentsSmall} />
+<Canvas of={ButtonStories.Icons} />
+<Canvas of={ButtonStories.Disabled} />
+<Canvas of={ButtonStories.CTA} />
 
-  <Canvas of={ButtonStories.CTA} />
+<hr />
+
+# Icon Button
+
+## Overview
+
+Icon button chỉ chứa icon và không kèm text, chủ yếu sử dụng ở những vị trí có nhiều function nhưng không gian xung quanh nhỏ.
+
+<img
+  src="/src/assets/media/image44.png"
+  class="s-mb-4"
+  style={{ maxWidth: 100 }}
+/>
+
+## Usage
+
+- Icon button luôn hiển thị kèm tooltip khi user hover
+- Sử dụng icon button khi user cần phải thực hiện action nhưng khoảng trống xung quanh là quá nhỏ để thể hiện được button có label.
+- Icon button chỉ nên sử dụng khi icon thực sự dễ hiểu và không gây confuse với các function khác.
+- Icon button thường sử dụng khi có 2 đến 3 button đứng cạnh nhau trên một hàng để thực hiện những action lên cùng 1 đối tượng.
+
+## Variants
+
+### Button type
+
+<img
+  src="/src/assets/media/image45.png"
+  class="s-mb-4"
+  style={{ maxWidth: 200 }}
+/>
+
+### Shape
+
+Icon button có 2 shape là round và pill, round được sử dụng khi icon button đứng cạnh các default button khác. Pill được sử dụng khi chỉ có các icon button đứng cạnh nhau.
+
+<img
+  src="/src/assets/media/image46.png"
+  class="s-mb-4"
+  style={{ maxWidth: 200 }}
+/>
+
+### Size
+
+<img
+  src="/src/assets/media/image47.png"
+  class="s-mb-4"
+  style={{ maxWidth: 150 }}
+/>
+
+### State
+
+<img
+  src="/src/assets/media/image48.png"
+  class="s-mb-4"
+  style={{ maxWidth: 300 }}
+/>
+
+### Disabled
+
+<img
+  src="/src/assets/media/image49.png"
+  class="s-mb-4"
+  style={{ maxWidth: 300 }}
+/>
+
+### Negative
+
+<img
+  src="/src/assets/media/image50.png"
+  class="s-mb-4"
+  style={{ maxWidth: 300 }}
+/>
+
+## Do's and Dont's
