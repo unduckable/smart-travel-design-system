@@ -1,5 +1,9 @@
 import { Canvas, Controls, Meta } from "@storybook/blocks";
 import * as Stories from "./_.stories";
+import image57 from "../../assets/media/image57.png";
+import image58 from "../../assets/media/image58.png";
+import image59 from "../../assets/media/image59.png";
+import image60 from "../../assets/media/image60.png";
 
 <Meta of={Stories} />
 
@@ -31,9 +35,6 @@ group button sẽ xuất hiện trong cùng 1 container.
 - Nếu không đủ diện tích hiển thị, các action có mức độ priority thấp hơn
   có thể ẩn trong action more trong button group.
 
-- Tối đa chỉ nên có 5 action hiển thị trong button group đã bao gồm 1
-  action "more".
-
 ### Props
 
 <Controls of={Stories.Default} />
@@ -42,19 +43,19 @@ group button sẽ xuất hiện trong cùng 1 container.
 
 **Size**
 
-<img src="/src/assets/media/image57.png" style={{ maxWidth: 500 }} />
+<img src={image57} style={{ maxWidth: 500 }} />
 
 **Label only**
 
-<img src="/src/assets/media/image58.png" style={{ maxWidth: 350 }} />
+<img src={image58} style={{ maxWidth: 350 }} />
 
 **With Icon**
 
-<img src="/src/assets/media/image59.png" style={{ maxWidth: 350 }} />
+<img src={image59} style={{ maxWidth: 350 }} />
 
 **Icon only**
 
-<img src="/src/assets/media/image60.png" style={{ maxWidth: 350 }} />
+<img src={image60} style={{ maxWidth: 350 }} />
 
 ## Do's & Don'ts
 

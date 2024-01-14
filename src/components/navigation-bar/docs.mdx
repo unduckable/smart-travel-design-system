@@ -1,6 +1,8 @@
 import { Canvas, Controls, Meta } from "@storybook/blocks";
 import * as Stories from "./_.stories";
 
+import image111 from "../../assets/media/image111.png";
+
 <Meta of={Stories} />
 
 # Navigation Bar
@@ -44,12 +46,10 @@ button và có tối đa 3 actions. Không đưa primary action lên vùng này.
 
 ### Default
 
-<img src="/src/assets/media/image111.png" style={{ maxWidth: 500 }} />
+<img src={image111} style={{ maxWidth: 500 }} />
 
 ## Do's & Dont's
 
 ## Examples
-
-{" "}
 
 <Canvas of={Stories.Example} />

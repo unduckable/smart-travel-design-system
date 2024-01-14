@@ -1,5 +1,10 @@
 import { Canvas, Controls, Meta } from "@storybook/blocks";
 import * as Stories from "./_.stories";
+import image28 from "../../assets/media/image28.png";
+import image29 from "../../assets/media/image29.png";
+import image30 from "../../assets/media/image30.png";
+import image31 from "../../assets/media/image31.png";
+import image32 from "../../assets/media/image32.png";
 
 <Meta of={Stories} />
 
@@ -24,51 +29,31 @@ Avatar là một yếu tố graphic để đại diện cho 1 user sử dụng s
 
 Avatar có 3 size, sử dụng trong từng trường hợp cụ thể (vd: chatbox, homepage, profile page..)
 
-<img
-  src="/src/assets/media/image28.png"
-  class="s-mb-4"
-  style={{ maxWidth: 336 }}
-/>
+<img src={image28} class="s-mb-4" style={{ maxWidth: 336 }} />
 
 ### Avatar dạng place holder
 
 Sử dụng khi user chưa đăng nhập (guest)
 
-<img
-  src="/src/assets/media/image29.png"
-  class="s-mb-4"
-  style={{ maxWidth: 336 }}
-/>
+<img src={image29} class="s-mb-4" style={{ maxWidth: 336 }} />
 
 ### Avatar text
 
 Sử dụng khi user không upload ảnh, lấy theo chữ cái tên của user, màu sắc random theo bộ màu của Smart Travel
 
-<img
-  src="/src/assets/media/image30.png"
-  class="s-mb-4"
-  style={{ maxWidth: 336 }}
-/>
+<img src={image30} class="s-mb-4" style={{ maxWidth: 336 }} />
 
 ### Avatar with indicator
 
 Avatar chứa các indicator chỉ thị trạng thái online, hoặc có noti
 
-<img
-  src="/src/assets/media/image31.png"
-  class="s-mb-4"
-  style={{ maxWidth: 336 }}
-/>
+<img src={image31} class="s-mb-4" style={{ maxWidth: 336 }} />
 
 ### Avatar group
 
 Thể hiện một group các user cùng đang access vào một nội dung cụ thể
 
-<img
-  src="/src/assets/media/image32.png"
-  class="s-mb-4"
-  style={{ maxWidth: 336 }}
-/>
+<img src={image32} class="s-mb-4" style={{ maxWidth: 336 }} />
 
 ## Do's and Don'ts
 
