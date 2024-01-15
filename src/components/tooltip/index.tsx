@@ -60,7 +60,6 @@ export const Tooltip: FC<ITooltip> = forwardRef<HTMLInputElement, ITooltip>((pro
 
   return (
     <TooltipTrigger isDisabled={isDisabled} {...rest}>
-      {/* TODO: Find a way to avoid wrapping trigger inside React Aria Button */}
       <Button className="s-flex s-cursor-default">{children}</Button>
       <BaseTooltip ref={ref} placement={placement} {...contentProps} className={classes}>
         <OverlayArrow>
