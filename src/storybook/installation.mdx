@@ -1,0 +1,59 @@
+import { Meta } from "@storybook/blocks";
+
+<Meta title="Installation" />
+
+# Cài đặt
+
+Trước tiên, hãy chạy những lệnh sau để cài đặt các thứ cần thiết cho project
+
+```bash
+npm install
+```
+
+## Chạy ở chế độ local
+
+Phát triển ở chế độ local sẽ hỗ trợ 2 chế độ để dựng lên giao diện: Chế độ Playgroun & Chế độ Storybook
+
+### Playground
+
+Để chạy ở chế độ Playground, chạy trong terminal:
+
+```bash
+npm run dev
+```
+
+### Storybook
+
+Để chạy ở chế độ Storybook, chạy trong terminal:
+
+```bash
+npm run dev:storybook
+```
+
+## Build
+
+Để build ra bản cho production thì có sẵn 2 lệnh chính: một lệnh build cho mã nguồn chính của design system và một lệnh build cho tài liệu Storybook
+
+### Lệnh build design system
+
+```bash
+npm run build
+```
+
+### Lệnh build Storybook
+
+```bash
+npm run build:storybook
+```
+
+## Cách sử dụng
+
+Để tích hợp, bạn có thể:
+
+1. Sự dụng mã nguồn này trực tiếp ở trên ứng dụng ReactJS của bạn
+
+2. Build mã nguồn với `npm run build` và publish lên npm. Sau đó, bạn có thể cài đặt như một dependency vào dự án và sự dùng các components phần cần thiết:
+
+```jsx
+import { Button } from "@your-npm-package-name";
+```
