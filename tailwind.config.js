@@ -18,7 +18,6 @@ export default {
       md: "8px",
       lg: "12px",
       full: "9999px",
-      // TODO: Add missing values from figma
     },
     fontWeight: {
       normal: "400",
